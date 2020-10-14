@@ -1,13 +1,14 @@
 <template>
   <div>
+    <ColorMode class="mt-4 mr-4 absolute top-0 right-0" />
     <Nuxt />
   </div>
 </template>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;900&display=swap');
 html {
-  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Nunito Sans', sans-serif;
   font-size: 16px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
@@ -25,10 +26,10 @@ html {
 }
 
 .dark-mode {
-  @apply text-white bg-dgrey;
+  @apply text-white bg-dgrey transition-colors duration-500 ease-in-out;
 }
 
 .light-mode {
-  @apply text-dgrey bg-white;
+  @apply text-dgrey bg-white transition-colors duration-500 ease-in-out;
 }
 </style>

@@ -1,5 +1,8 @@
 <template>
-  <button class="px-4 py-2 border border-white capitalize" @click="changeMode">
+  <button
+    class="px-3 py-1 rounded-md focus:outline-none border border-dgrey dark:border-white hover:bg-dblue hover:text-white"
+    @click="changeMode"
+  >
     {{ btnLabel }}
   </button>
 </template>

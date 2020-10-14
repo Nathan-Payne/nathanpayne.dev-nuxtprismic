@@ -35,13 +35,21 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    '@nuxtjs/prismic',
   ],
+
+  // Build Configuration (https://go.nuxtjs.dev/config-build)
+  build: {},
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: {},
 
-  // Build Configuration (https://go.nuxtjs.dev/config-build)
-  build: {},
+  prismic: {
+    endpoint: 'https://nathanpaynedev.cdn.prismic.io/api/v2',
+    linkResolver: '@/plugins/link-resolver',
+    htmlSerializer: '@/plugins/html-serializer',
+  },
+
   purgeCSS: {
     whitelist: ['dark-mode'],
   },
