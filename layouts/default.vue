@@ -32,4 +32,33 @@ html {
 .light-mode {
   @apply text-dgrey bg-white transition-colors duration-500 ease-in-out;
 }
+
+h1 {
+  font-size: 3rem;
+  font-weight: 900;
+}
+h2 {
+  font-size: 2.25rem;
+  font-weight: 600;
+}
+h3 {
+  font-size: 1.875rem;
+  font-weight: 600;
+}
+h4 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+h5 {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+h6 {
+  font-size: 1.125rem;
+  font-weight: 400;
+}
+section {
+  width: 100%;
+  padding: 0 4rem 0 4rem;
+}
 </style>

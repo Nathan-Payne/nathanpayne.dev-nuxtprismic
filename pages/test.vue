@@ -1,12 +1,14 @@
 <template>
-  <div>
-    <prismic-rich-text :field="pageTitle" />
-    <prismic-image :field="pageImage" class="w-20 h-20 rounded-full" />
-    <prismic-rich-text :field="subtitle" />
-    <prismic-rich-text :field="subtitleText" />
-
+  <main>
+    <section class="h-screen flex flex-col justify-center">
+      <prismic-rich-text :field="pageTitle" />
+      <prismic-image :field="pageImage" class="w-20 h-20 rounded-full" />
+      <prismic-rich-text :field="subtitle" />
+      <prismic-rich-text :field="subtitleText" />
+      <p>{{ href }}</p>
+    </section>
     <slices-block :slices="slices" />
-  </div>
+  </main>
 </template>
 
 <script>
