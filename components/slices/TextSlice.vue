@@ -1,5 +1,5 @@
 <template>
-  <div class="py-20">
+  <div class="py-20 px-16">
     <prismic-rich-text :field="slice.primary.text" />
   </div>
 </template>
