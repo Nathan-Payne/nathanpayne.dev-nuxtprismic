@@ -1,14 +1,22 @@
 <template>
   <div
-    class="h-screen flex"
-    :class="imagePosition === 'right' ? 'flex-row' : 'flex-row-reverse'"
+    class="h-screen flex flex-col justify-center"
+    :class="imagePosition === 'right' ? 'sm:flex-row' : 'sm:flex-row-reverse'"
   >
-    <article class="md:w-1/2 px-16 flex flex-col justify-center">
+    <article
+      class="sm:w-1/2 px-4 sm:px-8 md:px-16 md:pb-48 mb-8 flex flex-col justify-center"
+    >
       <prismic-rich-text :field="slice.primary.section_title" />
-      <prismic-rich-text :field="slice.primary.section_description" />
-      <p>{{ imagePosition }}</p>
+      <prismic-rich-text
+        :field="slice.primary.section_description"
+        class="mt-8"
+      />
     </article>
-    <div class="md:w-1/2 place-items-center" :class="imageCount">
+
+    <div
+      class="max-w-sm md:max-w-lg xl:max-w-xl sm:w-1/2 mx-auto"
+      :class="imageCount"
+    >
       <template v-if="slice.items.length > 1">
         <div
           v-for="(item, index) in slice.items"
@@ -17,7 +25,8 @@
           :class="{
             'row-start-1 col-start-3 z-10 transform translate-x-4': index == 0,
             'row-start-2 col-start-7 z-20': index == 1,
-            'row-start-4 col-start-2 z-10 transform translate-x-4': index == 2,
+            'row-start-5 sm:row-start-3 col-start-2 z-10 transform translate-x-4':
+              index == 2,
           }"
         >
           <picture>
@@ -92,10 +101,20 @@ export default {
   computed: {
     imageCount() {
       return {
-        'grid grid-cols-12 grid-rows-12': this.slice.items.length > 1,
-        relative: this.slice.items.length === 1,
+        'grid grid-cols-12 grid-rows-12 place-items-center':
+          this.slice.items.length > 1,
+        'flex flex-col sm:flex-row justify-center items-center':
+          this.slice.items.length === 1,
       }
     },
   },
 }
 </script>
+
+<style>
+/* label added from prismic - wraps span around text with "space-above" class */
+.space-above {
+  display: block;
+  margin-top: 0.4rem;
+}
+</style>

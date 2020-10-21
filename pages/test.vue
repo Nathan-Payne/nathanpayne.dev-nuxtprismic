@@ -1,11 +1,13 @@
 <template>
   <main>
-    <section class="h-screen px-16 flex flex-col justify-center">
+    <section
+      class="h-screen px-4 sm:px-8 md:px-16 flex flex-col justify-center"
+    >
       <prismic-rich-text :field="pageTitle" />
       <prismic-image :field="pageImage" class="w-20 h-20 rounded-full" />
       <prismic-rich-text :field="subtitle" />
       <prismic-rich-text :field="subtitleText" />
-      <p>{{ href }}</p>
+      <!-- <p>{{ href }}</p> -->
     </section>
     <slices-block :slices="slices" />
   </main>
@@ -43,5 +45,3 @@ export default {
   },
 }
 </script>
-
-<style></style>

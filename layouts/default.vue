@@ -36,6 +36,7 @@ html {
 h1 {
   font-size: 3rem;
   font-weight: 900;
+  line-height: 3rem;
 }
 h2 {
   font-size: 2.25rem;
@@ -55,7 +56,8 @@ h5 {
 }
 h6 {
   font-size: 1.125rem;
-  font-weight: 400;
+  font-weight: 600;
+  /* margin-bottom: 0.35rem; */
 }
 section {
   width: 100%;
