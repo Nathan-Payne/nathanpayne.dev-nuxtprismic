@@ -1,9 +1,25 @@
 <template>
   <div>
-    <ColorMode class="mt-4 mr-4 absolute top-0 right-0 z-50" />
-    <Nuxt />
+    <HeaderPrismic />
+    <main>
+      <ColorMode class="mt-4 mr-4 absolute top-0 right-0 z-50" />
+      <Nuxt />
+    </main>
+    <footer></footer>
   </div>
 </template>
+
+<script>
+import HeaderPrismic from '~/components/HeaderPrismic.vue'
+export default {
+  components: {
+    HeaderPrismic,
+  },
+  async middleware({ store, $prismic }) {
+    await store.dispatch('fetchMenu', $prismic)
+  },
+}
+</script>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;900&display=swap');
