@@ -7,7 +7,7 @@
         <text-slice :slice="slice" />
       </template>
       <!-- Icon list slice component -->
-      <template v-else-if="slice.slice_type === 'icon_list'">
+      <template v-else-if="slice.slice_type === 'icon_list1'">
         <icon-list-slice :slice="slice" />
       </template>
       <!-- Icon grid slice component -->

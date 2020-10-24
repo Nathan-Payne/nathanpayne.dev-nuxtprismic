@@ -1,6 +1,6 @@
 <template>
   <div>
-    <ColorMode class="mt-4 mr-4 absolute top-0 right-0" />
+    <ColorMode class="mt-4 mr-4 absolute top-0 right-0 z-50" />
     <Nuxt />
   </div>
 </template>
@@ -41,6 +41,7 @@ h1 {
 h2 {
   font-size: 2.25rem;
   font-weight: 600;
+  line-height: 2.8rem;
 }
 h3 {
   font-size: 1.875rem;

@@ -1,12 +1,11 @@
 <template>
   <main>
     <section
-      class="h-screen px-4 sm:px-8 md:px-16 flex flex-col justify-center"
+      class="h-screen px-4 sm:px-8 md:px-16 relative flex flex-col justify-center"
     >
-      <prismic-rich-text :field="pageTitle" />
-      <prismic-image :field="pageImage" class="w-20 h-20 rounded-full" />
-      <prismic-rich-text :field="subtitle" />
-      <prismic-rich-text :field="subtitleText" />
+      <prismic-rich-text :field="pageTitle" class="w-1/2" />
+      <prismic-rich-text :field="subtitle" class="w-1/2" />
+      <prismic-rich-text :field="subtitleText" class="w-1/2" />
       <!-- <p>{{ href }}</p> -->
     </section>
     <slices-block :slices="slices" />
@@ -25,7 +24,6 @@ export default {
       const document = (await $prismic.api.getByUID('page', 'test')).data
       const href = (await $prismic.api.getByUID('page', 'test')).href
       const pageTitle = document.page_title
-      const pageImage = document.page_image
       const subtitle = document.subtitle
       const subtitleText = document.subtitle_text
 
@@ -34,7 +32,6 @@ export default {
         document,
         href,
         pageTitle,
-        pageImage,
         subtitle,
         subtitleText,
         slices,
