@@ -18,6 +18,10 @@
       <template v-else-if="slice.slice_type === 'feature_section'">
         <feature-slice :slice="slice" />
       </template>
+      <!-- Project section slice component -->
+      <template v-else-if="slice.slice_type === 'project_section'">
+        <project-slice :slice="slice" />
+      </template>
     </section>
   </div>
 </template>
@@ -27,6 +31,7 @@ const TextSlice = () => import('./slices/TextSlice.vue')
 const IconListSlice = () => import('./slices/IconListSlice.vue')
 const IconGridSlice = () => import('./slices/IconGridSlice.vue')
 const FeatureSlice = () => import('./slices/FeatureSlice.vue')
+const ProjectSlice = () => import('./slices/ProjectSlice.vue')
 export default {
   name: 'SlicesBlock',
   components: {
@@ -34,6 +39,7 @@ export default {
     IconListSlice,
     IconGridSlice,
     FeatureSlice,
+    ProjectSlice,
   },
   props: {
     slices: {

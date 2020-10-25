@@ -37,6 +37,14 @@ module.exports = {
       'hover',
       'responsive',
     ],
-    textColor: ['dark', 'dark-hover', 'dark-active', 'hover', 'responsive'],
+    textColor: [
+      'dark',
+      'dark-hover',
+      'dark-active',
+      'hover',
+      'responsive',
+      'group-hover',
+    ],
+    opacity: ['group-hover'],
   },
 }

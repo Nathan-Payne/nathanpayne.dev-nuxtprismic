@@ -23,6 +23,13 @@ export default {
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;900&display=swap');
+
+:root {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  touch-action: manipulation;
+}
+
 html {
   font-family: 'Nunito Sans', sans-serif;
   font-size: 16px;
@@ -50,40 +57,38 @@ html {
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: clamp(2.2rem, 5vw, 4rem);
   font-weight: 900;
   line-height: 3rem;
 }
 h2 {
-  font-size: 2.25rem;
+  font-size: clamp(2rem, 4.2vw, 3rem);
   font-weight: 600;
   line-height: 2.8rem;
 }
 h3 {
-  font-size: 1.875rem;
+  font-size: clamp(1.6rem, 3.2vw, 2.5rem);
   font-weight: 600;
 }
 h4 {
-  font-size: 1.5rem;
+  font-size: clamp(1.5rem, 2.8vw, 2.25rem);
   font-weight: 600;
 }
 h5 {
-  font-size: 1.25rem;
+  font-size: clamp(1.3rem, 2.4vw, 2rem);
   font-weight: 600;
 }
 h6 {
-  font-size: 1.125rem;
+  font-size: clamp(1.15rem, 2.2vw, 1.5rem);
   font-weight: 600;
   /* margin-bottom: 0.35rem; */
 }
+p {
+  font-size: clamp(0.9rem, 1.8vw, 1.1rem);
+  font-weight: 400;
+}
 section {
   width: 100%;
-}
-
-:root {
-  scroll-behavior: smooth;
-  overflow-x: hidden;
-  touch-action: manipulation;
 }
 
 /* STYLING HIGHLIGHT AND SCROLLBAR IN WEBKIT SUPPORTED BROWSERS */
