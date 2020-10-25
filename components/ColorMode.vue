@@ -4,12 +4,6 @@
       <input type="checkbox" />
       <span class="slider round" @click="changeMode"></span>
     </label>
-    <!-- <button
-      class="px-3 py-1 rounded-md focus:outline-none border border-dgrey dark:border-white hover:bg-dblue hover:text-white"
-      @click="changeMode"
-    >
-      {{ btnLabel }}
-    </button> -->
   </div>
 </template>
 
@@ -33,8 +27,8 @@ export default {
 .switch {
   position: relative;
   display: inline-block;
-  width: 38px;
-  height: 16px;
+  width: 32px;
+  height: 11px;
 }
 
 .switch input {
@@ -58,8 +52,8 @@ export default {
 .slider:before {
   position: absolute;
   content: '';
-  height: 16px;
-  width: 16px;
+  height: 11px;
+  width: 11px;
   left: 0px;
   bottom: 0px;
   background-color: #5e5f5f;

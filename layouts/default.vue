@@ -1,8 +1,8 @@
 <template>
   <div>
     <HeaderPrismic />
+    <ColorMode class="mt-4 mr-4 absolute top-0 right-0 z-50" />
     <main>
-      <ColorMode class="mt-4 mr-4 absolute top-0 right-0 z-50" />
       <Nuxt />
     </main>
     <footer></footer>
@@ -78,5 +78,39 @@ h6 {
 }
 section {
   width: 100%;
+}
+
+:root {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  touch-action: manipulation;
+}
+
+/* STYLING HIGHLIGHT AND SCROLLBAR IN WEBKIT SUPPORTED BROWSERS */
+::selection {
+  background: #ff1d00;
+}
+::-moz-selection {
+  background: #ff1d00;
+}
+
+::-webkit-scrollbar {
+  width: 11px;
+}
+::-webkit-scrollbar-track {
+  background: #1e1f1f;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e1f1f;
+  border-radius: 6px;
+  border: 1px solid #555;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    140deg,
+    #1e1f1f77,
+    rgba(85, 85, 85, 0.5),
+    #1e1f1f77
+  );
 }
 </style>

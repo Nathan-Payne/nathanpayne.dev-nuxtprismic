@@ -1,21 +1,23 @@
 <template>
   <div class="mx-6 flex flex-col justify-center">
     <section
-      id="landing-section"
-      class="h-screen w-1/2 flex flex-col justify-center"
+      class="h-screen w-full sm:w-3/4 md:w-1/2 pb-6 flex flex-col justify-center"
     >
-      <h5 class="text-sm dark:text-gray-100">{{ smallTitle }}</h5>
-      <h1 class="text-5xl font-normal text-dgrey dark:text-white leading-tight">
+      <h5 v-if="smallTitle" class="text-sm dark:text-gray-100">
+        {{ smallTitle }}
+      </h5>
+      <h1
+        class="text-2xl sm:text-4xl md:text-5xl font-normal text-dgrey dark:text-white leading-tight"
+      >
         {{ mainTitle }}
       </h1>
-      <div
-        class="w-24 px-4 py-2 mt-6 inline-block text-center rounded-md border border-dgrey dark:border-white"
-      >
+      <!-- <div class="w-24 mt-6 inline-block text-center">
         <nuxt-link :to="`/${ctaLinkUid}`"> {{ ctaText }} </nuxt-link>
-      </div>
+      </div> -->
     </section>
+
     <section class="h-screen">
-      <h2>featured work</h2>
+      <h2>Selected Work</h2>
     </section>
   </div>
 </template>
