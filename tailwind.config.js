@@ -14,6 +14,7 @@ module.exports = {
     extend: {
       colors: {
         dgrey: 'var(--dgrey)',
+        ddgrey: 'var(--ddgrey)',
         dred: 'var(--dred)',
         dblue: 'var(--dblue)',
       },
@@ -45,6 +46,6 @@ module.exports = {
       'responsive',
       'group-hover',
     ],
-    opacity: ['group-hover'],
+    translate: ['group-hover'],
   },
 }

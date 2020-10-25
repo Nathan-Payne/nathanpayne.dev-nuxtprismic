@@ -3,7 +3,7 @@
     <section
       class="h-screen w-full sm:w-3/4 md:w-2/3 pb-6 flex flex-col justify-center"
     >
-      <h5 v-if="smallTitle" class="text-sm dark:text-gray-100">
+      <h5 v-if="smallTitle" class="text-sm dark:text-gray-400">
         {{ smallTitle }}
       </h5>
       <h1 class="font-normal text-dgrey dark:text-white leading-tight">
@@ -14,7 +14,7 @@
       </div>
     </section>
 
-    <section class="h-screen">
+    <section>
       <prismic-rich-text :field="sectionTitle" />
       <slices-block :slices="slices" class="mt-8" />
     </section>

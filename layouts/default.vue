@@ -5,15 +5,17 @@
     <main>
       <Nuxt />
     </main>
-    <footer></footer>
+    <NuxtFooter />
   </div>
 </template>
 
 <script>
 import HeaderPrismic from '~/components/HeaderPrismic.vue'
+import NuxtFooter from '~/components/NuxtFooter.vue'
 export default {
   components: {
     HeaderPrismic,
+    NuxtFooter,
   },
   async middleware({ store, $prismic }) {
     await store.dispatch('fetchMenu', $prismic)
