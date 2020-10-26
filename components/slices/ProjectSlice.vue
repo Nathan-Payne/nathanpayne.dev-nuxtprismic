@@ -1,17 +1,19 @@
 <template>
   <nuxt-link :to="`/services`">
     <div
-      class="flex flex-col justify-center relative transform group"
+      class="flex flex-col justify-center transform group"
       :class="
         imagePosition === 'right'
           ? 'sm:flex-row'
-          : 'custom-width sm:flex-row-reverse sm:-translate-x-24'
+          : 'sm:flex-row-reverse custom-width sm:-translate-x-24'
       "
     >
       <article
         class="w-full sm:px-2 md:px-4 relative flex flex-col justify-center"
         :class="
-          imagePosition === 'right' ? 'items-end text-right' : 'items-start'
+          imagePosition === 'right'
+            ? 'sm:items-end sm:text-right'
+            : 'items-start'
         "
       >
         <prismic-rich-text

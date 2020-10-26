@@ -59,21 +59,21 @@ html {
 }
 
 h1 {
-  font-size: clamp(2.2rem, 5vw, 4rem);
+  font-size: clamp(2.2rem, 4.4vw, 3.6rem);
   font-weight: 900;
   line-height: 3rem;
 }
 h2 {
-  font-size: clamp(2rem, 4.2vw, 3rem);
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
   font-weight: 600;
   line-height: 2.8rem;
 }
 h3 {
-  font-size: clamp(1.6rem, 3.2vw, 2.5rem);
+  font-size: clamp(1.6rem, 3vw, 2.5rem);
   font-weight: 600;
 }
 h4 {
-  font-size: clamp(1.5rem, 2.8vw, 2.25rem);
+  font-size: clamp(1.5rem, 2.75vw, 2.25rem);
   font-weight: 600;
 }
 h5 {
@@ -83,10 +83,9 @@ h5 {
 h6 {
   font-size: clamp(1.15rem, 2.2vw, 1.5rem);
   font-weight: 600;
-  /* margin-bottom: 0.35rem; */
 }
 p {
-  font-size: clamp(0.9rem, 1.8vw, 1.1rem);
+  font-size: clamp(0.9rem, 1.6vw, 1.08rem);
   font-weight: 400;
 }
 section {

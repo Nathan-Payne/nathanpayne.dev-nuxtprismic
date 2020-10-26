@@ -46,6 +46,6 @@ module.exports = {
       'responsive',
       'group-hover',
     ],
-    translate: ['group-hover'],
+    translate: ['group-hover', 'responsive'],
   },
 }

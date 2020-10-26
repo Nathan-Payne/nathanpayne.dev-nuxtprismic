@@ -12,7 +12,7 @@
       <prismic-rich-text
         v-if="subtitleText"
         :field="subtitleText"
-        class="w-full max-w-2xl sm:w-2/3 md:w-3/4 ml-0 md:ml-8 lg:ml-16 mt-2"
+        class="w-full max-w-2xl sm:w-2/3 md:w-3/4 ml-0 md:ml-8 lg:ml-16 mt-4"
       />
     </section>
     <!-- OPTIONAL BACKGROUND IMAGE - fullpage darkened/lightened depending on dark mode setting -->
@@ -26,7 +26,7 @@
       />
     </div>
 
-    <slices-block :slices="slices" />
+    <slices-block :slices="slices" class="leading-relaxed" />
   </div>
 </template>
 

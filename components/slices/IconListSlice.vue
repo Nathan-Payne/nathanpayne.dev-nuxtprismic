@@ -9,7 +9,8 @@
         <div
           class="w-full md:w-1/5 grid place-items-start md:place-items-center"
         >
-          <prismic-image :field="item.icon" class="w-16" />
+          <!-- <prismic-rich-text :field="item.icon" class="w-16" /> -->
+          <div class="w-full" v-html="item.icon[0].text"></div>
         </div>
         <prismic-rich-text
           :field="item.icon_text"

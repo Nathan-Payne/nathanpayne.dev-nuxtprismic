@@ -25,19 +25,19 @@
       <div class="px-4 sm:px-8 py-8 flex flex-wrap md:flex-no-wrap">
         <div class="flex flex-wrap justify-start">
           <p class="w-full">
-            Short on time? Send me an email and I'll get back to you:
+            Short on time? Send me your email and I'll get back to you:
           </p>
-          <div class="mt-8">
+          <div class="mt-8 text-dgrey dark:text-white">
             <label for="email">
               Email:
               <input
-                class="w-40 sm:w-64 bg-dgrey py-2 px-4 sm:mx-4 mx-1 border border-gray-800 focus:outline-none rounded"
+                class="w-40 sm:w-64 py-2 px-4 sm:mx-4 mx-1 bg-gray-200 dark:bg-dgrey border border-gray-300 dark:border-gray-800 focus:outline-none shadow-lg rounded"
                 placeholder="name@email.com"
                 type="email"
                 name="email"
               />
               <button
-                class="inline-flex bg-dgrey border-0 py-2 px-6 font-black tracking-wider focus:outline-none hover:bg-dred rounded"
+                class="py-2 px-6 inline-flex shadow-lg border-0 rounded dark:bg-dgrey font-black tracking-wider focus:outline-none dark-hover:bg-dred hover:bg-dblue hover:text-white transition duration-100"
               >
                 SEND
               </button>
@@ -47,6 +47,7 @@
             </p>
           </div>
         </div>
+
         <!-- ICONS -->
         <span
           class="w-full sm:w-auto mt-8 md:ml-auto inline-flex justify-center sm:justify-start md:items-center"
