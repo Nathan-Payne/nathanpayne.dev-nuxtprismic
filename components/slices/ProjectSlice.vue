@@ -1,5 +1,5 @@
 <template>
-  <nuxt-link :to="`/services`">
+  <prismic-link :field="slice.primary.project_link">
     <div
       class="flex flex-col justify-center transform group"
       :class="
@@ -53,7 +53,7 @@
         </picture>
       </div>
     </div>
-  </nuxt-link>
+  </prismic-link>
 </template>
 
 <script>
