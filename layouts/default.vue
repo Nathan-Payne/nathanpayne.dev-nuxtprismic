@@ -24,8 +24,6 @@ export default {
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;900&display=swap');
-
 :root {
   scroll-behavior: smooth;
   overflow-x: hidden;

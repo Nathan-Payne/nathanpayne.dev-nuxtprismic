@@ -10,9 +10,19 @@
           :field="projectRole"
           class="mt-2 uppercase tracking-wide leading-3"
         />
-        <div class="mt-8 md:mt-16 flex space-x-8 md:space-x-16 tracking-wider">
-          <prismic-link :field="mainLink">{{ mainLinkText }}</prismic-link>
-          <prismic-link :field="secondLink">{{ secondLinkText }}</prismic-link>
+        <div
+          class="mt-8 md:mt-16 flex space-x-4 sm:space-x-8 md:space-x-16 tracking-wider transition duration-300"
+        >
+          <prismic-link
+            :field="mainLink"
+            class="py-2 px-6 shadow-md rounded border-l-4 border-dred font-semibold focus:outline-none dark-hover:bg-dred transform hover:scale-105 hover:shadow-lg transition duration-300"
+            >{{ mainLinkText }}</prismic-link
+          >
+          <prismic-link
+            :field="secondLink"
+            class="py-2 px-6 shadow-md rounded border-l-4 border-dred font-semibold focus:outline-none dark-hover:bg-dred transform hover:scale-105 hover:shadow-lg transition duration-300"
+            >{{ secondLinkText }}</prismic-link
+          >
         </div>
       </article>
       <picture

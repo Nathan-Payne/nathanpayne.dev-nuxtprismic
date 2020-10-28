@@ -15,8 +15,10 @@ module.exports = {
       colors: {
         dgrey: 'var(--dgrey)',
         ddgrey: 'var(--ddgrey)',
+        lgrey: 'var(--lgrey)',
         dred: 'var(--dred)',
         dblue: 'var(--dblue)',
+        lblue: 'var(--lblue)',
       },
     },
   },
