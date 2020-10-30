@@ -22,6 +22,10 @@
       <template v-else-if="slice.slice_type === 'project_section'">
         <project-slice :slice="slice" />
       </template>
+      <!-- RepeatableImage slice component -->
+      <template v-else-if="slice.slice_type === 'repeatable_image'">
+        <repeatable-image :slice="slice" />
+      </template>
     </section>
   </div>
 </template>
@@ -32,6 +36,7 @@ const IconListSlice = () => import('./slices/IconListSlice.vue')
 const IconGridSlice = () => import('./slices/IconGridSlice.vue')
 const FeatureSlice = () => import('./slices/FeatureSlice.vue')
 const ProjectSlice = () => import('./slices/ProjectSlice.vue')
+const RepeatableImage = () => import('./slices/RepeatableImage.vue')
 export default {
   name: 'SlicesBlock',
   components: {
@@ -40,6 +45,7 @@ export default {
     IconGridSlice,
     FeatureSlice,
     ProjectSlice,
+    RepeatableImage,
   },
   props: {
     slices: {

@@ -25,7 +25,7 @@ export default {
 
 <style>
 :root {
-  scroll-behavior: smooth;
+  /* scroll-behavior: smooth; */
   overflow-x: hidden;
   touch-action: manipulation;
 }
@@ -88,6 +88,17 @@ p {
 }
 section {
   width: 100%;
+}
+
+/* Page Transitions */
+.page-enter-active,
+.page-leave-active {
+  transition: all 0.3s ease-out;
+}
+.page-enter,
+.page-leave-active {
+  opacity: 0;
+  transform-origin: 50% 50%;
 }
 
 /* STYLING HIGHLIGHT AND SCROLLBAR IN WEBKIT SUPPORTED BROWSERS */

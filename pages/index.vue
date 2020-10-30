@@ -22,6 +22,7 @@
 </template>
 
 <script>
+import { gsap } from 'gsap'
 import SlicesBlock from '../components/SlicesBlock.vue'
 
 export default {
@@ -33,25 +34,27 @@ export default {
     try {
       const document = (await $prismic.api.getSingle('home')).data
       // const href = (await $prismic.api.getSingle('home')).href
-      const smallTitle = document.small_title[0].text
-      const mainTitle = document.main_title[0].text
-      const ctaText = document.cta_text[0].text
-      const ctaLinkUid = document.cta_link.uid
-      const sectionTitle = document.section_title
-
-      const slices = document.body
       return {
         document,
-        smallTitle,
-        mainTitle,
-        ctaText,
-        ctaLinkUid,
-        sectionTitle,
-        slices,
+        smallTitle: document.small_title[0].text,
+        mainTitle: document.main_title[0].text,
+        ctaText: document.cta_text[0].text,
+        ctaLinkUid: document.cta_link.uid,
+        sectionTitle: document.section_title,
+        slices: document.body,
       }
     } catch (e) {
       error({ statusCode: 404, message: 'Page not found' })
     }
+  },
+  mounted() {
+    gsap.from('h1', {
+      x: '2rem',
+      opacity: 0,
+      ease: 'back.out(1.7)',
+      delay: 0.05,
+      duration: 2,
+    })
   },
 }
 </script>
