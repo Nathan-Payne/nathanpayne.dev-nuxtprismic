@@ -25,26 +25,10 @@
           >
         </div>
       </article>
-      <picture
+      <responsive-picture
+        :field="mainImage"
         class="image-perspective image-float mt-24 md:mt-48 absolute z-10 col-start-5 col-end-12"
-      >
-        <source
-          :srcSet="`${mainImage.mobile.url}`"
-          :alt="`${mainImage.mobile.alt}`"
-          media="(max-width: 495px)"
-        />
-        <source
-          :srcSet="`${mainImage.tablet.url}`"
-          :alt="`${mainImage.tablet.alt}`"
-          media="(max-width: 990px)"
-        />
-        <source
-          :srcSet="`${mainImage.desktop.url}`"
-          :alt="`${mainImage.desktop.alt}`"
-          media="(max-width: 1980px)"
-        />
-        <img :src="`${mainImage.url}`" :alt="`${mainImage.alt}`" />
-      </picture>
+      />
     </section>
 
     <section
@@ -53,24 +37,10 @@
       <article class="w-full md:w-3/5">
         <prismic-rich-text :field="projectDescription" class="flex flex-col" />
       </article>
-      <picture class="w-1/2 md:w-1/5 mx-auto mt-12 md:mt-0 flex items-center">
-        <source
-          :srcSet="`${secondImage.mobile.url}`"
-          :alt="`${secondImage.mobile.alt}`"
-          media="(max-width: 495px)"
-        />
-        <source
-          :srcSet="`${secondImage.tablet.url}`"
-          :alt="`${secondImage.tablet.alt}`"
-          media="(max-width: 990px)"
-        />
-        <source
-          :srcSet="`${secondImage.desktop.url}`"
-          :alt="`${secondImage.desktop.alt}`"
-          media="(max-width: 1980px)"
-        />
-        <img :src="`${secondImage.url}`" :alt="`${secondImage.alt}`" />
-      </picture>
+      <responsive-picture
+        :field="secondImage"
+        class="w-1/2 md:w-1/5 mx-auto mt-12 md:mt-0 flex items-center"
+      />
     </section>
     <slices-block :slices="slices" class="mt-20" />
   </main>
@@ -78,8 +48,10 @@
 
 <script>
 import SlicesBlock from '~/components/SlicesBlock.vue'
+import ResponsivePicture from '~/components/ResponsivePicture'
+
 export default {
-  components: SlicesBlock,
+  components: { SlicesBlock, ResponsivePicture },
   async asyncData({ params, $prismic, error }) {
     try {
       const project = (await $prismic.api.getByUID('project', params.uid)).data

@@ -29,7 +29,9 @@
               index == 2,
           }"
         >
-          <picture>
+          <responsive-picture :field="item.section_images" />
+          <!-- COMPONENT REQUIRES TESTING  -->
+          <!-- <picture>
             <source
               :srcSet="`${item.section_images.mobile.url}`"
               :alt="`${item.section_images.mobile.alt}`"
@@ -49,7 +51,7 @@
               :src="`${item.section_images.url}`"
               :alt="`${item.section_images.alt}`"
             />
-          </picture>
+          </picture> -->
         </div>
       </template>
       <template v-else>
@@ -57,7 +59,8 @@
           v-for="(item, index) in slice.items"
           :key="slice.slice_type + index"
         >
-          <picture>
+          <responsive-picture :field="item.section_images" />
+          <!-- <picture>
             <source
               :srcSet="`${item.section_images.mobile.url}`"
               :alt="`${item.section_images.mobile.alt}`"
@@ -77,7 +80,7 @@
               :src="`${item.section_images.url}`"
               :alt="`${item.section_images.alt}`"
             />
-          </picture>
+          </picture> -->
         </div>
       </template>
     </div>
@@ -85,8 +88,10 @@
 </template>
 
 <script>
+import ResponsivePicture from '~/components/ResponsivePicture'
 export default {
   name: 'FeatureSlice',
+  components: { ResponsivePicture },
   props: {
     slice: {
       type: Object,

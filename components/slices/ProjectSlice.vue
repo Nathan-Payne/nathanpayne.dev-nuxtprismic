@@ -30,35 +30,17 @@
       <div
         class="max-w-lg md:max-w-2xl xl:max-w-3xl ml-auto mt-8 sm:mt-0 border border-dgrey group-hover:opacity-75 transition duration-300"
       >
-        <picture>
-          <source
-            :srcSet="`${slice.primary.project_image.mobile.url}`"
-            :alt="`${slice.primary.project_image.mobile.alt}`"
-            media="(max-width: 495px)"
-          />
-          <source
-            :srcSet="`${slice.primary.project_image.tablet.url}`"
-            :alt="`${slice.primary.project_image.tablet.alt}`"
-            media="(max-width: 990px)"
-          />
-          <source
-            :srcSet="`${slice.primary.project_image.desktop.url}`"
-            :alt="`${slice.primary.project_image.desktop.alt}`"
-            media="(max-width: 1980px)"
-          />
-          <img
-            :src="`${slice.primary.project_image.url}`"
-            :alt="`${slice.primary.project_image.alt}`"
-          />
-        </picture>
+        <responsive-picture :field="slice.primary.project_image" />
       </div>
     </div>
   </prismic-link>
 </template>
 
 <script>
+import ResponsivePicture from '../ResponsivePicture'
 export default {
   name: 'ProjectSlice',
+  components: { ResponsivePicture },
   props: {
     slice: {
       type: Object,
