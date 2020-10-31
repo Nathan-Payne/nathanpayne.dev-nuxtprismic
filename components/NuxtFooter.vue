@@ -54,6 +54,8 @@
         >
           <!-- Github icon -->
           <a
+            href="https://github.com/Nathan-Payne"
+            target="_blank"
             class="dark:text-white text-dgrey dark-hover:text-dred hover:text-dblue transition-colors duration-300 ease-in-out cursor-pointer"
           >
             <svg
@@ -92,6 +94,8 @@
             </a> -->
           <!-- Linkdin Icon -->
           <a
+            href="https://www.linkedin.com/in/nathanpayne-dev"
+            target="_blank"
             class="ml-3 dark:text-white text-dgrey dark-hover:text-dred hover:text-dblue transition-colors duration-300 ease-in-out cursor-pointer"
           >
             <svg

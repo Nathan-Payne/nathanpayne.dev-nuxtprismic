@@ -19,6 +19,7 @@
             >{{ mainLinkText }}</prismic-link
           >
           <prismic-link
+            v-if="secondLink && secondLinkText"
             :field="secondLink"
             class="py-2 px-6 dark:bg-lgrey shadow-md rounded border-l-4 border-dred font-semibold focus:outline-none dark-hover:bg-dred transform hover:scale-105 hover:shadow-lg transition duration-300"
             >{{ secondLinkText }}</prismic-link

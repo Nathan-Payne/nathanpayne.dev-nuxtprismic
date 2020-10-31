@@ -7,6 +7,7 @@
     <div v-for="(item, index) in slice.items" :key="slice.slice_type + index">
       <div class="w-full mt-12 md:mt-16 flex flex-col md:flex-row items-center">
         <div
+          aria-hidden="true"
           class="w-full md:w-1/5 grid place-items-start md:place-items-center"
         >
           <!-- <prismic-rich-text :field="item.icon" class="w-16" /> -->

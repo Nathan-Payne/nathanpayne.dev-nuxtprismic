@@ -1,8 +1,18 @@
 <template>
-  <main>
-    <prismic-rich-text :field="mainTitle" />
-    <slices-block :slices="slices" class="mt-8" />
-  </main>
+  <div class="px-4 sm:px-8 md:px-16 mt-24">
+    <div v-if="mainTitle[0].text !== 'Portfolio'">
+      <prismic-rich-text :field="mainTitle" />
+    </div>
+    <div v-else>
+      <h1 class="font-normal text-dgrey dark:text-white leading-tight">
+        Portfolio
+      </h1>
+    </div>
+    <slices-block
+      :slices="slices"
+      class="mt-32 flex flex-col space-y-16 sm:space-y-20 md:space-y-32 lg:space-y-48"
+    />
+  </div>
 </template>
 
 <script>

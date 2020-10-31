@@ -23,7 +23,12 @@
         <prismic-rich-text :field="slice.primary.project_title" class="mt-1" />
         <prismic-rich-text
           :field="slice.primary.project_link_text"
-          class="w-32 mt-2 sm:mt-8 group-hover:text-transparent transform group-hover:scale-105 group-hover:translate-x-2 bg-clip-text bg-gradient-to-br from-white via-dred to-dblue transition duration-300"
+          class="w-32 mt-2 sm:mt-8 group-hover:text-transparent transform group-hover:scale-105 bg-clip-text bg-gradient-to-br from-white via-dred to-dblue transition duration-300"
+          :class="
+            imagePosition === 'right'
+              ? 'group-hover:-translate-x-2'
+              : 'group-hover:translate-x-2'
+          "
         />
       </article>
       <!-- IMAGE STARTS HERE -->
