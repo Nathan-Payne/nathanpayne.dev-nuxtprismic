@@ -31,13 +31,13 @@
             <label for="email">
               Email:
               <input
-                class="w-40 sm:w-64 py-2 px-4 sm:mx-4 mx-1 bg-gray-200 dark:bg-dgrey border border-gray-300 dark:border-gray-800 focus:outline-none shadow-lg rounded"
+                class="w-40 sm:w-64 py-2 px-4 sm:mx-4 mx-1 bg-gray-200 dark:bg-dgrey border border-gray-300 dark:border-gray-800 focus:outline-none shadow-md focus:shadow-lg rounded"
                 placeholder="name@email.com"
                 type="email"
                 name="email"
               />
               <button
-                class="py-2 px-6 inline-flex shadow-lg border-0 rounded dark:bg-dgrey font-black tracking-wider focus:outline-none dark-hover:bg-dred hover:bg-dblue hover:text-white transition duration-100"
+                class="py-2 px-6 inline-flex shadow-md hover:shadow-lg border-0 rounded dark:bg-dgrey font-black tracking-wider focus:outline-none dark-hover:bg-dred hover:bg-dblue hover:text-white transition duration-300"
               >
                 SEND
               </button>
