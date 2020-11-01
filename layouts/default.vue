@@ -91,7 +91,7 @@ section {
 }
 
 /* Page Transitions */
-.page-enter-active,
+/* .page-enter-active,
 .page-leave-active {
   transition: all 0.3s ease-out;
 }
@@ -99,7 +99,7 @@ section {
 .page-leave-active {
   opacity: 0;
   transform-origin: 50% 50%;
-}
+} */
 
 /* STYLING HIGHLIGHT AND SCROLLBAR IN WEBKIT SUPPORTED BROWSERS */
 ::selection {

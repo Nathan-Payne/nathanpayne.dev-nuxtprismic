@@ -1,7 +1,12 @@
 <template>
   <div class="mt-40 bg-gray-200 dark:bg-ddgrey">
     <section class="px-4 sm:px-8 py-16 border-b-2 border-gray-800">
-      <h3 class="font-normal tracking-wider">Get in touch</h3>
+      <h3 class="font-normal tracking-wider">
+        Get in touch<span
+          class="cursorAnimate text-5xl font-semibold text-dblue dark:text-dred"
+          >_</span
+        >
+      </h3>
     </section>
     <section>
       <div class="px-4 sm:px-8 py-16 flex justify-between items-center">
@@ -154,9 +159,18 @@
 </template>
 
 <script>
+import { gsap } from 'gsap'
 export default {
   name: 'NuxtFooter',
+  mounted() {
+    gsap.to('.cursorAnimate', {
+      opacity: 0,
+      ease: 'power2.inOut',
+      repeat: -1,
+      duration: 1.3,
+    })
+  },
 }
 </script>
 
-<style></style>
+<style scoped></style>
