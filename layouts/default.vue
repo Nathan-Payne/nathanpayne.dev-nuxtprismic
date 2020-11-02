@@ -12,6 +12,7 @@
 <script>
 import HeaderPrismic from '~/components/HeaderPrismic.vue'
 import NuxtFooter from '~/components/NuxtFooter.vue'
+
 export default {
   components: {
     HeaderPrismic,
@@ -91,15 +92,43 @@ section {
 }
 
 /* Page Transitions */
-/* .page-enter-active,
+.page-enter-active,
 .page-leave-active {
-  transition: all 0.3s ease-out;
+  transition: all 0.1s ease-out;
 }
 .page-enter,
 .page-leave-active {
   opacity: 0;
   transform-origin: 50% 50%;
-} */
+}
+
+.animated {
+  /* clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%); */
+  overflow: hidden;
+}
+.animated:after {
+  content: ' ';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #ff1d00, #4206c2);
+  transform: scaleX(0);
+  transform-origin: left;
+  z-index: 25;
+}
+.animated:before {
+  content: ' ';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, #1e1f1f 2%, #1e1f1f 100%);
+  transform-origin: left;
+  /* border: 1px solid black; */
+}
 
 /* STYLING HIGHLIGHT AND SCROLLBAR IN WEBKIT SUPPORTED BROWSERS */
 ::selection {

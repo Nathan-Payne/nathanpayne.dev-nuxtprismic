@@ -17,6 +17,7 @@
 
 <script>
 import SlicesBlock from '~/components/SlicesBlock.vue'
+import { runAnimated } from '~/plugins/animations.js'
 
 export default {
   name: 'Portfolio',
@@ -32,6 +33,14 @@ export default {
     } catch (e) {
       error({ statusCode: 404, message: 'Page not found' })
     }
+  },
+  data() {
+    return {
+      landingTl: null,
+    }
+  },
+  mounted() {
+    this.landingTl = runAnimated()
   },
 }
 </script>

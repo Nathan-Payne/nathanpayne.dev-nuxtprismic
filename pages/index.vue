@@ -7,7 +7,8 @@
         {{ smallTitle }}
       </h5>
       <h1
-        class="relative z-20 font-normal text-dgrey dark:text-white leading-tight animated"
+        class="relative z-20 font-normal text-dgrey dark:text-white leading-tight"
+        :class="getColorMode === 'dark' ? 'animated' : ''"
       >
         {{ mainTitle }}
       </h1>
@@ -24,16 +25,21 @@
 </template>
 
 <script>
-import { gsap } from 'gsap'
 import SlicesBlock from '../components/SlicesBlock.vue'
-import { CSSRulePlugin } from '~/assets/CSSRulePlugin.js'
-
-gsap.registerPlugin(CSSRulePlugin)
+import { runAnimated } from '~/plugins/animations.js'
 
 export default {
   name: 'Home',
   components: {
     SlicesBlock,
+  },
+  transition: {
+    enter() {
+      if (this.landingTl) {
+        this.landingTl.tl.restart()
+      }
+    },
+    leave() {},
   },
   async asyncData({ $prismic, error }) {
     try {
@@ -52,102 +58,18 @@ export default {
       error({ statusCode: 404, message: 'Page not found' })
     }
   },
-  mounted() {
-    this.gsapAnimate()
+  data() {
+    return {
+      landingTl: null,
+    }
   },
-  methods: {
-    gsapAnimate() {
-      const ruleAfter = CSSRulePlugin.getRule('.animated:after')
-      const ruleBefore = CSSRulePlugin.getRule('.animated:before')
-      const tl = gsap.timeline()
-      tl.to('.animated', { opacity: 1, duration: 0.1 })
-        .from(
-          ruleAfter,
-          {
-            cssRule: {
-              x: '-4rem',
-              scaleX: 0,
-              ease: 'none',
-            },
-            duration: 0.1,
-          },
-          '<'
-        )
-        .from(ruleBefore, { cssRule: { x: '-4rem', ease: 'none' } }, '<')
-        .to(ruleAfter, {
-          cssRule: {
-            x: '50%',
-            scaleX: 0.15,
-            ease: 'none',
-          },
-          duration: 0.5,
-        })
-        .to(
-          ruleBefore,
-          {
-            cssRule: {
-              x: '50%',
-              ease: 'none',
-            },
-            duration: 0.5,
-          },
-          '<'
-        )
-        .to(
-          ruleAfter,
-          {
-            cssRule: {
-              x: '100%',
-              scaleX: 0,
-              ease: 'none',
-            },
-            duration: 0.5,
-          },
-          'ruleAfter-=0.32'
-        )
-        .to(
-          ruleBefore,
-          {
-            cssRule: {
-              x: '100%',
-              ease: 'none',
-            },
-            duration: 0.5,
-          },
-          '<'
-        )
-        .set(ruleAfter, { cssRule: { x: '0%', scaleX: 0 } })
-        .set(ruleBefore, { cssRule: { x: '0%', scaleX: 0 } })
+  computed: {
+    getColorMode() {
+      return this.$colorMode.preference
     },
+  },
+  mounted() {
+    this.landingTl = runAnimated()
   },
 }
 </script>
-
-<style>
-.animated {
-  opacity: 0;
-  overflow: hidden;
-}
-.animated:after {
-  content: ' ';
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, #ff1d00, #4206c2);
-  transform: scaleX(0) scaleY(1);
-  transform-origin: left;
-  z-index: 25;
-}
-.animated:before {
-  content: ' ';
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, #1e1f1f 2%, #1e1f1f 100%);
-  transform-origin: left;
-}
-</style>
