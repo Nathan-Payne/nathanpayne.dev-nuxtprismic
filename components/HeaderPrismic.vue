@@ -10,14 +10,14 @@
       >{{ $store.state.menu.site_name }}</nuxt-link
     >
 
-    <nav class="mt-12 mr-2 absolute top-0 right-0 z-30 text-right">
+    <nav class="mt-8 mr-2 absolute top-0 right-0 z-30 text-right">
       <ul
-        class="flex flex-col space-y-1 overflow-hidden text-lg tracking-wider text-dgrey dark:text-gray-300"
+        class="py-4 flex flex-col space-y-1 overflow-hidden text-lg tracking-wider text-dgrey dark:text-gray-300"
       >
         <li
           v-for="(navItem, index) in $store.state.menu.header_nav_items"
           :key="navItem.id"
-          class="px-2 relative bg-clip-text dark-hover:text-dgrey hover:text-white text-shadow transition-all duration-300 ease-out"
+          class="px-2 relative hover:text-white transition-all duration-300 ease-out"
           @mouseover="menuHover(index)"
           @mouseleave="stopHover(index)"
         >
@@ -26,7 +26,7 @@
           }}</prismic-link>
           <div
             aria-hidden="true"
-            class="w-full h-full mx-1 absolute z-10 top-0 left-0 bg-gradient-to-br from-dred to-dblue transform -translate-x-full blur"
+            class="w-full h-full mx-1 absolute z-10 top-0 left-0 bg-gradient-to-br from-dred to-dblue -translate-more blur"
             :class="`menu-hover${index}`"
           ></div>
         </li>
@@ -62,5 +62,8 @@ export default {
 <style>
 .blur {
   filter: blur(1px);
+}
+.-translate-more {
+  transform: translateX(-110%);
 }
 </style>

@@ -91,7 +91,7 @@ section {
   width: 100%;
 }
 
-.text-shadow:hover {
+.text-shadow {
   text-shadow: 1px 1px 4px rgba(50, 50, 50, 0.5);
 }
 
