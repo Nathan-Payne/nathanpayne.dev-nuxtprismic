@@ -39,6 +39,7 @@
         <prismic-rich-text :field="projectDescription" class="flex flex-col" />
       </article>
       <responsive-picture
+        v-if="secondImage.url"
         :field="secondImage"
         class="w-1/2 md:w-1/5 mx-auto mt-12 md:mt-0 flex items-center"
       />

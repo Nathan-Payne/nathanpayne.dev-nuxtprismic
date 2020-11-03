@@ -6,7 +6,10 @@
         :key="'img_grid' + index"
         class="shadow-lg"
       >
-        <responsive-picture :field="img.repeatable_image" />
+        <responsive-picture
+          v-if="img.repeatable_image.url"
+          :field="img.repeatable_image"
+        />
       </div>
     </div>
     <div class="w-full md:w-1/2 mt-4 px-6 flex flex-col space-y-12">
@@ -15,7 +18,10 @@
         :key="'img_grid' + index"
         class="shadow-lg"
       >
-        <responsive-picture :field="img.repeatable_image" />
+        <responsive-picture
+          v-if="img.repeatable_image.url"
+          :field="img.repeatable_image"
+        />
       </div>
     </div>
   </div>
