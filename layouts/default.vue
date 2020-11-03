@@ -102,32 +102,18 @@ section {
   transform-origin: 50% 50%;
 }
 
-.animated {
-  /* clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%); */
-  overflow: hidden;
-}
-.animated:after {
+.gradient-box {
   content: ' ';
   position: absolute;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, #ff1d00, #4206c2);
+  background: linear-gradient(100deg, #ff1d00, #4206c2);
   transform: scaleX(0);
   transform-origin: left;
-  z-index: 25;
-}
-.animated:before {
-  content: ' ';
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, #1e1f1f 2%, #1e1f1f 100%);
-  transform-origin: left;
-  /* border: 1px solid black; */
+  z-index: 35;
+  opacity: 0.9;
 }
 
 /* STYLING HIGHLIGHT AND SCROLLBAR IN WEBKIT SUPPORTED BROWSERS */

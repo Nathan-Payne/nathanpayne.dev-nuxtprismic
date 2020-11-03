@@ -6,12 +6,23 @@
       <h5 v-if="smallTitle" class="text-sm dark:text-gray-400">
         {{ smallTitle }}
       </h5>
-      <h1
-        class="relative z-20 font-normal text-dgrey dark:text-white leading-tight"
-        :class="getColorMode === 'dark' ? 'animated' : ''"
-      >
-        {{ mainTitle }}
-      </h1>
+      <div class="relative overflow-hidden">
+        <h1
+          class="relative z-20 font-normal text-dgrey dark:text-white leading-tight flex flex-wrap space-x-3"
+        >
+          <span
+            v-for="(word, index) in mainTitleSplit"
+            :key="word + index"
+            :class="index === 0 ? 'ml-3' : ''"
+            >{{ word }}</span
+          >
+        </h1>
+        <div aria-hidden="true" class="gradient-box"></div>
+        <div
+          aria-hidden="true"
+          class="text-reveal w-full bg-white dark:bg-dgrey absolute inset-0 z-30"
+        ></div>
+      </div>
       <div v-if="ctaLinkUid" class="w-24 mt-6 inline-block text-center">
         <nuxt-link :to="`/${ctaLinkUid}`"> {{ ctaText }} </nuxt-link>
       </div>
@@ -64,8 +75,12 @@ export default {
     }
   },
   computed: {
-    getColorMode() {
-      return this.$colorMode.preference
+    mainTitleSplit() {
+      const splitTitle = []
+      this.mainTitle.split(' ').forEach((word) => {
+        splitTitle.push(word)
+      })
+      return splitTitle
     },
   },
   mounted() {
