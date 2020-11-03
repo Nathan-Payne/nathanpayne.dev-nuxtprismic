@@ -11,6 +11,11 @@ export default {
       { hid: 'description', name: 'description', content: '' },
     ],
     link: [
+      {
+        rel: 'preconnect',
+        href: 'https://fonts.gstatic.com',
+        crossorigin: true,
+      },
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       {
         rel: 'stylesheet',

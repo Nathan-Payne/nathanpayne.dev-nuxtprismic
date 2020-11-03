@@ -159,16 +159,11 @@
 </template>
 
 <script>
-import { gsap } from 'gsap'
+import { runCursorBlink } from '~/plugins/animations'
 export default {
   name: 'NuxtFooter',
   mounted() {
-    gsap.to('.cursorAnimate', {
-      opacity: 0,
-      ease: 'power2.inOut',
-      repeat: -1,
-      duration: 1.3,
-    })
+    runCursorBlink('.cursorAnimate')
   },
 }
 </script>

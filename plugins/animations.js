@@ -1,6 +1,6 @@
 import { gsap } from 'gsap/all'
 
-export function runAnimated() {
+export function runGradientBox() {
   const gradientBox = '.gradient-box'
   const tl = gsap.timeline({ defaults: { ease: 'none' } })
   // set commands set initial position correctly, required to work with nuxt links/transitions
@@ -9,8 +9,8 @@ export function runAnimated() {
     .set('.text-reveal', { xPercent: 0 })
     .set(gradientBox, { xPercent: 0, scaleX: 0 })
     .from('.text-reveal', { x: '-4rem', duration: 0.1 })
-    .to('.text-reveal', { xPercent: 50, duration: 0.5 })
-    .to('.text-reveal', { xPercent: 100, duration: 0.4 }, '-=0.15')
+    .to('.text-reveal', { xPercent: 50, duration: 0.4 })
+    .to('.text-reveal', { xPercent: 100, duration: 0.3 }, '-=0.15')
   tl.from(
     gradientBox,
     {
@@ -27,7 +27,7 @@ export function runAnimated() {
         scaleX: 0.25,
         opacity: 0.9,
         ease: 'none',
-        duration: 0.6,
+        duration: 0.5,
       },
       'start+=0.1'
     )
@@ -36,26 +36,61 @@ export function runAnimated() {
       {
         xPercent: 110,
         scaleX: 0.0,
-        opacity: 0.8,
+        opacity: 0.2,
         ease: 'none',
-        duration: 0.4,
+        duration: 0.3,
       },
-      '-=0.32'
+      '-=0.3'
     )
 
-  tl.from(
-    'h1>span',
+  return tl
+}
+
+export function runCursorBlink(className) {
+  const cursorBlinkTween = gsap.to(className, {
+    opacity: 0,
+    ease: 'power2.inOut',
+    repeat: -1,
+    duration: 1.3,
+  })
+  return cursorBlinkTween
+}
+
+export function runLetterRotate() {
+  // 3d staggered letter entry, give parent .animation-perspective, wrap each letter in span.letter-rotate
+  gsap.set('.animation-perspective', { perspective: 400 })
+  const letterRotateTween = gsap.from(
+    '.letter-rotate',
     {
-      x: 6,
-      ease: 'back.out(1.7)',
-      duration: 2.2,
+      duration: 0.7,
+      opacity: 0,
+      scale: 0,
+      y: 40,
+      rotationX: 180,
+      transformOrigin: '0% 50% -50',
+      ease: 'back',
+      stagger: 0.02,
     },
     'start+=0.2'
   )
-
-  return { tl, gradientBox }
+  return letterRotateTween
 }
 
-export function resetAnimated({ tl, gradientBox }) {
-  tl.set(gradientBox, { xPercent: 0, scaleX: 0 })
+export function runMenuHover(index) {
+  const menuHoverTween = gsap.to(`.menu-hover${index}`, {
+    xPercent: 100,
+    scaleX: 1,
+    duration: 0.3,
+    ease: 'power2.out',
+  })
+  return menuHoverTween
+}
+export function stopMenuHover(index) {
+  const menuHoverTween = gsap.to(`.menu-hover${index}`, {
+    xPercent: '-100',
+    scaleX: 0,
+    duration: 0.3,
+    ease: 'back.in',
+  })
+  return menuHoverTween
 }

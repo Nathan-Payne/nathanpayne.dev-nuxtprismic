@@ -8,14 +8,9 @@
       </h5>
       <div class="relative overflow-hidden">
         <h1
-          class="relative z-20 font-normal text-dgrey dark:text-white leading-tight flex flex-wrap space-x-3"
+          class="relative z-20 font-normal text-dgrey dark:text-white leading-tight"
         >
-          <span
-            v-for="(word, index) in mainTitleSplit"
-            :key="word + index"
-            :class="index === 0 ? 'ml-3' : ''"
-            >{{ word }}</span
-          >
+          {{ mainTitle }}
         </h1>
         <div aria-hidden="true" class="gradient-box"></div>
         <div
@@ -37,7 +32,7 @@
 
 <script>
 import SlicesBlock from '../components/SlicesBlock.vue'
-import { runAnimated } from '~/plugins/animations.js'
+import { runGradientBox } from '~/plugins/animations.js'
 
 export default {
   name: 'Home',
@@ -46,8 +41,8 @@ export default {
   },
   transition: {
     enter() {
-      if (this.landingTl) {
-        this.landingTl.tl.restart()
+      if (this.gradientBoxTl) {
+        this.gradientBoxTl.tl.restart()
       }
     },
     leave() {},
@@ -71,20 +66,11 @@ export default {
   },
   data() {
     return {
-      landingTl: null,
+      gradientBoxTl: null,
     }
   },
-  computed: {
-    mainTitleSplit() {
-      const splitTitle = []
-      this.mainTitle.split(' ').forEach((word) => {
-        splitTitle.push(word)
-      })
-      return splitTitle
-    },
-  },
   mounted() {
-    this.landingTl = runAnimated()
+    this.gradientBoxTl = runGradientBox()
   },
 }
 </script>

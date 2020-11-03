@@ -3,10 +3,15 @@
     <div v-if="mainTitle[0].text !== 'Portfolio'">
       <prismic-rich-text :field="mainTitle" />
     </div>
-    <div v-else>
+    <div v-else class="w-full md:w-2/5 relative overflow-hidden">
       <h1 class="font-normal text-dgrey dark:text-white leading-tight">
         Portfolio
       </h1>
+      <div aria-hidden="true" class="gradient-box"></div>
+      <div
+        aria-hidden="true"
+        class="text-reveal w-full bg-white dark:bg-dgrey absolute inset-0 z-30"
+      ></div>
     </div>
     <slices-block
       :slices="slices"
@@ -17,7 +22,7 @@
 
 <script>
 import SlicesBlock from '~/components/SlicesBlock.vue'
-import { runAnimated } from '~/plugins/animations.js'
+import { runGradientBox } from '~/plugins/animations.js'
 
 export default {
   name: 'Portfolio',
@@ -36,11 +41,11 @@ export default {
   },
   data() {
     return {
-      landingTl: null,
+      portfolioTl: null,
     }
   },
   mounted() {
-    this.landingTl = runAnimated()
+    this.portfolioTl = runGradientBox()
   },
 }
 </script>

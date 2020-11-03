@@ -91,6 +91,10 @@ section {
   width: 100%;
 }
 
+.text-shadow:hover {
+  text-shadow: 1px 1px 4px rgba(50, 50, 50, 0.5);
+}
+
 /* Page Transitions */
 .page-enter-active,
 .page-leave-active {
@@ -103,7 +107,6 @@ section {
 }
 
 .gradient-box {
-  content: ' ';
   position: absolute;
   left: 0;
   top: 0;
