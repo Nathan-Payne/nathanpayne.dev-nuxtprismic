@@ -12,18 +12,14 @@
         >
           {{ mainTitle }}
         </h1>
-        <div aria-hidden="true" class="gradient-box"></div>
-        <div
-          aria-hidden="true"
-          class="text-reveal w-full bg-white dark:bg-dgrey absolute inset-0 z-30"
-        ></div>
+        <gradient-box />
       </div>
       <div v-if="ctaLinkUid" class="w-24 mt-6 inline-block text-center">
         <nuxt-link :to="`/${ctaLinkUid}`"> {{ ctaText }} </nuxt-link>
       </div>
     </section>
 
-    <section>
+    <section id="selected-project">
       <prismic-rich-text :field="sectionTitle" />
       <slices-block :slices="slices" class="mt-8" />
     </section>
@@ -31,22 +27,28 @@
 </template>
 
 <script>
-import SlicesBlock from '../components/SlicesBlock.vue'
-import { runGradientBox } from '~/plugins/animations.js'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+import SlicesBlock from '~/components/SlicesBlock.vue'
+import GradientBox from '~/components/GradientBox'
+
+gsap.registerPlugin(ScrollTrigger)
 
 export default {
   name: 'Home',
   components: {
     SlicesBlock,
+    GradientBox,
   },
-  transition: {
-    enter() {
-      if (this.gradientBoxTl) {
-        this.gradientBoxTl.tl.restart()
-      }
-    },
-    leave() {},
-  },
+  // transition: {
+  //   enter() {
+  //     if (this.gradientBoxTl) {
+  //       this.gradientBoxTl.tl.restart()
+  //     }
+  //   },
+  //   leave() {},
+  // },
   async asyncData({ $prismic, error }) {
     try {
       const document = (await $prismic.api.getSingle('home')).data
@@ -64,13 +66,17 @@ export default {
       error({ statusCode: 404, message: 'Page not found' })
     }
   },
-  data() {
-    return {
-      gradientBoxTl: null,
-    }
-  },
   mounted() {
-    this.gradientBoxTl = runGradientBox()
+    gsap.from('#selected-project', {
+      scrollTrigger: {
+        trigger: '#selected-project',
+        start: 'top 65%',
+        // markers: true,
+      },
+      opacity: 0,
+      x: 300,
+      duration: 1,
+    })
   },
 }
 </script>

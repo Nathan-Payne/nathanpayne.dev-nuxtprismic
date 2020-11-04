@@ -21,12 +21,14 @@
           @mouseover="menuHover(index)"
           @mouseleave="stopHover(index)"
         >
-          <prismic-link :field="navItem.link" class="relative z-20">{{
-            navItem.text
-          }}</prismic-link>
+          <prismic-link
+            :field="navItem.link"
+            class="relative z-20 focus:outline-none"
+            >{{ navItem.text }}</prismic-link
+          >
           <div
             aria-hidden="true"
-            class="w-full h-full mx-1 absolute z-10 top-0 left-0 bg-gradient-to-br from-dred to-dblue -translate-more blur"
+            class="w-full h-full mx-1 absolute z-10 top-0 left-0 bg-gradient-to-br from-dred to-dblue -translate-more"
             :class="`menu-hover${index}`"
           ></div>
         </li>

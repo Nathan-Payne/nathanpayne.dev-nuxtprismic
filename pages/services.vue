@@ -3,7 +3,10 @@
     <section
       class="h-screen px-4 sm:px-8 md:px-16 relative flex flex-col justify-center z-20"
     >
-      <prismic-rich-text :field="pageTitle" class="w-full md:w-3/4" />
+      <div class="w-full md:w-3/5 relative overflow-hidden">
+        <h1 class="font-normal">{{ pageTitle }}</h1>
+        <gradient-box />
+      </div>
       <prismic-rich-text
         v-if="subtitle"
         :field="subtitle"
@@ -32,17 +35,19 @@
 
 <script>
 import SlicesBlock from '../components/SlicesBlock.vue'
+import GradientBox from '../components/GradientBox.vue'
 
 export default {
   name: 'Services',
   components: {
     SlicesBlock,
+    GradientBox,
   },
   async asyncData({ $prismic, error }) {
     try {
       const document = (await $prismic.api.getByUID('page', 'services')).data
       // const href = (await $prismic.api.getByUID('page', 'services')).href //for testing https://nathanpaynedev.cdn.prismic.io/api/v2/documents/search?ref=X4jepxAAACIAO-OR&q=%5B%5B%3Ad+%3D+at%28document.id%2C+%22X4c5BRAAACMAY9KB%22%29+%5D%5D
-      const pageTitle = document.page_title
+      const pageTitle = document.page_title[0].text
       const pageImage = document.page_image
       const subtitle = document.subtitle
       const subtitleText = document.subtitle_text

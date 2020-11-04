@@ -5,9 +5,12 @@
     class="px-4 sm:px-8 md:px-16 mt-24"
     aria-label="Contact Information"
   >
-    <h1 class="font-normal text-dgrey dark:text-white leading-tight">
-      Contact
-    </h1>
+    <div class="w-full md:w-2/5 relative overflow-hidden">
+      <h1 class="font-normal text-dgrey dark:text-white leading-tight">
+        Contact
+      </h1>
+      <gradient-box />
+    </div>
     <div class="sm:px-4 md:px-12 lg:px-32">
       <div class="mt-32">
         <p class="py-8 sm:px-4 lg:w-2/3">
@@ -70,7 +73,12 @@
 </template>
 
 <script>
-export default {}
-</script>
+import GradientBox from '~/components/GradientBox'
 
-<style></style>
+export default {
+  name: 'Contact',
+  components: {
+    GradientBox,
+  },
+}
+</script>
