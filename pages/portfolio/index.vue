@@ -52,7 +52,7 @@ export default {
         })
         .from(container, {
           opacity: 0,
-          duration: 0.7,
+          duration: 0.6,
           ease: 'power4.out',
         })
     })
@@ -64,7 +64,7 @@ export default {
           start: 'top 78%',
         },
         x: 200,
-        duration: 0.7,
+        duration: 0.8,
         ease: 'power4.out',
       })
     })
@@ -73,10 +73,10 @@ export default {
       gsap.from(title, {
         scrollTrigger: {
           trigger: title,
-          start: 'top 85%',
+          start: 'top 82%',
         },
         x: -200,
-        duration: 0.7,
+        duration: 1.2,
         ease: 'power4.out',
       })
     })
@@ -85,10 +85,10 @@ export default {
       gsap.from(link, {
         scrollTrigger: {
           trigger: link,
-          start: 'top 100%',
+          start: 'top 108%',
         },
         y: 100,
-        duration: 0.4,
+        duration: 0.5,
         ease: 'power4.out',
       })
     })
@@ -97,13 +97,13 @@ export default {
       gsap.from(image, {
         scrollTrigger: {
           trigger: image,
-          start: 'top 64%',
+          start: 'top 60%',
         },
         x: index % 2 ? 200 : -200,
         transformOrigin: index % 2 ? 'right' : 'left',
         scaleX: 0.7,
         opacity: 0,
-        duration: 1,
+        duration: 1.2,
         ease: 'back.out(1)',
       })
     })

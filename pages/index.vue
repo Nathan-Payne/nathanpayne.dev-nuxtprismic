@@ -67,15 +67,55 @@ export default {
     }
   },
   mounted() {
-    gsap.from('#section-title', {
-      scrollTrigger: {
-        trigger: '#section-title',
-        start: 'top 74%',
-      },
-      opacity: 0,
-      x: 300,
-      duration: 0.6,
-    })
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: '#section-title',
+          start: 'top 60%',
+        },
+      })
+      .from('#section-title', {
+        opacity: 0,
+        x: 200,
+        duration: 0.6,
+        ease: 'power4.out',
+      })
+      .from(
+        '.project-container',
+        {
+          opacity: 0,
+          duration: 0.6,
+          ease: 'power4.out',
+        },
+        '<0.2'
+      )
+      .from(
+        '.project-title',
+        { x: -100, duration: 1.2, ease: 'power4.out' },
+        '<'
+      )
+      .from(
+        '.project-category',
+        { x: 100, duration: 0.8, ease: 'power4.out' },
+        '<'
+      )
+      .from(
+        '.project-image',
+        {
+          x: 200,
+          transformOrigin: 'right',
+          scaleX: 0.7,
+          opacity: 0,
+          duration: 1.2,
+          ease: 'back.out(1)',
+        },
+        '<'
+      )
+      .from(
+        '.project-link',
+        { y: 100, duration: 0.8, ease: 'power4.out' },
+        '<0.1'
+      )
   },
 }
 </script>
