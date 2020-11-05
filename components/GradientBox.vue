@@ -21,3 +21,18 @@ export default {
   },
 }
 </script>
+
+<style>
+.gradient-box {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(100deg, var(--dred), var(--dblue));
+  transform: scaleX(0);
+  transform-origin: left;
+  z-index: 35;
+  opacity: 0.9;
+}
+</style>

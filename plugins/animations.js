@@ -109,7 +109,7 @@ export function runProjectHover(imagePos, projectTitle) {
 export function stopProjectHover(imagePos, projectTitle) {
   const projectHoverTween = gsap.to(`.project-link-${projectTitle}`, {
     x: 0,
-    color: 'white',
+    color: 'inherit',
     scaleX: 1,
     transformOrigin: imagePos === 'right' ? 'right' : 'left',
     duration: 0.3,

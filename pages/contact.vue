@@ -5,6 +5,8 @@
     class="px-4 sm:px-8 md:px-16 mt-24"
     aria-label="Contact Information"
   >
+    <gradient-line :location="44" />
+
     <div class="w-full md:w-2/5 relative overflow-hidden">
       <h1 class="font-normal text-dgrey dark:text-white leading-tight">
         Contact
@@ -74,11 +76,13 @@
 
 <script>
 import GradientBox from '~/components/GradientBox'
+import GradientLine from '~/components/GradientLine'
 
 export default {
   name: 'Contact',
   components: {
     GradientBox,
+    GradientLine,
   },
 }
 </script>

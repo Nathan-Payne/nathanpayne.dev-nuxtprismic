@@ -1,7 +1,7 @@
 <template>
   <div class="mx-6 flex flex-col justify-center">
     <section
-      class="h-screen w-full sm:w-3/4 md:w-2/3 pb-6 flex flex-col justify-center"
+      class="h-screen w-full sm:w-3/4 md:w-2/3 pb-20 flex flex-col justify-center"
     >
       <h5 v-if="smallTitle" class="text-sm dark:text-gray-400">
         {{ smallTitle }}
@@ -19,9 +19,11 @@
       </div>
     </section>
 
+    <gradient-line :location="80" />
+
     <section>
       <prismic-rich-text id="section-title" :field="sectionTitle" />
-      <slices-block :slices="slices" class="mt-8" />
+      <slices-block :slices="slices" class="mt-12" />
     </section>
   </div>
 </template>
@@ -32,6 +34,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 import SlicesBlock from '~/components/SlicesBlock.vue'
 import GradientBox from '~/components/GradientBox'
+import GradientLine from '~/components/GradientLine'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -40,15 +43,8 @@ export default {
   components: {
     SlicesBlock,
     GradientBox,
+    GradientLine,
   },
-  // transition: {
-  //   enter() {
-  //     if (this.gradientBoxTl) {
-  //       this.gradientBoxTl.tl.restart()
-  //     }
-  //   },
-  //   leave() {},
-  // },
   async asyncData({ $prismic, error }) {
     try {
       const document = (await $prismic.api.getSingle('home')).data
@@ -71,7 +67,7 @@ export default {
       .timeline({
         scrollTrigger: {
           trigger: '#section-title',
-          start: 'top 60%',
+          start: 'top 65%',
         },
       })
       .from('#section-title', {

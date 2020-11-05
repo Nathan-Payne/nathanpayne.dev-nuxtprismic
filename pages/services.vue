@@ -7,6 +7,7 @@
         <h1 class="font-normal">{{ pageTitle }}</h1>
         <gradient-box />
       </div>
+      <gradient-line :location="44" />
       <prismic-rich-text
         v-if="subtitle"
         :field="subtitle"
@@ -36,12 +37,14 @@
 <script>
 import SlicesBlock from '../components/SlicesBlock.vue'
 import GradientBox from '../components/GradientBox.vue'
+import GradientLine from '~/components/GradientLine'
 
 export default {
   name: 'Services',
   components: {
     SlicesBlock,
     GradientBox,
+    GradientLine,
   },
   async asyncData({ $prismic, error }) {
     try {

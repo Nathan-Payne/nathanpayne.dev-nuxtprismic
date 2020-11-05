@@ -10,6 +10,7 @@
       </h1>
       <gradient-box />
     </div>
+    <gradient-line :location="45" />
     <slices-block
       :slices="slices"
       class="mt-48 flex flex-col space-y-16 sm:space-y-20 md:space-y-32 lg:space-y-48"
@@ -22,12 +23,13 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import SlicesBlock from '~/components/SlicesBlock.vue'
 import GradientBox from '~/components/GradientBox'
+import GradientLine from '~/components/GradientLine'
 
 gsap.registerPlugin(ScrollTrigger)
 
 export default {
   name: 'Portfolio',
-  components: { SlicesBlock, GradientBox },
+  components: { SlicesBlock, GradientBox, GradientLine },
   async asyncData({ $prismic, error }) {
     try {
       const document = (await $prismic.api.getSingle('projects_home')).data

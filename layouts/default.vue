@@ -106,19 +106,6 @@ section {
   transform-origin: 50% 50%;
 }
 
-.gradient-box {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(100deg, #ff1d00, #4206c2);
-  transform: scaleX(0);
-  transform-origin: left;
-  z-index: 35;
-  opacity: 0.9;
-}
-
 /* STYLING HIGHLIGHT AND SCROLLBAR IN WEBKIT SUPPORTED BROWSERS */
 ::selection {
   background: #ff1d00;
