@@ -2,10 +2,17 @@
   <div
     class="py-8 px-4 sm:px-8 md:px-16 ml-0 md:ml-8 lg:ml-16 md:mr-24 lg:mr-32 xl:mr-40"
   >
-    <prismic-rich-text :field="slice.primary.section_title" />
-    <prismic-rich-text :field="slice.primary.intro_paragraph" class="mt-6" />
+    <div class="gsap-in">
+      <prismic-rich-text :field="slice.primary.section_title" class="gsap-in" />
+      <prismic-rich-text
+        :field="slice.primary.intro_paragraph"
+        class="mt-6 gsap-in"
+      />
+    </div>
     <div v-for="(item, index) in slice.items" :key="slice.slice_type + index">
-      <div class="w-full mt-12 md:mt-16 flex flex-col md:flex-row items-center">
+      <div
+        class="w-full mt-12 md:mt-16 flex flex-col md:flex-row items-center gsap-in"
+      >
         <div
           aria-hidden="true"
           class="w-full md:w-1/5 grid place-items-start md:place-items-center"

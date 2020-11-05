@@ -8,16 +8,18 @@
         <gradient-box />
       </div>
       <gradient-line :location="44" />
-      <prismic-rich-text
-        v-if="subtitle"
-        :field="subtitle"
-        class="w-full max-w-2xl md:w-5/6 mt-32 sm:mt-40 md:mt-48 ml-0 md:ml-8 lg:ml-16"
-      />
-      <prismic-rich-text
-        v-if="subtitleText"
-        :field="subtitleText"
-        class="w-full max-w-2xl sm:w-2/3 md:w-3/4 ml-0 md:ml-8 lg:ml-16 mt-4"
-      />
+      <div class="gsap-in">
+        <prismic-rich-text
+          v-if="subtitle"
+          :field="subtitle"
+          class="w-full max-w-2xl md:w-5/6 mt-32 sm:mt-40 md:mt-48 ml-0 md:ml-8 lg:ml-16 gsap-stagger"
+        />
+        <prismic-rich-text
+          v-if="subtitleText"
+          :field="subtitleText"
+          class="w-full max-w-2xl sm:w-2/3 md:w-3/4 ml-0 md:ml-8 lg:ml-16 mt-4 gsap-stagger"
+        />
+      </div>
     </section>
     <!-- OPTIONAL BACKGROUND IMAGE - fullpage darkened/lightened depending on dark mode setting -->
     <div
@@ -38,6 +40,7 @@
 import SlicesBlock from '../components/SlicesBlock.vue'
 import GradientBox from '../components/GradientBox.vue'
 import GradientLine from '~/components/GradientLine'
+import { servicesScrollAnimation } from '~/plugins/animations/pageAnimations'
 
 export default {
   name: 'Services',
@@ -67,6 +70,9 @@ export default {
     } catch (e) {
       error({ statusCode: 404, message: 'Page not found' })
     }
+  },
+  mounted() {
+    servicesScrollAnimation()
   },
 }
 </script>

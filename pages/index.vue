@@ -29,14 +29,10 @@
 </template>
 
 <script>
-import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-
 import SlicesBlock from '~/components/SlicesBlock.vue'
 import GradientBox from '~/components/GradientBox'
 import GradientLine from '~/components/GradientLine'
-
-gsap.registerPlugin(ScrollTrigger)
+import { homeTimeline } from '~/plugins/animations/pageAnimations'
 
 export default {
   name: 'Home',
@@ -63,55 +59,7 @@ export default {
     }
   },
   mounted() {
-    gsap
-      .timeline({
-        scrollTrigger: {
-          trigger: '#section-title',
-          start: 'top 65%',
-        },
-      })
-      .from('#section-title', {
-        opacity: 0,
-        x: 200,
-        duration: 0.6,
-        ease: 'power4.out',
-      })
-      .from(
-        '.project-container',
-        {
-          opacity: 0,
-          duration: 0.6,
-          ease: 'power4.out',
-        },
-        '<0.2'
-      )
-      .from(
-        '.project-title',
-        { x: -100, duration: 1.2, ease: 'power4.out' },
-        '<'
-      )
-      .from(
-        '.project-category',
-        { x: 100, duration: 0.8, ease: 'power4.out' },
-        '<'
-      )
-      .from(
-        '.project-image',
-        {
-          x: 200,
-          transformOrigin: 'right',
-          scaleX: 0.7,
-          opacity: 0,
-          duration: 1.2,
-          ease: 'back.out(1)',
-        },
-        '<'
-      )
-      .from(
-        '.project-link',
-        { y: 100, duration: 0.8, ease: 'power4.out' },
-        '<0.1'
-      )
+    homeTimeline()
   },
 }
 </script>
