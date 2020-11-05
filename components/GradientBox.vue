@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import { runGradientBox } from '~/plugins/animations.js'
+import { runGradientBox } from '~/plugins/animations/gradientBox'
 export default {
   data() {
     return {

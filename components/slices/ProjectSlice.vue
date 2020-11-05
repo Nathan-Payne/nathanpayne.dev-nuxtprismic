@@ -46,7 +46,7 @@
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import ResponsivePicture from '../ResponsivePicture'
-import { runProjectHover, stopProjectHover } from '~/plugins/animations.js'
+import { runProjectHover, stopProjectHover } from '~/plugins/animations/hovers'
 
 gsap.registerPlugin(ScrollTrigger)
 

@@ -159,7 +159,7 @@
 </template>
 
 <script>
-import { runCursorBlink } from '~/plugins/animations'
+import { runCursorBlink } from '~/plugins/animations/miscAnimations'
 export default {
   name: 'NuxtFooter',
   mounted() {

@@ -38,7 +38,7 @@
 </template>
 
 <script>
-import { runMenuHover, stopMenuHover } from '~/plugins/animations.js'
+import { runMenuHover, stopMenuHover } from '~/plugins/animations/hovers'
 export default {
   name: 'HeaderPrismic',
   computed: {
