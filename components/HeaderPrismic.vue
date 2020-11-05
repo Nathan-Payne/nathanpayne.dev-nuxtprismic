@@ -62,9 +62,6 @@ export default {
 </script>
 
 <style>
-.blur {
-  filter: blur(1px);
-}
 .-translate-more {
   transform: translateX(-110%);
 }

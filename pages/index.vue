@@ -19,8 +19,8 @@
       </div>
     </section>
 
-    <section id="selected-project">
-      <prismic-rich-text :field="sectionTitle" />
+    <section>
+      <prismic-rich-text id="section-title" :field="sectionTitle" />
       <slices-block :slices="slices" class="mt-8" />
     </section>
   </div>
@@ -67,15 +67,14 @@ export default {
     }
   },
   mounted() {
-    gsap.from('#selected-project', {
+    gsap.from('#section-title', {
       scrollTrigger: {
-        trigger: '#selected-project',
-        start: 'top 65%',
-        // markers: true,
+        trigger: '#section-title',
+        start: 'top 74%',
       },
       opacity: 0,
       x: 300,
-      duration: 1,
+      duration: 0.6,
     })
   },
 }
