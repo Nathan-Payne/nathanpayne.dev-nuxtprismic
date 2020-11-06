@@ -128,10 +128,82 @@ export function servicesScrollAnimation() {
         trigger: el,
         start: 'top 76%',
       },
+      stagger: 0.2,
       x: 60,
       autoAlpha: 0,
       duration: 1.4,
       ease: 'power4.out',
     })
   })
+}
+
+export function projectTitleTimeline() {
+  return gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: '.gsap-project-title',
+        start: 'top 65%',
+      },
+    })
+    .from('.gsap-project-title', {
+      autoAlpha: 0,
+      x: -120,
+      duration: 1.3,
+      stagger: 0.12,
+      ease: 'power2.out',
+    })
+    .from(
+      '.gsap-project-button',
+      {
+        autoAlpha: 0,
+        duration: 0.8,
+        stagger: 0.18,
+        ease: 'power2.out',
+      },
+      '<0.3'
+    )
+}
+
+export function projectDescTimeline() {
+  return gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: '.gsap-project-desc',
+        start: 'top 65%',
+      },
+    })
+    .from('.gsap-project-desc *', {
+      x: 35,
+      autoAlpha: 0,
+      stagger: 0.04,
+      duration: 2.2,
+      ease: 'power4.out',
+    })
+    .from(
+      '.gsap-project-image',
+      {
+        scale: 0,
+        transformOrigin: 'center',
+        autoAlpha: 0,
+        duration: 0.8,
+        ease: 'back.out(1.7)',
+      },
+      '<0.4'
+    )
+}
+
+export function repeatImageTween() {
+  gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: '.gsap-repeat-image',
+        start: 'top 65%',
+      },
+    })
+    .from('.gsap-repeat-image', {
+      x: 35,
+      autoAlpha: 0,
+      duration: 3.5,
+      ease: 'power2.out',
+    })
 }

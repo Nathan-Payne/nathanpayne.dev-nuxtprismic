@@ -4,7 +4,7 @@
       <div
         v-for="(img, index) in leftImages"
         :key="'img_grid' + index"
-        class="shadow-lg"
+        class="shadow-lg gsap-repeat-image"
       >
         <responsive-picture
           v-if="img.repeatable_image.url"
@@ -16,7 +16,7 @@
       <div
         v-for="(img, index) in rightImages"
         :key="'img_grid' + index"
-        class="shadow-lg"
+        class="shadow-lg gsap-repeat-image"
       >
         <responsive-picture
           v-if="img.repeatable_image.url"
@@ -29,6 +29,7 @@
 
 <script>
 import ResponsivePicture from '../ResponsivePicture'
+
 export default {
   name: 'RepeatableImage',
   components: { ResponsivePicture },

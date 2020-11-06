@@ -1,5 +1,5 @@
 <template>
-  <div class="">
+  <div>
     <div aria-hidden="true" class="gradient-line" :style="lineLocation"></div>
     <div aria-hidden="true" class="page-line" :style="lineLocation"></div>
   </div>
