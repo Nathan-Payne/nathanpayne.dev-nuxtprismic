@@ -19,7 +19,13 @@
           Get in touch for a free introductory meeting.
         </p>
       </div>
-      <form id="contact-form" class="flex flex-wrap" aria-label="Contact Form">
+      <form
+        id="contact-form"
+        ref="contactForm"
+        class="flex flex-wrap"
+        aria-label="Contact Form"
+        @submit.prevent="sendEmail"
+      >
         <div class="w-full sm:w-1/2 mt-6 sm:px-4">
           <label for="name">Name</label>
           <input
@@ -53,14 +59,6 @@
             required
           ></textarea>
         </div>
-        <div
-          id="success-msg"
-          class="p-4 mt-4 bg-white text-noshadow border border-gray-200 transition duration-200 ease-in-out hidden"
-        >
-          Looking forward to working with you! I aim to respond within a couple
-          of days but feel free to contact me on Linkedin if you haven't heard
-          anything.
-        </div>
         <div class="p-2 mt-6 md:mt-10 w-full">
           <button
             type="submit"
@@ -70,11 +68,28 @@
           </button>
         </div>
       </form>
+      <div
+        v-if="emailSent"
+        id="success-msg"
+        class="p-4 mt-6 font-extrabold bg-green-400 dark:bg-green-600 rounded shadow-lg transition duration-200 ease-in-out"
+      >
+        Looking forward to working with you! I aim to respond within a couple of
+        days but feel free to contact me on Linkedin if you haven't heard
+        anything.
+      </div>
+      <div
+        v-if="emailNotSent"
+        id="err-msg"
+        class="p-4 mt-6 font-extrabold bg-dred rounded shadow-lg transition duration-200 ease-in-out"
+      >
+        There was an error sending your email: {{ emailError }}
+      </div>
     </div>
   </section>
 </template>
 
 <script>
+import emailjs from 'emailjs-com'
 import GradientBox from '~/components/GradientBox'
 import GradientLine from '~/components/GradientLine'
 
@@ -83,6 +98,39 @@ export default {
   components: {
     GradientBox,
     GradientLine,
+  },
+  data() {
+    return {
+      emailRes: null,
+      emailSent: false,
+      emailError: null,
+      emailNotSent: false,
+    }
+  },
+  computed: {
+    emailResult() {
+      return this.emailRes
+    },
+  },
+  methods: {
+    sendEmail(e) {
+      try {
+        emailjs.sendForm(
+          'gmail',
+          'nathanpayne_dev',
+          e.target,
+          'user_3ZA63LlJVcLX4yKvKnU8Y'
+        )
+        this.emailSent = true
+        this.resetForm()
+      } catch (error) {
+        this.emailError = error
+        this.emailNotSent = true
+      }
+    },
+    resetForm() {
+      this.$refs.contactForm.reset()
+    },
   },
 }
 </script>

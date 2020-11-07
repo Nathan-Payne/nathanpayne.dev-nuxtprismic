@@ -10,6 +10,7 @@
 </template>
 
 <script>
+import emailjs from 'emailjs-com'
 import HeaderPrismic from '~/components/HeaderPrismic.vue'
 import NuxtFooter from '~/components/NuxtFooter.vue'
 
@@ -20,6 +21,14 @@ export default {
   },
   async middleware({ store, $prismic }) {
     await store.dispatch('fetchMenu', $prismic)
+  },
+  mounted() {
+    this.emailJsInit()
+  },
+  methods: {
+    emailJsInit() {
+      emailjs.init('user_3ZA63LlJVcLX4yKvKnU8Y')
+    },
   },
 }
 </script>
