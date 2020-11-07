@@ -211,8 +211,8 @@ export function nuxtFooterTimeline() {
       '.gsap-footer-link',
       {
         autoAlpha: 0,
-        duration: 0.8,
-        stagger: 0.15,
+        duration: 0.6,
+        stagger: 0.14,
         ease: 'power2.out',
       },
       '<0.2'

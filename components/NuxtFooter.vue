@@ -17,21 +17,23 @@
         <ul
           class="flex flex-col sm:flex-row items-start sm:items-center sm:justify-start sm:space-x-5 space-y-2 sm:space-y-0 tracking-wider text-dgrey dark:text-gray-300"
         >
-          <li><nuxt-link to="/" class="gsap-footer-link">Home</nuxt-link></li>
-          <li>
-            <nuxt-link to="/portfolio" class="gsap-footer-link"
-              >Portfolio</nuxt-link
+          <li
+            v-for="(navItem, index) in $store.state.menu.header_nav_items"
+            :key="navItem.id"
+            class="px-2 pr-3 relative overflow-hidden hover:text-white transition-all duration-300 ease-out gsap-footer-link"
+            @mouseover="menuHover(index)"
+            @mouseleave="stopHover(index)"
+          >
+            <prismic-link
+              :field="navItem.link"
+              class="relative z-20 focus:outline-none"
+              >{{ navItem.text }}</prismic-link
             >
-          </li>
-          <li>
-            <nuxt-link to="/services" class="gsap-footer-link"
-              >Services</nuxt-link
-            >
-          </li>
-          <li>
-            <nuxt-link to="/contact" class="gsap-footer-link"
-              >Contact</nuxt-link
-            >
+            <div
+              aria-hidden="true"
+              class="w-full h-full mx-1 absolute z-10 top-0 left-0 bg-gradient-to-br from-dred to-dblue -translate-more"
+              :class="`menu-hover${index}`"
+            ></div>
           </li>
         </ul>
       </div>
@@ -172,14 +174,22 @@
 
 <script>
 import { runCursorBlink } from '~/plugins/animations/miscAnimations'
+import { runMenuHover, stopMenuHover } from '~/plugins/animations/hovers'
 import { nuxtFooterTimeline } from '~/plugins/animations/pageAnimations'
 
 export default {
   name: 'NuxtFooter',
-
   mounted() {
     runCursorBlink('.cursorAnimate')
     nuxtFooterTimeline()
+  },
+  methods: {
+    menuHover(index) {
+      runMenuHover(index)
+    },
+    stopHover(index) {
+      stopMenuHover(index)
+    },
   },
 }
 </script>
