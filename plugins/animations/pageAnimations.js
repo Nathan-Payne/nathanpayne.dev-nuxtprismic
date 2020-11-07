@@ -186,10 +186,10 @@ export function projectDescTimeline() {
         scale: 0,
         transformOrigin: 'center',
         autoAlpha: 0,
-        duration: 0.8,
+        duration: 1,
         ease: 'back.out(1.7)',
       },
-      '<0.4'
+      '<0.5'
     )
 }
 
@@ -239,4 +239,25 @@ export function nuxtFooterTimeline() {
       },
       '<0.2'
     )
+}
+
+export function runMenuTween() {
+  return gsap.from('.gsap-menu-links *', {
+    xPercent: 5,
+    autoAlpha: 0,
+    duration: 0.8,
+    stagger: 0.08,
+    ease: 'back.out(1)',
+    delay: 0.8,
+  })
+}
+export function runLogoTween() {
+  return gsap.from('.gsap-logo', {
+    yPercent: -10,
+    autoAlpha: 0,
+    color: '#4206c2',
+    duration: 3,
+    ease: 'power2.out',
+    delay: 1.1,
+  })
 }

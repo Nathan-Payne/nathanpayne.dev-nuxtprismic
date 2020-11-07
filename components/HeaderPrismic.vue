@@ -4,15 +4,16 @@
       {{ $store.state.menu }}
     </p>
 
+    <!-- LOGO HERE -->
     <nuxt-link
       to="/"
-      class="ml-4 font-black text-lg text-dgrey dark:text-gray-300"
+      class="ml-4 font-thin text-xl text-dgrey dark:text-gray-300 gsap-logo"
       >{{ $store.state.menu.site_name }}</nuxt-link
     >
-
+    <!-- Right Navigation -->
     <nav class="mt-8 mr-2 absolute top-0 right-0 z-30 text-right">
       <ul
-        class="py-4 flex flex-col space-y-1 overflow-hidden text-lg tracking-wider text-dgrey dark:text-gray-300"
+        class="py-4 flex flex-col space-y-1 overflow-hidden text-lg tracking-wider text-dgrey dark:text-gray-300 gsap-menu-links"
       >
         <li
           v-for="(navItem, index) in $store.state.menu.header_nav_items"
@@ -39,17 +40,22 @@
 
 <script>
 import { runMenuHover, stopMenuHover } from '~/plugins/animations/hovers'
+import { runLogoTween, runMenuTween } from '~/plugins/animations/pageAnimations'
 export default {
   name: 'HeaderPrismic',
-  computed: {
-    wordSplit() {
-      const splitWord = []
-      this.mainWord.split('').forEach((word) => {
-        splitWord.push(word)
-      })
-      return splitWord
-    },
+  mounted() {
+    runMenuTween()
+    runLogoTween()
   },
+  // computed: {
+  //   wordSplit() {
+  //     const splitWord = []
+  //     this.mainWord.split('').forEach((word) => {
+  //       splitWord.push(word)
+  //     })
+  //     return splitWord
+  //   },
+  // },
   methods: {
     menuHover(index) {
       runMenuHover(index)

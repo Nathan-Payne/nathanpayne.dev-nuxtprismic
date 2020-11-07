@@ -2,13 +2,14 @@
   <div class="mt-40 relative bg-gray-200 dark:bg-ddgrey">
     <section class="px-4 sm:px-8 py-16">
       <h3 class="font-normal tracking-wider">
-        Get in touch<span
+        <nuxt-link to="/contact">Get in touch</nuxt-link>
+        <span
           class="cursorAnimate text-5xl font-semibold text-dblue dark:text-dred"
           >_</span
         >
       </h3>
     </section>
-    <section class="gsap-footer-section">
+    <section class="border-t border-llgrey gsap-footer-section">
       <div class="px-4 sm:px-8 py-16 flex justify-between items-center">
         <div class="w-1/2 relative">
           <h2 class="font-bold relative z-20 gsap-footer-logo">Nathan Payne</h2>
