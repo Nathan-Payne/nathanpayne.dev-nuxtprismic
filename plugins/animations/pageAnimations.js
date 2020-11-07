@@ -127,6 +127,7 @@ export function servicesScrollAnimation() {
       scrollTrigger: {
         trigger: el,
         start: 'top 76%',
+        toggleActions: 'play none none reset',
       },
       stagger: 0.2,
       x: 60,
@@ -192,18 +193,50 @@ export function projectDescTimeline() {
     )
 }
 
-export function repeatImageTween() {
-  gsap
+export function nuxtFooterTimeline() {
+  return gsap
     .timeline({
       scrollTrigger: {
-        trigger: '.gsap-repeat-image',
+        trigger: '.gsap-footer-section',
         start: 'top 65%',
       },
     })
-    .from('.gsap-repeat-image', {
-      x: 35,
+    .from('.gsap-footer-logo', {
       autoAlpha: 0,
-      duration: 3.5,
-      ease: 'power2.out',
+      x: -120,
+      duration: 1.3,
+      ease: 'back.out(1.7)',
     })
+    .from(
+      '.gsap-footer-link',
+      {
+        autoAlpha: 0,
+        duration: 0.8,
+        stagger: 0.15,
+        ease: 'power2.out',
+      },
+      '<0.2'
+    )
+    .from(
+      '.gsap-footer-email',
+      {
+        xPercent: -10,
+        autoAlpha: 0,
+        duration: 0.8,
+        stagger: 0.12,
+        ease: 'power2.out',
+      },
+      '<0.2'
+    )
+    .from(
+      '.gsap-footer-icon',
+      {
+        xPercent: -10,
+        autoAlpha: 0,
+        duration: 1.4,
+        stagger: 0.12,
+        ease: 'power2.out',
+      },
+      '<0.2'
+    )
 }

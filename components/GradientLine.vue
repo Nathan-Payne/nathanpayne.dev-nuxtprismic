@@ -28,7 +28,7 @@ export default {
         '.gradient-line',
         { xPercent: -100, scaleX: 1, duration: 1 },
         { xPercent: 100, scaleX: 0, autoAlpha: 0, duration: 1.5 },
-        0.35
+        0.38
       )
       .from(
         '.page-line',

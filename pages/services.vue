@@ -4,7 +4,7 @@
       class="h-screen px-4 sm:px-8 md:px-16 relative flex flex-col justify-center z-20"
     >
       <div class="w-full md:w-3/5 relative overflow-hidden">
-        <h1 class="font-normal">{{ pageTitle }}</h1>
+        <h1 class="font-thin">{{ pageTitle }}</h1>
         <gradient-box />
       </div>
       <gradient-line :location="44" />

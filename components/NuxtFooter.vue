@@ -1,6 +1,6 @@
 <template>
-  <div class="mt-40 bg-gray-200 dark:bg-ddgrey">
-    <section class="px-4 sm:px-8 py-16 border-b-2 border-gray-800">
+  <div class="mt-40 relative bg-gray-200 dark:bg-ddgrey">
+    <section class="px-4 sm:px-8 py-16">
       <h3 class="font-normal tracking-wider">
         Get in touch<span
           class="cursorAnimate text-5xl font-semibold text-dblue dark:text-dred"
@@ -8,31 +8,40 @@
         >
       </h3>
     </section>
-    <section>
+    <section class="gsap-footer-section">
       <div class="px-4 sm:px-8 py-16 flex justify-between items-center">
-        <div class="w-1/2 relative group">
-          <h2 class="font-bold relative z-20">Nathan Payne</h2>
-          <span
-            class="absolute inset-0 bg-gradient-to-br from-dred to-dblue transform -translate-x-full group-hover:-translate-x-32 transition duration-300"
-          ></span>
+        <div class="w-1/2 relative">
+          <h2 class="font-bold relative z-20 gsap-footer-logo">Nathan Payne</h2>
         </div>
         <ul
           class="flex flex-col sm:flex-row items-start sm:items-center sm:justify-start sm:space-x-5 space-y-2 sm:space-y-0 tracking-wider text-dgrey dark:text-gray-300"
         >
-          <li><nuxt-link to="/">Home</nuxt-link></li>
-          <li><nuxt-link to="/portfolio">Portfolio</nuxt-link></li>
-          <li><nuxt-link to="/services">Services</nuxt-link></li>
-          <li><nuxt-link to="/contact">Contact</nuxt-link></li>
+          <li><nuxt-link to="/" class="gsap-footer-link">Home</nuxt-link></li>
+          <li>
+            <nuxt-link to="/portfolio" class="gsap-footer-link"
+              >Portfolio</nuxt-link
+            >
+          </li>
+          <li>
+            <nuxt-link to="/services" class="gsap-footer-link"
+              >Services</nuxt-link
+            >
+          </li>
+          <li>
+            <nuxt-link to="/contact" class="gsap-footer-link"
+              >Contact</nuxt-link
+            >
+          </li>
         </ul>
       </div>
     </section>
     <section>
       <div class="px-4 sm:px-8 py-8 flex flex-wrap md:flex-no-wrap">
         <div class="flex flex-wrap justify-start">
-          <p class="w-full">
+          <p class="w-full gsap-footer-email">
             Short on time? Send me your email and I'll get back to you:
           </p>
-          <div class="mt-8 text-dgrey dark:text-white">
+          <div class="mt-8 text-dgrey dark:text-white gsap-footer-email">
             <label for="email">
               Email:
               <input
@@ -47,7 +56,9 @@
                 SEND
               </button>
             </label>
-            <p class="text-gray-600 mt-4 md:mt-8 text-sm xl:text-base">
+            <p
+              class="text-gray-600 mt-4 md:mt-8 text-sm xl:text-base gsap-footer-email"
+            >
               Or leave a more detailed question on the contact page.
             </p>
           </div>
@@ -69,7 +80,7 @@
               stroke-linecap="round"
               stroke-linejoin="round"
               stroke-width="1"
-              class="w-10 h-10"
+              class="w-10 h-10 gsap-footer-icon"
               viewBox="0 0 24 24"
             >
               <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -109,7 +120,7 @@
               stroke-linecap="round"
               stroke-linejoin="round"
               stroke-width="1"
-              class="w-10 h-10"
+              class="w-10 h-10 gsap-footer-icon"
               viewBox="0 0 24 24"
             >
               <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -130,7 +141,7 @@
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 stroke-width="1"
-                class="w-6 h-10"
+                class="w-6 h-10 gsap-footer-icon"
                 viewBox="0 0 24 24"
               >
                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -144,7 +155,7 @@
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 stroke-width="1"
-                class="w-6 h-10 transform -translate-x-2"
+                class="w-6 h-10 transform -translate-x-2 gsap-footer-icon"
                 viewBox="0 0 24 24"
               >
                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -160,12 +171,14 @@
 
 <script>
 import { runCursorBlink } from '~/plugins/animations/miscAnimations'
+import { nuxtFooterTimeline } from '~/plugins/animations/pageAnimations'
+
 export default {
   name: 'NuxtFooter',
+
   mounted() {
     runCursorBlink('.cursorAnimate')
+    nuxtFooterTimeline()
   },
 }
 </script>
-
-<style scoped></style>

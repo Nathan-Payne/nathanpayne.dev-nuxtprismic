@@ -1,7 +1,7 @@
 <template>
   <prismic-link :field="slice.primary.project_link">
     <div
-      class="project-container flex flex-col justify-center transform"
+      class="flex flex-col justify-center transform project-container"
       :class="
         imagePosition === 'right'
           ? 'sm:flex-row'
@@ -20,11 +20,11 @@
       >
         <prismic-rich-text
           :field="slice.primary.project_category"
-          class="project-category tracking-widest dark:text-gray-500"
+          class="tracking-widest dark:text-gray-500 project-category"
         />
         <prismic-rich-text
           :field="slice.primary.project_title"
-          class="project-title mt-1"
+          class="mt-1 project-title"
         />
         <prismic-rich-text
           :field="slice.primary.project_link_text"
@@ -34,7 +34,7 @@
       </article>
       <!-- IMAGE STARTS HERE -->
       <div
-        class="project-image max-w-lg md:max-w-2xl xl:max-w-3xl ml-auto mt-8 sm:mt-0 border border-dgrey"
+        class="max-w-lg md:max-w-2xl xl:max-w-3xl ml-auto mt-8 sm:mt-0 border border-dgrey project-image"
       >
         <responsive-picture :field="slice.primary.project_image" />
       </div>
@@ -43,12 +43,8 @@
 </template>
 
 <script>
-import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import ResponsivePicture from '../ResponsivePicture'
 import { runProjectHover, stopProjectHover } from '~/plugins/animations/hovers'
-
-gsap.registerPlugin(ScrollTrigger)
 
 export default {
   name: 'ProjectSlice',

@@ -8,7 +8,7 @@
     <gradient-line :location="44" />
 
     <div class="w-full md:w-2/5 relative overflow-hidden">
-      <h1 class="font-normal text-dgrey dark:text-white leading-tight">
+      <h1 class="font-thin text-dgrey dark:text-white leading-tight">
         Contact
       </h1>
       <gradient-box />

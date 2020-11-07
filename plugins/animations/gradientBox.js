@@ -9,13 +9,12 @@ export function runGradientBox() {
     .set('.text-reveal', { xPercent: 0 })
     .set(gradientBox, { xPercent: 0, scaleX: 0 })
     .from('.text-reveal', { x: '-4rem', duration: 0.1 })
-    .to('.text-reveal', { xPercent: 50, duration: 0.4 })
-    .to('.text-reveal', { xPercent: 100, duration: 0.3 }, '-=0.15')
+    .to('.text-reveal', { xPercent: 50, duration: 0.45 })
+    .to('.text-reveal', { xPercent: 100, duration: 0.35 }, '-=0.15')
   tl.from(
     gradientBox,
     {
       scaleX: 0,
-      ease: 'none',
       duration: 0.15,
     },
     'start'
@@ -25,9 +24,8 @@ export function runGradientBox() {
       {
         xPercent: 50,
         scaleX: 0.25,
-        opacity: 0.9,
-        ease: 'none',
-        duration: 0.5,
+        opacity: 0.8,
+        duration: 0.55,
       },
       'start+=0.1'
     )
@@ -37,8 +35,7 @@ export function runGradientBox() {
         xPercent: 110,
         scaleX: 0.0,
         opacity: 0.2,
-        ease: 'none',
-        duration: 0.3,
+        duration: 0.35,
       },
       '-=0.3'
     )

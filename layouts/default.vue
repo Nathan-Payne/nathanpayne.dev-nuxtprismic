@@ -59,7 +59,7 @@ html {
 
 h1 {
   font-size: clamp(2.2rem, 4.4vw, 3.6rem);
-  font-weight: 900;
+  font-weight: 800;
   line-height: 3rem;
 }
 h2 {

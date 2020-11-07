@@ -8,7 +8,7 @@
       </h5>
       <div class="relative overflow-hidden">
         <h1
-          class="relative z-20 font-normal text-dgrey dark:text-white leading-tight"
+          class="relative z-20 font-thin text-dgrey dark:text-white leading-tight"
         >
           {{ mainTitle }}
         </h1>

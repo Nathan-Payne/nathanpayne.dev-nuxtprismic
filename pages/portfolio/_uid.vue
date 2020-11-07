@@ -60,7 +60,6 @@ import ResponsivePicture from '~/components/ResponsivePicture'
 import {
   projectTitleTimeline,
   projectDescTimeline,
-  repeatImageTween,
 } from '~/plugins/animations/pageAnimations'
 
 export default {
@@ -89,7 +88,6 @@ export default {
   mounted() {
     projectTitleTimeline()
     projectDescTimeline()
-    repeatImageTween()
   },
 }
 </script>
