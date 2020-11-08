@@ -2,10 +2,11 @@
   <div class="mt-40 relative bg-gray-200 dark:bg-ddgrey">
     <section class="px-4 sm:px-8 py-16">
       <h3 class="font-normal tracking-wider">
-        <nuxt-link to="/contact">Get in touch</nuxt-link>
-        <span
-          class="cursorAnimate text-5xl font-semibold text-dblue dark:text-dred"
-          >_</span
+        <nuxt-link to="/contact"
+          >Get in touch<span
+            class="cursorAnimate text-5xl font-semibold text-dblue dark:text-dred"
+            >_</span
+          ></nuxt-link
         >
       </h3>
     </section>
@@ -40,7 +41,7 @@
     </section>
     <section>
       <div class="px-4 sm:px-8 py-8 flex flex-wrap md:flex-no-wrap">
-        <div class="flex flex-wrap justify-start">
+        <div class="w-full flex flex-wrap justify-between">
           <p class="w-full gsap-footer-email">
             Short on time? Send me your email and I'll get back to you:
           </p>
@@ -72,8 +73,8 @@
           </form>
 
           <!-- ICONS -->
-          <span
-            class="w-full sm:w-auto mt-8 md:ml-auto inline-flex justify-center sm:justify-start md:items-center"
+          <div
+            class="w-full sm:w-auto mt-6 sm:mt-0 pb-2 flex justify-center items-center"
           >
             <!-- Github icon -->
             <a
@@ -170,7 +171,7 @@
                 </svg>
               </div>
             </a>
-          </span>
+          </div>
         </div>
       </div>
       <div
@@ -196,7 +197,7 @@
 import emailjs from 'emailjs-com'
 import { runCursorBlink } from '~/plugins/animations/miscAnimations'
 import { runMenuHover, stopMenuHover } from '~/plugins/animations/hovers'
-import { nuxtFooterTimeline } from '~/plugins/animations/pageAnimations'
+// import { nuxtFooterTimeline } from '~/plugins/animations/pageAnimations'
 
 export default {
   name: 'NuxtFooter',
@@ -209,7 +210,7 @@ export default {
   },
   mounted() {
     runCursorBlink('.cursorAnimate')
-    nuxtFooterTimeline()
+    // nuxtFooterTimeline()
   },
   methods: {
     menuHover(index) {
