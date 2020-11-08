@@ -11,7 +11,7 @@
       </h3>
     </section>
     <section class="border-t border-llgrey gsap-footer-section">
-      <div class="px-4 sm:px-8 py-16 flex justify-between items-center">
+      <nav class="px-4 sm:px-8 py-16 flex justify-between items-center">
         <div class="w-1/2 relative">
           <h2 class="font-bold relative z-20 gsap-footer-logo">Nathan Payne</h2>
         </div>
@@ -37,7 +37,7 @@
             ></div>
           </li>
         </ul>
-      </div>
+      </nav>
     </section>
     <section>
       <div class="px-4 sm:px-8 py-8 flex flex-wrap md:flex-no-wrap">
