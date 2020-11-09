@@ -80,6 +80,8 @@ export default {
         projectDescription: project.project_description,
         secondImage: project.second_image,
         slices: project.body,
+        seoTitle: project.seo_title[0].text,
+        seoDescription: project.seo_description[0].text,
       }
     } catch (err) {
       error({ statusCode: 404, message: 'Page not found' })
@@ -88,6 +90,18 @@ export default {
   mounted() {
     projectTitleTimeline()
     projectDescTimeline()
+  },
+  head() {
+    return {
+      title: this.seoTitle,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.seoDescription,
+        },
+      ],
+    }
   },
 }
 </script>

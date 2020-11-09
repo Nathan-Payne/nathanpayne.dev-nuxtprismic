@@ -132,5 +132,16 @@ export default {
       this.$refs.contactForm.reset()
     },
   },
+  head: {
+    title: 'Contact | Nathan Payne web developer',
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content:
+          'Get in touch with Nathan Payne a UK Web Developer delivering high performance, mobile friendly websites with a user experience tailored to business needs',
+      },
+    ],
+  },
 }
 </script>

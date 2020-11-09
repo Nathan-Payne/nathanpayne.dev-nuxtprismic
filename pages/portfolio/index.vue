@@ -43,12 +43,13 @@ export default {
     portfolioTimeline()
   },
   head: {
-    title: 'Portfolio',
+    title: 'Portfolio | Nathan Payne development projects',
     meta: [
       {
         hid: 'description',
         name: 'description',
-        content: 'Home page description',
+        content:
+          'Portfolio | Nathan Payne UK web developer portfolio | Showcasing some of my work in website design and development',
       },
     ],
   },

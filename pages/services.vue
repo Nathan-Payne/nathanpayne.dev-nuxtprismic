@@ -78,6 +78,17 @@ export default {
     const servicesTl = servicesTitleAnimation()
     servicesTl.eventCallback('onStart', servicesScrollAnimation)
   },
+  head: {
+    title: 'Services | Nathan Payne web development services UK',
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content:
+          'Nathan Payne | UK Web Developer | Freelance services, availability and the process followed in delivering high quality websites',
+      },
+    ],
+  },
 }
 </script>
 
