@@ -42,5 +42,15 @@ export default {
   mounted() {
     portfolioTimeline()
   },
+  head: {
+    title: 'Portfolio',
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'Home page description',
+      },
+    ],
+  },
 }
 </script>

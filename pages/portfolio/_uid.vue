@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <div>
     <section
       class="min-h-screen px-4 sm:px-8 md:px-16 mt-24 md:mt-0 relative z-20 md:grid grid-cols-11 place-items-center"
     >
@@ -36,7 +36,7 @@
     </section>
 
     <section
-      class="min-h-screen px-4 sm:px-8 md:px-16 sm:mt-12 flex flex-col md:flex-row"
+      class="min-h-screen px-4 sm:px-8 md:px-16 mt-20 md:mt-12 flex flex-col md:flex-row"
     >
       <article class="w-full md:w-3/5">
         <prismic-rich-text
@@ -51,7 +51,7 @@
       />
     </section>
     <slices-block :slices="slices" class="mt-20" />
-  </main>
+  </div>
 </template>
 
 <script>

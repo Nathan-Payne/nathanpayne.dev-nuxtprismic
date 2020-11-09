@@ -2,7 +2,7 @@
   <div>
     <HeaderPrismic />
     <ColorMode class="mt-4 mr-4 absolute top-0 right-0 z-50" />
-    <main>
+    <main class="overflow-x-hidden">
       <Nuxt />
     </main>
     <NuxtFooter />
@@ -36,7 +36,7 @@ export default {
 <style>
 :root {
   /* scroll-behavior: smooth; */
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
   touch-action: manipulation;
 }
 

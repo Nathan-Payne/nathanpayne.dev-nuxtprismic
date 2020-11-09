@@ -8,8 +8,14 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      {
+        hid: 'description',
+        name: 'description',
+        content:
+          'Nathan Payne | UK Web Developer | I aim to deliver high performance, mobile friendly websites with a user experience tailored to business needs',
+      },
     ],
+    noscript: [{ innerHTML: 'This website requires JavaScript.' }],
     link: [
       {
         rel: 'preconnect',
