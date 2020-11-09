@@ -32,7 +32,10 @@
 import SlicesBlock from '~/components/SlicesBlock.vue'
 import GradientBox from '~/components/GradientBox'
 import GradientLine from '~/components/GradientLine'
-import { homeTimeline } from '~/plugins/animations/pageAnimations'
+import {
+  homeProjectTimeline,
+  homeAboutTimeline,
+} from '~/plugins/animations/pageAnimations'
 
 export default {
   name: 'Home',
@@ -59,7 +62,30 @@ export default {
     }
   },
   mounted() {
-    homeTimeline()
+    homeProjectTimeline()
+    homeAboutTimeline()
   },
 }
 </script>
+
+<style>
+.space-above {
+  display: block;
+  margin-top: 1.8rem;
+  width: 60%;
+}
+.space-above em {
+  font-style: normal;
+  position: relative;
+}
+.space-above em::before {
+  content: '';
+  width: 92%;
+  height: 25%;
+  position: absolute;
+  top: 65%;
+  left: 10%;
+  background: linear-gradient(135deg, var(--dred), var(--dblue));
+  opacity: 0.6;
+}
+</style>

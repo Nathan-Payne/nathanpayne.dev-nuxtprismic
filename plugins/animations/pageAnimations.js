@@ -3,7 +3,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger)
 
-export function homeTimeline() {
+export function homeProjectTimeline() {
   return gsap
     .timeline({
       scrollTrigger: {
@@ -49,6 +49,23 @@ export function homeTimeline() {
       { y: 100, duration: 0.8, ease: 'power4.out' },
       '<0.1'
     )
+}
+
+export function homeAboutTimeline() {
+  return gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: '.gsap-about',
+        start: 'top 65%',
+      },
+    })
+    .from('.gsap-about *', {
+      xPercent: 4,
+      autoAlpha: 0,
+      stagger: 0.03,
+      duration: 0.5,
+      ease: 'power3.out',
+    })
 }
 
 export function portfolioTimeline() {
@@ -166,10 +183,10 @@ export function projectDescTimeline() {
       },
     })
     .from('.gsap-project-desc *', {
-      x: 35,
+      x: 30,
       autoAlpha: 0,
-      stagger: 0.04,
-      duration: 2.2,
+      stagger: 0.08,
+      duration: 2,
       ease: 'power4.out',
     })
     .from(
@@ -247,7 +264,6 @@ export function runLogoTween() {
   return gsap.from('.gsap-logo', {
     yPercent: -10,
     autoAlpha: 0,
-    color: '#4206c2',
     duration: 3,
     ease: 'power2.out',
     delay: 1.1,

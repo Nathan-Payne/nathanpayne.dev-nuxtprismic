@@ -197,7 +197,7 @@
 import emailjs from 'emailjs-com'
 import { runCursorBlink } from '~/plugins/animations/miscAnimations'
 import { runMenuHover, stopMenuHover } from '~/plugins/animations/hovers'
-// import { nuxtFooterTimeline } from '~/plugins/animations/pageAnimations'
+import { nuxtFooterTimeline } from '~/plugins/animations/pageAnimations'
 
 export default {
   name: 'NuxtFooter',
@@ -210,7 +210,7 @@ export default {
   },
   mounted() {
     runCursorBlink('.cursorAnimate')
-    // nuxtFooterTimeline()
+    nuxtFooterTimeline()
   },
   methods: {
     menuHover(index) {
