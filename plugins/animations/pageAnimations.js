@@ -259,7 +259,7 @@ export function nuxtFooterTimeline() {
 
 export function runMenuTween() {
   return gsap.from('.gsap-menu-links *', {
-    xPercent: 5,
+    xPercent: 8,
     autoAlpha: 0,
     duration: 0.8,
     stagger: 0.08,
@@ -274,5 +274,14 @@ export function runLogoTween() {
     duration: 3,
     ease: 'power2.out',
     delay: 1.1,
+  })
+}
+
+export function runColormodeTween() {
+  return gsap.from('.gsap-colormode', {
+    autoAlpha: 0,
+    duration: 3,
+    delay: 1,
+    ease: 'power3.out',
   })
 }

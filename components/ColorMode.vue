@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="gsap-colormode">
     <label class="switch">
       <input type="checkbox" />
       <span class="slider round" @click="changeMode"></span>
@@ -8,11 +8,15 @@
 </template>
 
 <script>
+import { runColormodeTween } from '~/plugins/animations/pageAnimations'
 export default {
   computed: {
     btnLabel() {
       return this.$colorMode.preference === 'light' ? 'dark' : 'light'
     },
+  },
+  mounted() {
+    runColormodeTween()
   },
   methods: {
     changeMode() {
