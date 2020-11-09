@@ -8,16 +8,16 @@
         <gradient-box />
       </div>
       <gradient-line :location="44" />
-      <div class="gsap-in">
+      <div class="">
         <prismic-rich-text
           v-if="subtitle"
           :field="subtitle"
-          class="w-full max-w-2xl md:w-5/6 mt-32 sm:mt-40 md:mt-48 ml-0 md:ml-8 lg:ml-16 gsap-stagger"
+          class="w-full max-w-2xl md:w-5/6 mt-32 sm:mt-40 md:mt-48 ml-0 md:ml-8 lg:ml-16 gsap-services-title"
         />
         <prismic-rich-text
           v-if="subtitleText"
           :field="subtitleText"
-          class="w-full max-w-2xl sm:w-2/3 md:w-3/4 ml-0 md:ml-8 lg:ml-16 mt-4 gsap-stagger"
+          class="w-full max-w-2xl sm:w-2/3 md:w-3/4 ml-0 md:ml-8 lg:ml-16 mt-4 gsap-services-title"
         />
       </div>
     </section>
@@ -40,7 +40,10 @@
 import SlicesBlock from '../components/SlicesBlock.vue'
 import GradientBox from '../components/GradientBox.vue'
 import GradientLine from '~/components/GradientLine'
-import { servicesScrollAnimation } from '~/plugins/animations/pageAnimations'
+import {
+  servicesTitleAnimation,
+  servicesScrollAnimation,
+} from '~/plugins/animations/pageAnimations'
 
 export default {
   name: 'Services',
@@ -72,7 +75,8 @@ export default {
     }
   },
   mounted() {
-    servicesScrollAnimation()
+    const servicesTl = servicesTitleAnimation()
+    servicesTl.eventCallback('onStart', servicesScrollAnimation)
   },
 }
 </script>

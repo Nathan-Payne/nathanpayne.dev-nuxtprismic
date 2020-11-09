@@ -52,20 +52,17 @@ export function homeProjectTimeline() {
 }
 
 export function homeAboutTimeline() {
-  return gsap
-    .timeline({
-      scrollTrigger: {
-        trigger: '.gsap-about',
-        start: 'top 65%',
-      },
-    })
-    .from('.gsap-about *', {
-      xPercent: 4,
-      autoAlpha: 0,
-      stagger: 0.03,
-      duration: 0.5,
-      ease: 'power3.out',
-    })
+  return gsap.from('.gsap-about *', {
+    scrollTrigger: {
+      trigger: '.gsap-about',
+      start: 'top 65%',
+    },
+    xPercent: 4,
+    autoAlpha: 0,
+    stagger: 0.03,
+    duration: 0.5,
+    ease: 'power3.out',
+  })
 }
 
 export function portfolioTimeline() {
@@ -129,6 +126,17 @@ export function portfolioTimeline() {
   })
 }
 
+export function servicesTitleAnimation() {
+  return gsap.from('.gsap-services-title', {
+    xPercent: 8,
+    autoAlpha: 0,
+    stagger: 0.15,
+    duration: 1.2,
+    delay: 0.5,
+    ease: 'power2.out',
+  })
+}
+
 export function servicesScrollAnimation() {
   const animatedElement = gsap.utils.toArray('.gsap-in')
   animatedElement.forEach((el) => {
@@ -138,10 +146,9 @@ export function servicesScrollAnimation() {
         start: 'top 76%',
         toggleActions: 'play none none reset',
       },
-      stagger: 0.2,
-      x: 60,
+      x: 55,
       autoAlpha: 0,
-      duration: 1.4,
+      duration: 1.2,
       ease: 'power4.out',
     })
   })

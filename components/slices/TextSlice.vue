@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-20 py-20 px-4 sm:px-8 md:px-16">
+  <div class="mt-32 py-16 px-4 sm:px-8 md:px-16">
     <prismic-rich-text :field="slice.primary.text" class="gsap-about" />
   </div>
 </template>

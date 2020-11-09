@@ -62,8 +62,8 @@ export default {
     }
   },
   mounted() {
-    homeProjectTimeline()
-    homeAboutTimeline()
+    const homeTl = homeProjectTimeline()
+    homeTl.eventCallback('onStart', homeAboutTimeline)
   },
 }
 </script>
@@ -72,7 +72,7 @@ export default {
 .space-above {
   display: block;
   margin-top: 1.8rem;
-  width: 60%;
+  width: 100%;
 }
 .space-above em {
   font-style: normal;
@@ -87,5 +87,11 @@ export default {
   left: 10%;
   background: linear-gradient(135deg, var(--dred), var(--dblue));
   opacity: 0.6;
+}
+
+@media (min-width: 1024px) {
+  .space-above {
+    width: 60%;
+  }
 }
 </style>
