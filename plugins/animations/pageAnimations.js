@@ -214,7 +214,7 @@ export function nuxtFooterTimeline() {
     .timeline({
       scrollTrigger: {
         trigger: '.gsap-footer-section',
-        start: 'top 65%',
+        start: 'top 68%',
       },
     })
     .from('.gsap-footer-logo', {
@@ -288,9 +288,23 @@ export function runColormodeTween() {
 
 export function runScrollIndicatorEntry() {
   return gsap.from('.scroll-indicator', {
-    opacity: 0,
-    duration: 1.7,
-    delay: 1.8,
+    autoAlpha: 0,
+    yPercent: -40,
+    duration: 1.2,
+    delay: 1.7,
     ease: 'back.out(3)',
+  })
+}
+
+export function runScrollIndicatorExit() {
+  return gsap.to('.scroll-indicator', {
+    scrollTrigger: {
+      trigger: '.scroll-indicator',
+      start: 'top 75%',
+    },
+    autoAlpha: 0,
+    yPercent: 50,
+    duration: 1,
+    ease: 'power2.out',
   })
 }

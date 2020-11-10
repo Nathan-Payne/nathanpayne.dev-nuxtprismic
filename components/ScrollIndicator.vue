@@ -1,5 +1,5 @@
 <template>
-  <div class="scroll-indicator">
+  <div class="scroll-indicator text-dgrey dark:text-white">
     <svg
       viewBox="0 0 24 24"
       stroke-width="0.5"
@@ -36,7 +36,6 @@ export default {
   height: 60px;
   bottom: -5px;
   left: 47%;
-  color: white;
   opacity: 0.5;
 }
 </style>

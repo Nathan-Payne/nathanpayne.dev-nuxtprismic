@@ -36,10 +36,11 @@ import GradientLine from '~/components/GradientLine'
 import ScrollIndicator from '~/components/ScrollIndicator'
 import {
   runScrollIndicatorEntry,
+  runScrollIndicatorExit,
   homeProjectTimeline,
   homeAboutTimeline,
 } from '~/plugins/animations/pageAnimations'
-import { runScrollIndicatorRepeat } from '~/plugins/animations/miscAnimations'
+// import { runScrollIndicatorRepeat } from '~/plugins/animations/miscAnimations'
 
 export default {
   name: 'Home',
@@ -67,8 +68,9 @@ export default {
     }
   },
   mounted() {
-    runScrollIndicatorEntry()
-    runScrollIndicatorRepeat()
+    const scrollEntryTween = runScrollIndicatorEntry()
+    scrollEntryTween.eventCallback('onComplete', runScrollIndicatorExit)
+
     const homeTl = homeProjectTimeline()
     homeTl.eventCallback('onStart', homeAboutTimeline)
   },

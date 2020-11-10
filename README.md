@@ -26,6 +26,7 @@ For detailed explanation on how things work, check out [Nuxt.js docs](https://nu
 - overlap image (code sign) about me
 - svg logo design
 - host - update sitemap url in nuxt.config.js
-- google analytics data stream [https://nuxtjs.org/faq/ga](here)
+- google analytics via gtag data stream
+  [https://www.carlcassar.com/articles/add-google-analytics-to-a-nuxt-js-app/](here)
 - services
 - mobile menu
