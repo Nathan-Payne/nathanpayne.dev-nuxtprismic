@@ -55,6 +55,8 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     '@nuxtjs/prismic',
+    '@nuxtjs/sitemap',
+    '@nuxtjs/robots',
   ],
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
@@ -73,5 +75,15 @@ export default {
 
   purgeCSS: {
     whitelist: ['dark-mode'],
+  },
+
+  sitemap: {
+    hostname: 'http://localhost:3000/',
+    gzip: true,
+    routes: [
+      '/portfolio/squarecircle',
+      '/portfolio/tailwindcss-portfolio',
+      '/portfolio/prnt',
+    ],
   },
 }

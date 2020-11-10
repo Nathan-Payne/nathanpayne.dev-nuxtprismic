@@ -23,10 +23,9 @@ For detailed explanation on how things work, check out [Nuxt.js docs](https://nu
 
 # TODO
 
-- mouse scroll animation
-- nuxt-directives
-- google analytics
 - overlap image (code sign) about me
 - svg logo design
+- host - update sitemap url in nuxt.config.js
+- google analytics data stream [https://nuxtjs.org/faq/ga](here)
 - services
 - mobile menu
