@@ -20,6 +20,7 @@
     </section>
 
     <gradient-line :location="80" />
+    <scroll-indicator />
 
     <section>
       <prismic-rich-text id="section-title" :field="sectionTitle" />
@@ -32,10 +33,13 @@
 import SlicesBlock from '~/components/SlicesBlock.vue'
 import GradientBox from '~/components/GradientBox'
 import GradientLine from '~/components/GradientLine'
+import ScrollIndicator from '~/components/ScrollIndicator'
 import {
+  runScrollIndicatorEntry,
   homeProjectTimeline,
   homeAboutTimeline,
 } from '~/plugins/animations/pageAnimations'
+import { runScrollIndicatorRepeat } from '~/plugins/animations/miscAnimations'
 
 export default {
   name: 'Home',
@@ -43,6 +47,7 @@ export default {
     SlicesBlock,
     GradientBox,
     GradientLine,
+    ScrollIndicator,
   },
   async asyncData({ $prismic, error }) {
     try {
@@ -62,6 +67,8 @@ export default {
     }
   },
   mounted() {
+    runScrollIndicatorEntry()
+    runScrollIndicatorRepeat()
     const homeTl = homeProjectTimeline()
     homeTl.eventCallback('onStart', homeAboutTimeline)
   },

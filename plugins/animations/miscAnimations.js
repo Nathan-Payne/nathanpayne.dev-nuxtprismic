@@ -10,6 +10,15 @@ export function runCursorBlink(className) {
   return cursorBlinkTween
 }
 
+export function runScrollIndicatorRepeat() {
+  return gsap
+    .timeline({ repeat: -1, yoyo: true })
+    .to('.scroll-indicator-line', {
+      yPercent: 60,
+      duration: 1.2,
+    })
+}
+
 export function runLetterRotate() {
   // 3d staggered letter entry, give parent .animation-perspective, wrap each letter in span.letter-rotate
   gsap.set('.animation-perspective', { perspective: 400 })

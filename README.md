@@ -1,5 +1,7 @@
 # 2020-nathanpayne.dev-prismic-nuxt
 
+Statically generated Nuxt portfolio integrating the headless CMS @ Prismic.io, GSAP animations, TailwindCSS and @nuxtjs/color-mode.
+
 ## Build Setup
 
 ```bash
@@ -18,3 +20,13 @@ $ npm run generate
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+
+# TODO
+
+- mouse scroll animation
+- nuxt-directives
+- google analytics
+- overlap image (code sign) about me
+- svg logo design
+- services
+- mobile menu

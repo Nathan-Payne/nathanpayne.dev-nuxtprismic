@@ -285,3 +285,12 @@ export function runColormodeTween() {
     ease: 'power3.out',
   })
 }
+
+export function runScrollIndicatorEntry() {
+  return gsap.from('.scroll-indicator', {
+    opacity: 0,
+    duration: 1.7,
+    delay: 1.8,
+    ease: 'back.out(3)',
+  })
+}
