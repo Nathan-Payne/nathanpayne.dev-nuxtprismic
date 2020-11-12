@@ -5,11 +5,9 @@
     </p>
 
     <!-- LOGO HERE -->
-    <nuxt-link
-      to="/"
-      class="ml-4 font-thin text-xl text-dgrey dark:text-gray-300 gsap-logo"
-      >{{ $store.state.menu.site_name }}</nuxt-link
-    >
+    <nuxt-link to="/" class="relative">
+      <logo />
+    </nuxt-link>
     <!-- Right Navigation -->
     <nav class="mt-8 mr-2 absolute top-0 right-0 z-30 text-right">
       <ul
@@ -41,8 +39,12 @@
 <script>
 import { runMenuHover, stopMenuHover } from '~/plugins/animations/hovers'
 import { runLogoTween, runMenuTween } from '~/plugins/animations/pageAnimations'
+import Logo from '~/components/Logo'
 export default {
   name: 'HeaderPrismic',
+  components: {
+    Logo,
+  },
   mounted() {
     runMenuTween()
     runLogoTween()

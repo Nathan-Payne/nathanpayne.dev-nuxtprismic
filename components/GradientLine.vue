@@ -22,12 +22,12 @@ export default {
     },
   },
   mounted() {
-    const gradientLineTl = gsap.timeline({ defaults: { ease: 'power1.out' } })
+    const gradientLineTl = gsap.timeline({ defaults: { ease: 'power3.inOut' } })
     gradientLineTl
       .fromTo(
         '.gradient-line',
-        { xPercent: -100, scaleX: 1, scaleY: 1.5, duration: 1.4 },
-        { xPercent: 100, scaleX: 0, scaleY: 1, autoAlpha: 0, duration: 1.5 },
+        { xPercent: -100, scaleX: 1, duration: 1.4 },
+        { xPercent: 100, scaleX: 0, autoAlpha: 0, duration: 1.5 },
         0.38
       )
       .from(

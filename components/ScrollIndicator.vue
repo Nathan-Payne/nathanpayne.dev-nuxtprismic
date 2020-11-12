@@ -36,6 +36,6 @@ export default {
   height: 60px;
   bottom: -5px;
   left: 47%;
-  opacity: 0.5;
+  opacity: 0.45;
 }
 </style>

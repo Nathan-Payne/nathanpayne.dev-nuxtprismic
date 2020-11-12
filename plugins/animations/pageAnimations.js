@@ -289,9 +289,9 @@ export function runColormodeTween() {
 export function runScrollIndicatorEntry() {
   return gsap.from('.scroll-indicator', {
     autoAlpha: 0,
-    yPercent: -40,
+    yPercent: -35,
     duration: 1.2,
-    delay: 1.7,
+    delay: 1.6,
     ease: 'back.out(3)',
   })
 }
@@ -303,8 +303,8 @@ export function runScrollIndicatorExit() {
       start: 'top 75%',
     },
     autoAlpha: 0,
-    yPercent: 50,
-    duration: 1,
-    ease: 'power2.out',
+    yPercent: 80,
+    duration: 0.4,
+    ease: 'power3.out',
   })
 }

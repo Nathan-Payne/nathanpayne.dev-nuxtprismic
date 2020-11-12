@@ -23,7 +23,7 @@ For detailed explanation on how things work, check out [Nuxt.js docs](https://nu
 
 # TODO
 
-- overlap image (code sign) about me
+- overlap image (trace bitmap face) about me
 - svg logo design
 - host - update sitemap url in nuxt.config.js
 - google analytics via gtag data stream
