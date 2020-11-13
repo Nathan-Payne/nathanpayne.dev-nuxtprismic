@@ -144,7 +144,8 @@
                 <path d="M16 16v-3a2 2 0 0 0 -4 0" />
               </svg>
             </a>
-            <a
+            <nuxt-link
+              to="/cv"
               class="dark:text-white text-dgrey dark-hover:text-dred hover:text-dblue transition-colors duration-300 ease-in-out cursor-pointer"
               aria-label="Link to CV"
             >
@@ -176,7 +177,7 @@
                   <path d="M6 4l6 16l6 -16" />
                 </svg>
               </div>
-            </a>
+            </nuxt-link>
           </div>
         </div>
       </div>

@@ -23,9 +23,9 @@ For detailed explanation on how things work, check out [Nuxt.js docs](https://nu
 
 # TODO
 
-- overlap image (trace bitmap face) about me
-- host - update sitemap url in nuxt.config.js
-- add CV
+- overlap image (tracebitmap face png) next to about me
+- host + domain - update sitemap url in nuxt.config.js
+- look into changing default propeeties of elements on initial page load so they dont show (loader?)
 - google analytics via gtag data stream
   [https://www.carlcassar.com/articles/add-google-analytics-to-a-nuxt-js-app/](here)
 - services
