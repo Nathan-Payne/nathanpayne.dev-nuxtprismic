@@ -79,8 +79,10 @@
             <!-- Github icon -->
             <a
               href="https://github.com/Nathan-Payne"
+              rel="noopener noreferrer"
               target="_blank"
               class="dark:text-white text-dgrey dark-hover:text-dred hover:text-dblue transition-colors duration-300 ease-in-out cursor-pointer"
+              aria-label="link to Github"
             >
               <svg
                 fill="none"
@@ -100,6 +102,7 @@
 
             <!-- Facebook Icon -->
             <!-- <a
+            rel="noopener noreferrer"
               class="dark:text-white text-dgrey dark-hover:text-dred hover:text-dblue transition-colors duration-300 ease-in-out cursor-pointer"
             >
               <svg
@@ -119,8 +122,10 @@
             <!-- Linkdin Icon -->
             <a
               href="https://www.linkedin.com/in/nathanpayne-dev"
+              rel="noopener noreferrer"
               target="_blank"
               class="ml-3 dark:text-white text-dgrey dark-hover:text-dred hover:text-dblue transition-colors duration-300 ease-in-out cursor-pointer"
+              aria-label="link to LinkedIn"
             >
               <svg
                 fill="none"
@@ -141,6 +146,7 @@
             </a>
             <a
               class="dark:text-white text-dgrey dark-hover:text-dred hover:text-dblue transition-colors duration-300 ease-in-out cursor-pointer"
+              aria-label="Link to CV"
             >
               <div class="flex ml-2">
                 <svg

@@ -5,15 +5,15 @@
     class="px-4 sm:px-8 md:px-16 mt-24"
     aria-label="Contact Information"
   >
-    <gradient-line :location="44" />
+    <gradient-line :location="40" />
 
-    <div class="w-full md:w-2/5 relative overflow-hidden">
+    <div class="w-full md:w-2/5 mt-40 sm:mt-0 relative overflow-hidden">
       <h1 class="font-thin text-dgrey dark:text-white leading-tight">
         Contact
       </h1>
       <gradient-box />
     </div>
-    <div class="sm:px-4 md:px-12 lg:px-32">
+    <div class="sm:px-4 md:px-12 lg:px-32 mt-16 sm:mt-6">
       <div class="mt-32">
         <p class="py-8 sm:px-4 lg:w-2/3">
           Get in touch for a free introductory meeting.

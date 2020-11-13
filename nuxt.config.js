@@ -4,6 +4,9 @@ export default {
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
+    htmlAttrs: {
+      lang: 'en',
+    },
     title: 'Nathan Payne | Web Developer',
     meta: [
       { charset: 'utf-8' },
@@ -19,7 +22,17 @@ export default {
     link: [
       {
         rel: 'preconnect',
-        href: 'https://fonts.gstatic.com',
+        href: 'https://fonts.googleapis.com',
+        crossorigin: true,
+      },
+      {
+        rel: 'preconnect',
+        href: 'https://nathanpaynedev.prismic.io',
+        crossorigin: true,
+      },
+      {
+        rel: 'preconnect',
+        href: 'https://static.cdn.prismic.io',
         crossorigin: true,
       },
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },

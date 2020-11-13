@@ -1,5 +1,5 @@
 <template>
-  <div class="px-4 sm:px-8 md:px-16 mt-24">
+  <div class="px-4 sm:px-8 md:px-16 mt-40 sm:mt-24">
     <div v-if="mainTitle[0].text !== 'Portfolio'">
       <prismic-rich-text :field="mainTitle" />
       <gradient-box />
