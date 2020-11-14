@@ -80,8 +80,11 @@ export default {
     const scrollEntryTween = runScrollIndicatorEntry()
     scrollEntryTween.eventCallback('onComplete', runScrollIndicatorExit)
 
-    const homeTl = homeProjectTimeline()
-    homeTl.eventCallback('onStart', homeAboutTimeline)
+    homeProjectTimeline()
+    setTimeout(() => {
+      homeAboutTimeline()
+    }, 0.1)
+    // homeTl.eventCallback('onStart', homeAboutTimeline)
   },
 }
 </script>

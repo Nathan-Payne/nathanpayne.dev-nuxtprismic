@@ -52,17 +52,41 @@ export function homeProjectTimeline() {
 }
 
 export function homeAboutTimeline() {
-  return gsap.from('.gsap-about *', {
-    scrollTrigger: {
-      trigger: '.gsap-about',
-      start: 'top 65%',
-    },
-    xPercent: 4,
-    autoAlpha: 0,
-    stagger: 0.03,
-    duration: 0.5,
-    ease: 'power3.out',
-  })
+  const paragraphs = gsap.utils.toArray('.gsap-about p')
+  gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: '.gsap-about',
+        start: 'top 70%',
+      },
+      defaults: {
+        xPercent: 3,
+        autoAlpha: 0,
+        duration: 1,
+        ease: 'power2.out',
+      },
+    })
+    .from('.gsap-about h2', {})
+    .from(paragraphs[0], {}, '<')
+    .from(paragraphs[1], {}, '<')
+    .from(paragraphs[2], {}, '<0.15')
+    .from(paragraphs[3], {}, '<0.15')
+    .from(paragraphs[4], {}, '<0.15')
+
+  // ALTERNATE: ADD SCROLL TRIGGER TO EACH INDIVIDUAL PARAGRAPH
+  // paragraphs.forEach((para) => {
+  //   gsap.from(para, {
+  //     scrollTrigger: {
+  //       trigger: para,
+  //       start: 'top 72%',
+  //     },
+  //     xPercent: 3,
+  //     autoAlpha: 0,
+  //     delay: 0.2,
+  //     duration: 0.8,
+  //     ease: 'power2.out',
+  //   })
+  // })
 }
 
 export function portfolioTimeline() {
