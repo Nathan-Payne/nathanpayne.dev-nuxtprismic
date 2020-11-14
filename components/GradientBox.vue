@@ -1,23 +1,30 @@
 <template>
   <div>
-    <div aria-hidden="true" class="gradient-box"></div>
+    <div aria-hidden="true" class="gradient-box" :class="boxName"></div>
     <div
       aria-hidden="true"
-      class="text-reveal w-full bg-white dark:bg-dgrey absolute inset-0 z-30"
+      class="w-full bg-white dark:bg-dgrey absolute inset-0 z-30"
+      :class="`text-reveal-${boxName}`"
     ></div>
   </div>
 </template>
 
 <script>
 import { runGradientBox } from '~/plugins/animations/gradientBox'
+
 export default {
-  data() {
-    return {
-      gradientBoxTimeline: null,
-    }
+  props: {
+    boxName: { type: String, default: 'gradient-box' },
+    delay: {
+      type: Number,
+      default: 0,
+    },
   },
   mounted() {
-    this.gradientBoxTimeline = runGradientBox()
+    const tl = runGradientBox(this.boxName)
+    setTimeout(() => {
+      tl.play()
+    }, this.delay)
   },
 }
 </script>

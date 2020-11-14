@@ -1,7 +1,7 @@
 <template>
   <div class="mx-6 flex flex-col justify-center">
     <section
-      class="h-screen w-full sm:w-3/4 md:w-2/3 pb-20 flex flex-col justify-center"
+      class="h-screen w-full sm:w-3/4 md:w-2/3 lg:w-2/5 xl:w-1/3 pb-20 flex flex-col justify-center"
     >
       <h5 v-if="smallTitle" class="text-sm dark:text-gray-400">
         {{ smallTitle }}
@@ -12,7 +12,15 @@
         >
           {{ mainTitle }}
         </h1>
-        <gradient-box />
+        <gradient-box :box-name="'first-box'" :delay="0" />
+      </div>
+      <div class="relative overflow-hidden">
+        <h1
+          class="relative z-20 font-thin text-dgrey dark:text-white leading-tight"
+        >
+          {{ mainTitleSecondLine }}
+        </h1>
+        <gradient-box :box-name="'second-box'" :delay="450" />
       </div>
       <div v-if="ctaLinkUid" class="w-24 mt-6 inline-block text-center">
         <nuxt-link :to="`/${ctaLinkUid}`"> {{ ctaText }} </nuxt-link>
@@ -58,6 +66,7 @@ export default {
         document,
         smallTitle: document.small_title[0].text,
         mainTitle: document.main_title[0].text,
+        mainTitleSecondLine: document.main_title_second_line[0].text,
         ctaText: document.cta_text[0].text,
         ctaLinkUid: document.cta_link.uid,
         sectionTitle: document.section_title,
