@@ -1,7 +1,7 @@
 <template>
-  <div class="mx-6 flex flex-col justify-center">
+  <div class="px-4 sm:px-8 md:px-16 flex flex-col justify-center">
     <section
-      class="h-screen w-full sm:w-3/4 lg:w-1/2 pb-20 flex flex-col justify-center"
+      class="h-screen w-full sm:w-3/4 lg:w-3/5 pb-20 flex flex-col justify-center"
     >
       <h5 v-if="smallTitle" class="text-sm dark:text-gray-400">
         {{ smallTitle }}
@@ -83,8 +83,7 @@ export default {
     homeProjectTimeline()
     setTimeout(() => {
       homeAboutTimeline()
-    }, 0.1)
-    // homeTl.eventCallback('onStart', homeAboutTimeline)
+    }, 0.15)
   },
 }
 </script>

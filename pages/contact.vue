@@ -2,10 +2,10 @@
   <section
     id="contact"
     role="form"
-    class="px-4 sm:px-8 md:px-16 mt-24"
+    class="px-4 sm:px-8 md:px-16 mt-32 md:mt-40 lg:mt-48 xl:mt-56 relative"
     aria-label="Contact Information"
   >
-    <gradient-line :location="40" />
+    <gradient-line :location="20" />
 
     <div class="w-full md:w-2/5 mt-40 sm:mt-0 relative overflow-hidden">
       <h1 class="font-thin text-dgrey dark:text-white leading-tight">

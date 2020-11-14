@@ -67,35 +67,35 @@ html {
 }
 
 h1 {
-  font-size: clamp(2.2rem, 4.4vw, 4rem);
+  font-size: clamp(2.2rem, 4.1vw, 4rem);
   font-weight: 800;
   line-height: 3rem;
 }
 h2 {
-  font-size: clamp(2rem, 3.5vw, 3.2rem);
+  font-size: clamp(2rem, 3.2vw, 3.2rem);
   font-weight: 600;
   line-height: 2.8rem;
 }
 h3 {
-  font-size: clamp(1.6rem, 3vw, 2.8rem);
+  font-size: clamp(1.6rem, 2.8vw, 2.8rem);
   font-weight: 600;
 }
 h4 {
-  font-size: clamp(1.5rem, 2.75vw, 2.5rem);
+  font-size: clamp(1.5rem, 2.6vw, 2.5rem);
   font-weight: 600;
 }
 h5 {
-  font-size: clamp(1.3rem, 2.4vw, 2.2rem);
+  font-size: clamp(1.3rem, 2.3vw, 2.2rem);
   font-weight: 600;
 }
 h6 {
-  font-size: clamp(1.15rem, 2.2vw, 1.85rem);
+  font-size: clamp(1.15rem, 2vw, 1.8rem);
   font-weight: 600;
 }
 p,
 a,
 li {
-  font-size: clamp(0.9rem, 1.6vw, 1.4rem);
+  font-size: clamp(0.9rem, 1.4vw, 1.35rem);
   font-weight: 400;
 }
 section {

@@ -1,5 +1,5 @@
 <template>
-  <div class="px-4 sm:px-8 md:px-16 mt-40 sm:mt-24">
+  <div class="px-4 sm:px-8 md:px-16 mt-40 lg:mt-48 xl:mt-56">
     <div v-if="mainTitle[0].text !== 'Portfolio'">
       <prismic-rich-text :field="mainTitle" />
       <gradient-box />
@@ -10,10 +10,12 @@
       </h1>
       <gradient-box />
     </div>
-    <gradient-line :location="45" />
+    <div class="w-screen mt-24 -ml-6 sm:-ml-12 md:-ml-16 relative">
+      <gradient-line :location="55" />
+    </div>
     <slices-block
       :slices="slices"
-      class="mt-48 flex flex-col space-y-16 sm:space-y-20 md:space-y-32 lg:space-y-48"
+      class="mt-56 flex flex-col space-y-16 sm:space-y-20 md:space-y-32 lg:space-y-48"
     />
   </div>
 </template>

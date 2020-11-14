@@ -1,23 +1,23 @@
 <template>
   <div class="relative">
     <section
-      class="h-screen px-4 sm:px-8 md:px-16 relative flex flex-col justify-center z-20"
+      class="h-screen px-4 sm:px-8 md:px-16 mt-8 md:mt-24 relative flex flex-col justify-center z-20"
     >
       <div class="w-full md:w-3/5 relative overflow-hidden">
         <h1 class="font-thin">{{ pageTitle }}</h1>
         <gradient-box />
       </div>
-      <gradient-line :location="44" />
+      <gradient-line :location="42" />
       <div class="">
         <prismic-rich-text
           v-if="subtitle"
           :field="subtitle"
-          class="w-full max-w-2xl md:w-5/6 mt-32 sm:mt-40 md:mt-48 ml-0 md:ml-8 lg:ml-16 gsap-services-title"
+          class="w-full max-w-4xl md:w-5/6 mt-32 sm:mt-40 md:mt-48 ml-0 md:ml-8 lg:ml-16 gsap-services-title"
         />
         <prismic-rich-text
           v-if="subtitleText"
           :field="subtitleText"
-          class="w-full max-w-2xl sm:w-2/3 md:w-3/4 ml-0 md:ml-8 lg:ml-16 mt-4 gsap-services-title"
+          class="w-full max-w-4xl sm:w-2/3 md:w-3/4 ml-0 md:ml-8 lg:ml-16 mt-4 gsap-services-title"
         />
       </div>
     </section>

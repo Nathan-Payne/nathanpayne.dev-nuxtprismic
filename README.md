@@ -24,8 +24,6 @@ For what prismic is/does, check out [Prismic.io](https://prismic.io/)
 
 # TODO
 
-- about me section - does not animate if click on portfolio then back immediately
-- wide screens: move logo in/make larger, make portfolio / contact title + gradientLine sections the same as services page, add higher breakpoint and increase general padding
 - \_uid.vue - wide screens reduce margin above image gallery (offset left column up using -translate-y), increase gap between images
 - default color mode position of switch is wrong so first click doesn't work when loading white screen
 
