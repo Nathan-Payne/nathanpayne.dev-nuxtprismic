@@ -99,4 +99,8 @@ export default {
       '/portfolio/prnt',
     ],
   },
+
+  colorMode: {
+    preference: 'dark', // default value of $colorMode.preference
+  },
 }

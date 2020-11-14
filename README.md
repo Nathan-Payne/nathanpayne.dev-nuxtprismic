@@ -24,8 +24,6 @@ For what prismic is/does, check out [Prismic.io](https://prismic.io/)
 
 # TODO
 
-- default color mode position of switch is wrong so first click doesn't work when loading white screen
-
 - homepage - cta on larger screens
 - color behind project images in project slice, set on prismic, animate out on fade in then again on hover
 - overlap image (tracebitmap face png) next to about me
