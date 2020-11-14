@@ -1,14 +1,15 @@
 <template>
   <div class="mt-40 relative bg-gray-200 dark:bg-ddgrey">
     <section class="px-4 sm:px-8 py-16">
-      <h3 class="font-normal tracking-wider">
+      <div>
         <nuxt-link to="/contact"
-          >Get in touch<span
+          ><h3 class="font-normal tracking-wider inline-block">Get in touch</h3>
+          <span
             class="cursorAnimate text-5xl font-semibold text-dblue dark:text-dred"
             >_</span
           ></nuxt-link
         >
-      </h3>
+      </div>
     </section>
     <section class="border-t border-llgrey gsap-footer-section">
       <nav class="px-4 sm:px-8 py-16 flex justify-between items-center">

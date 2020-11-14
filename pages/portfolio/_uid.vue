@@ -136,22 +136,22 @@ export default {
 /* labels from prismic: applies to h2 in second rich text */
 .thin {
   font-weight: 400;
-  font-size: clamp(1.3rem, 2.3vw, 1.6rem);
+  font-size: clamp(1.3rem, 2.3vw, 1.8rem);
 }
 /* applies to h3 in third rich text */
 .thinner {
   font-weight: 400;
-  font-size: clamp(0.9rem, 1.5vw, 1rem);
+  font-size: clamp(0.9rem, 1.5vw, 1.2rem);
 }
 /* colors lines where selected in prismic */
 .color-line {
   color: var(--dred);
   font-weight: 400;
-  font-size: clamp(1.3rem, 2.3vw, 1.6rem);
+  font-size: clamp(1.3rem, 2.3vw, 1.7rem);
 }
 /* adds margin above inside rich text elements in prismic editor */
 .margin-above {
   display: block;
-  margin-top: 1rem;
+  margin-top: 1.1rem;
 }
 </style>

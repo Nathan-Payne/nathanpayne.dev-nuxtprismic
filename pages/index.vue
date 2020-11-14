@@ -1,7 +1,7 @@
 <template>
   <div class="mx-6 flex flex-col justify-center">
     <section
-      class="h-screen w-full sm:w-3/4 md:w-2/3 lg:w-2/5 xl:w-1/3 pb-20 flex flex-col justify-center"
+      class="h-screen w-full sm:w-3/4 lg:w-1/2 pb-20 flex flex-col justify-center"
     >
       <h5 v-if="smallTitle" class="text-sm dark:text-gray-400">
         {{ smallTitle }}
@@ -89,7 +89,7 @@ export default {
 <style>
 .space-above {
   display: block;
-  margin-top: 1.8rem;
+  margin-top: 2rem;
   width: 100%;
 }
 .space-above em {

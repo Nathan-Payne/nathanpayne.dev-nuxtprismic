@@ -24,12 +24,12 @@ For what prismic is/does, check out [Prismic.io](https://prismic.io/)
 
 # TODO
 
-- homepage - split text into two lines, cta on larger screens
-- about me section- more spacing on larger screens, does not animate if click on portfolio then back immediately
-- wide screens: increase max font size, move logo in/make larger, make portfolio / contact title + gradientLine sections the same as services page, add higher breakpoint and increase general padding
+- about me section - does not animate if click on portfolio then back immediately
+- wide screens: move logo in/make larger, make portfolio / contact title + gradientLine sections the same as services page, add higher breakpoint and increase general padding
 - \_uid.vue - wide screens reduce margin above image gallery (offset left column up using -translate-y), increase gap between images
 - default color mode position of switch is wrong so first click doesn't work when loading white screen
 
+- homepage - cta on larger screens
 - color behind project images in project slice, set on prismic, animate out on fade in then again on hover
 - overlap image (tracebitmap face png) next to about me
 - host + domain - update sitemap url in nuxt.config.js
