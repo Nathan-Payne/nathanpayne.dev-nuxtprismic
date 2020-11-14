@@ -24,7 +24,6 @@ For what prismic is/does, check out [Prismic.io](https://prismic.io/)
 
 # TODO
 
-- \_uid.vue - wide screens reduce margin above image gallery (offset left column up using -translate-y), increase gap between images
 - default color mode position of switch is wrong so first click doesn't work when loading white screen
 
 - homepage - cta on larger screens

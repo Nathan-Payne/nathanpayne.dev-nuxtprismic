@@ -92,12 +92,15 @@ h6 {
   font-size: clamp(1.15rem, 2vw, 1.8rem);
   font-weight: 600;
 }
+
 p,
 a,
-li {
+li,
+label {
   font-size: clamp(0.9rem, 1.4vw, 1.35rem);
   font-weight: 400;
 }
+
 section {
   width: 100%;
 }

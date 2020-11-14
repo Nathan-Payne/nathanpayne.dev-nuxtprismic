@@ -1,14 +1,14 @@
 <template>
   <div class="relative">
     <section
-      class="h-screen px-4 sm:px-8 md:px-16 mt-8 md:mt-24 relative flex flex-col justify-center z-20"
+      class="h-screen px-4 sm:px-8 md:px-16 mt-8 md:mt-8 lg:mt-20 relative flex flex-col justify-center z-20"
     >
       <div class="w-full md:w-3/5 relative overflow-hidden">
         <h1 class="font-thin">{{ pageTitle }}</h1>
         <gradient-box />
       </div>
       <gradient-line :location="42" />
-      <div class="">
+      <div class="mt-8">
         <prismic-rich-text
           v-if="subtitle"
           :field="subtitle"
