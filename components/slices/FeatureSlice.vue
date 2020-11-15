@@ -116,10 +116,10 @@ export default {
 }
 </script>
 
-<style>
-/* label added from prismic - wraps span around text with "space-above" class */
-.space-above {
+<style scoped>
+/* label added from prismic - wraps span around text with "margin-top-2" class */
+.margin-top-2 {
   display: block;
-  margin-top: 0.4rem;
+  margin-top: 0.5rem;
 }
 </style>

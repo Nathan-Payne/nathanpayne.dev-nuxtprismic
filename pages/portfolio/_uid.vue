@@ -1,7 +1,7 @@
 <template>
   <div>
     <section
-      class="min-h-screen px-4 sm:px-8 md:px-16 mt-24 md:mt-0 relative z-20 md:grid grid-cols-11 place-items-center"
+      class="min-height-80 px-4 sm:px-8 md:px-16 mt-24 md:mt-0 relative z-20 md:grid grid-cols-11 place-items-center"
     >
       <article class="md:mb-32 col-start-1 col-end-8 justify-self-start">
         <prismic-rich-text :field="projectName" class="gsap-project-title" />
@@ -36,7 +36,7 @@
     </section>
 
     <section
-      class="min-h-screen px-4 sm:px-8 md:px-16 mt-20 md:mt-12 flex flex-col md:flex-row"
+      class="min-h-screen px-4 sm:px-8 md:px-16 mt-12 flex flex-col md:flex-row"
     >
       <article class="w-full md:w-3/5">
         <prismic-rich-text
@@ -153,5 +153,8 @@ export default {
 .margin-above {
   display: block;
   margin-top: 1.1rem;
+}
+.min-height-80 {
+  min-height: 80vh;
 }
 </style>

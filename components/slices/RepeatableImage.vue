@@ -12,7 +12,7 @@
         />
       </div>
     </div>
-    <div class="w-full md:w-1/2 mt-4 px-10 flex flex-col space-y-16">
+    <div class="w-full md:w-1/2 mt-16 md:mt-4 px-10 flex flex-col space-y-16">
       <div
         v-for="(img, index) in rightImages"
         :key="'img_grid' + index"
