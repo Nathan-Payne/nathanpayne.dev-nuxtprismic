@@ -22,13 +22,19 @@ $ npm run generate
 For detailed explanation on how nuxt works, check out [Nuxt.js docs](https://nuxtjs.org).
 For what prismic is/does, check out [Prismic.io](https://prismic.io/)
 
+# Adapting for new prismic repo
+
+Add prismic API endpoint to nuxt.config.js
+
+# Adding new project
+
+Need to add new project route to sitemap in nuxt.config.js
+
 # TODO
 
-- homepage - cta on larger screens
-- color behind project images in project slice, set on prismic, animate out on fade in then again on hover
 - overlap image (tracebitmap face png) next to about me
 - host + domain - update sitemap url in nuxt.config.js
-- look into changing default propeeties of elements on initial page load so they dont show (loader?)
+- look into changing default propeeties of elements on initial page load so they dont show (or a loader?)
 - google analytics via gtag data stream
   [https://www.carlcassar.com/articles/add-google-analytics-to-a-nuxt-js-app/](here)
 - services

@@ -15,7 +15,7 @@
     </div>
     <slices-block
       :slices="slices"
-      class="mt-56 flex flex-col space-y-16 sm:space-y-20 md:space-y-32 lg:space-y-48"
+      class="mt-56 pb-6 flex flex-col space-y-16 sm:space-y-20 md:space-y-32 lg:space-y-48"
     />
   </div>
 </template>

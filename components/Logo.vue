@@ -2,7 +2,7 @@
   <div
     class="w-32 md:w-48 px-2 sm:px-4 md:px-6 lg:px-8 mt-1 absolute z-40 text-dgrey dark:text-white gsap-logo"
   >
-    <svg class="w-16 sm:w-24 xl:w-32" viewBox="0 0 22.273968 7.5931891">
+    <svg class="w-16 sm:w-24 xl:w-24" viewBox="0 0 22.273968 7.5931891">
       <g
         id="layer1"
         inkscape:label="Layer 1"

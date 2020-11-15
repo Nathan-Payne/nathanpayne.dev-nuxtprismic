@@ -45,6 +45,18 @@ export function homeProjectTimeline() {
       '<'
     )
     .from(
+      '.project-image-background',
+      {
+        transformOrigin: 'left',
+        xPercent: 50,
+        yPercent: 4,
+        opacity: 0,
+        duration: 2,
+        ease: 'power4.out',
+      },
+      '<'
+    )
+    .from(
       '.project-link',
       { y: 100, duration: 0.8, ease: 'power4.out' },
       '<0.1'
@@ -96,6 +108,7 @@ export function portfolioTimeline() {
     const category = container.querySelector('.project-category')
     const link = container.querySelector('.project-link')
     const image = container.querySelector('.project-image')
+    const imageBackground = container.querySelector('.project-image-background')
     gsap
       .timeline({
         scrollTrigger: {
@@ -144,6 +157,17 @@ export function portfolioTimeline() {
           opacity: 0,
           duration: 1.2,
           ease: 'back.out(1)',
+        },
+        '<'
+      )
+      .from(
+        imageBackground,
+        {
+          transformOrigin: 'left',
+          xPercent: index % 2 ? -50 : 50,
+          opacity: 0,
+          duration: 2.4,
+          ease: 'power4.out',
         },
         '<'
       )

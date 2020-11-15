@@ -28,15 +28,23 @@
         />
         <prismic-rich-text
           :field="slice.primary.project_link_text"
-          class="project-link w-32 mt-2 sm:mt-8 transform bg-clip-text bg-gradient-to-br from-white via-dred to-dblue"
+          class="w-32 mt-2 sm:mt-8 transform bg-clip-text bg-gradient-to-br from-white via-dred to-dblue project-link"
           :class="`project-link-${singleWordProjectTitle}`"
         />
       </article>
       <!-- IMAGE STARTS HERE -->
       <div
-        class="max-w-lg md:max-w-2xl xl:max-w-3xl ml-auto mt-8 sm:mt-0 border border-dgrey project-image"
+        class="max-w-lg md:max-w-2xl xl:max-w-3xl ml-auto mt-8 sm:mt-0 flex shadow-md project-image"
       >
-        <responsive-picture :field="slice.primary.project_image" />
+        <responsive-picture
+          :field="slice.primary.project_image"
+          class="relative z-20"
+        />
+        <div
+          class="w-full h-full absolute z-10 inset-0 shadow-lg project-image-background"
+          :class="`gsap-background-${singleWordProjectTitle}`"
+          :style="{ backgroundColor: backgroundColor }"
+        ></div>
       </div>
     </div>
   </prismic-link>
@@ -63,6 +71,11 @@ export default {
   computed: {
     singleWordProjectTitle() {
       return this.slice.primary.project_title[0].text.replace(/[\s&]/g, '')
+    },
+    backgroundColor() {
+      return this.slice.primary.background_hover_color
+        ? this.slice.primary.background_hover_color
+        : '#ff1d00'
     },
   },
   methods: {

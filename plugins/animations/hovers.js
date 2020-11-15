@@ -20,24 +20,48 @@ export function stopMenuHover(index) {
 }
 
 export function runProjectHover(imagePos, projectTitle) {
-  const projectHoverTween = gsap.to(`.project-link-${projectTitle}`, {
-    x: imagePos === 'right' ? -0.5 : 0.5,
-    color: 'transparent',
-    scaleX: 1.05,
-    transformOrigin: imagePos === 'right' ? 'right' : 'left',
-    duration: 0.3,
-    ease: 'power2.out',
-  })
+  const projectHoverTween = gsap
+    .timeline()
+    .to(`.project-link-${projectTitle}`, {
+      x: imagePos === 'right' ? -0.5 : 0.5,
+      color: 'transparent',
+      scaleX: 1.05,
+      transformOrigin: imagePos === 'right' ? 'right' : 'left',
+      duration: 0.3,
+      ease: 'power2.out',
+    })
+    .to(
+      `.gsap-background-${projectTitle}`,
+      {
+        x: '0.5rem',
+        y: '0.5rem',
+        duration: 0.15,
+        ease: 'power2.inOut',
+      },
+      '<'
+    )
   return projectHoverTween
 }
 export function stopProjectHover(imagePos, projectTitle) {
-  const projectHoverTween = gsap.to(`.project-link-${projectTitle}`, {
-    x: 0,
-    color: 'inherit',
-    scaleX: 1,
-    transformOrigin: imagePos === 'right' ? 'right' : 'left',
-    duration: 0.3,
-    ease: 'power2.out',
-  })
+  const projectHoverTween = gsap
+    .timeline()
+    .to(`.project-link-${projectTitle}`, {
+      x: 0,
+      color: 'inherit',
+      scaleX: 1,
+      transformOrigin: imagePos === 'right' ? 'right' : 'left',
+      duration: 0.3,
+      ease: 'power2.out',
+    })
+    .to(
+      `.gsap-background-${projectTitle}`,
+      {
+        x: 0,
+        y: 0,
+        duration: 0.15,
+        ease: 'power2.inOut',
+      },
+      '<'
+    )
   return projectHoverTween
 }
