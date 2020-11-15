@@ -36,7 +36,7 @@
     </section>
 
     <section
-      class="min-h-screen px-4 sm:px-8 md:px-16 mt-12 flex flex-col md:flex-row"
+      class="min-h-screen px-4 sm:px-8 md:px-16 mt-12 md:mt-24 flex flex-col md:flex-row"
     >
       <article class="w-full md:w-3/5">
         <prismic-rich-text

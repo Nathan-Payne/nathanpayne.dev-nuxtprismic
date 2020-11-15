@@ -32,10 +32,10 @@ Need to add new project route to sitemap in nuxt.config.js
 
 # TODO
 
-- overlap image (tracebitmap face png) next to about me
-- host + domain - update sitemap url in nuxt.config.js
+- social media icons on landing
+- overlap image next to about me
 - look into changing default propeeties of elements on initial page load so they dont show (or a loader?)
 - google analytics via gtag data stream
   [https://www.carlcassar.com/articles/add-google-analytics-to-a-nuxt-js-app/](here)
 - services
-- mobile menu
+- mobile menu overlay

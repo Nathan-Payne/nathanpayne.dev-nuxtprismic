@@ -91,7 +91,7 @@ export default {
   },
 
   sitemap: {
-    hostname: 'http://localhost:3000/',
+    hostname: 'https://nathanpayne.dev',
     gzip: true,
     routes: [
       '/portfolio/squarecircle',
