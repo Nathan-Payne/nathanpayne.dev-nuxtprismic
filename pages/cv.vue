@@ -51,14 +51,14 @@
             </h1>
             <p class="c28 c18">
               <span
-                >Hard working developer keen to adopt modern web technologies
-                and practices. Proficient in core languages of HTML, CSS and
-                JavaScript with a high interest in furthering knowledge
-                (currently learning Vue.js). Able to follow a design
-                specification accurately or create bespoke web designs; all
-                while optimising code for accessibility, SEO and an efficient
-                user interface experience. Looking to collaborate on projects in
-                an enthusiastic team setting.
+                >Hard working developer focused on adopting modern web
+                technologies and practices. Proficient in core languages of
+                HTML, CSS and JavaScript with a high interest in furthering
+                knowledge. Able to follow a design specification accurately or
+                create bespoke web designs; all while optimising code for
+                accessibility, SEO and an efficient user interface experience.
+                Looking to collaborate on projects in an enthusiastic team
+                setting.
               </span>
             </p>
             <h1 id="h.bfwcxbslj9" class="c13 c19">
@@ -97,36 +97,36 @@
               <span class="c1"
                 >Began working independently on freelance projects for
                 international clients while continuing to develop industry
-                knowledge. Key achievements:</span
+                knowledge. Achievements:</span
               >
             </p>
             <ul class="c3 lst-kix_mnlplkr44x0y-0 start">
               <li class="c7">
                 <span class="c1"
-                  >developed, tested and deployed full-stack web
-                  applications</span
+                  >Designed, developed and deployed a statically generated Nuxt
+                  app with content delivered from a headless CMS</span
                 >
               </li>
               <li class="c7">
                 <span class="c1"
-                  >met client design specifications and extended to be
+                  >Met specific client design specifications and extended to be
                   responsive across all devices</span
                 >
               </li>
               <li class="c7">
                 <span class="c1"
-                  >stored data using MongoDB (a NoSQL database)</span
+                  >Read/write data stored using MongoDB (a NoSQL database)</span
                 >
               </li>
               <li class="c7">
                 <span class="c1"
-                  >implemented modern image optimisation via the API of a
+                  >Implemented modern image optimisation via the API of a
                   content delivery network (CDN)</span
                 >
               </li>
               <li class="c7">
                 <span class="c1"
-                  >refactored a node.js backend to use modern asynchronous
+                  >Refactored a node.js backend to use modern asynchronous
                   JavaScript (ES6 +)</span
                 >
               </li>
@@ -219,11 +219,14 @@
             <h2 id="h.9gpeh6gwt44i" class="c5">
               <span class="c4">Skills</span>
             </h2>
-            <p class="c25"><span class="c1">HTML5</span></p>
-            <p class="c25"><span class="c1">CSS3</span></p>
+            <p class="c25"><span class="c1">HTML5 / CSS3</span></p>
             <p class="c25"><span class="c1">JavaScript</span></p>
-            <p class="c25"><span class="c1">Node.js + Express</span></p>
+            <p class="c25"><span class="c1">Vue.js / Nuxt</span></p>
+            <p class="c25"><span class="c1">Node.js / Express</span></p>
             <p class="c25"><span class="c1">MongoDB</span></p>
+            <p class="c25"><span class="c1">TailwindCSS / GSAP</span></p>
+            <p class="c25"><span class="c1">Git</span></p>
+            <p class="c25"><span class="c1">NPM</span></p>
             <h2 id="h.k19xy2pxjila" class="c16"><span>Education</span></h2>
             <h2 id="h.6wymnhinx9q5" class="c23 c33">
               <span class="c4">Physics (Msc) 2.1</span>

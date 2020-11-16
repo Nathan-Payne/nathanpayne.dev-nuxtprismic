@@ -1,7 +1,7 @@
 <template>
   <div>
     <section
-      class="min-height-80 px-4 sm:px-8 md:px-16 mt-24 md:mt-0 relative z-20 md:grid grid-cols-11 place-items-center"
+      class="min-height-80 px-4 sm:px-8 md:px-16 mt-32 sm:mt-24 md:mt-0 relative z-20 md:grid grid-cols-11 place-items-center"
     >
       <article class="md:mb-32 col-start-1 col-end-8 justify-self-start">
         <prismic-rich-text :field="projectName" class="gsap-project-title" />
