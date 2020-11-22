@@ -33,8 +33,14 @@ Need to add new project route to sitemap in nuxt.config.js
 # TODO
 
 - look into changing default propeeties of elements on initial page load so they dont show (or a loader?)
-- social media icons on landing
+- ultrawide monitors, set max-w-xl on contact form container / RepeatableImage slice / about me / services
+- ultrawide only - \_uid.vue move left image column up again
+- JAMSTACK link doesn't look like a link (about me section)
+- add vue project - binance API
 - overlap image next to about me
+- check \$prismic parsing tools (e.g. asText(document.title), asHtml()) documentations use with nuxt
+- social media icons on landing? more stuff in general on landing.. perhaps animation/texture?
+- add blog (e.g. reflecting on web dev bootcamp.. etc)
 - google analytics via gtag data stream
   [https://www.carlcassar.com/articles/add-google-analytics-to-a-nuxt-js-app/](here)
 - services

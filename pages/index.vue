@@ -1,5 +1,8 @@
 <template>
   <div class="px-4 sm:px-8 md:px-16 flex flex-col justify-center">
+    <div
+      class="w-full h-full absolute inset-0 z-50 bg-dgrey gsap-init-overlay"
+    ></div>
     <section
       class="h-screen w-full sm:w-3/4 lg:w-3/5 pb-20 flex flex-col justify-center"
     >
@@ -43,6 +46,7 @@ import GradientBox from '~/components/GradientBox'
 import GradientLine from '~/components/GradientLine'
 import ScrollIndicator from '~/components/ScrollIndicator'
 import {
+  runInitOverlayReveal,
   runScrollIndicatorEntry,
   runScrollIndicatorExit,
   homeProjectTimeline,
@@ -77,6 +81,7 @@ export default {
     }
   },
   mounted() {
+    runInitOverlayReveal()
     const scrollEntryTween = runScrollIndicatorEntry()
     scrollEntryTween.eventCallback('onComplete', runScrollIndicatorExit)
 

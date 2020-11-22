@@ -31,7 +31,7 @@ export default {
 <style>
 .scroll-indicator {
   position: absolute;
-  z-index: 60;
+  z-index: 49;
   width: 52px;
   height: 60px;
   bottom: -5px;

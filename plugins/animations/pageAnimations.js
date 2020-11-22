@@ -3,6 +3,13 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger)
 
+export function runInitOverlayReveal() {
+  return gsap.to('.gsap-init-overlay', {
+    autoAlpha: 0,
+    duration: 0.1,
+  })
+}
+
 export function homeProjectTimeline() {
   return gsap
     .timeline({
