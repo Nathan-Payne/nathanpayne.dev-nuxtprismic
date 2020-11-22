@@ -32,9 +32,6 @@ Need to add new project route to sitemap in nuxt.config.js
 
 # TODO
 
-- look into changing default propeeties of elements on initial page load so they dont show (or a loader?)
-- ultrawide monitors, set max-w-xl on contact form container / RepeatableImage slice / about me / services
-- ultrawide only - \_uid.vue move left image column up again
 - JAMSTACK link doesn't look like a link (about me section)
 - add vue project - binance API
 - overlap image next to about me

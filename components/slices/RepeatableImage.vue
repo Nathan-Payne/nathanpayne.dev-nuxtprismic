@@ -1,6 +1,8 @@
 <template>
   <div class="px-4 sm:px-8 md:px-16 lg:pt-32 flex flex-col md:flex-row">
-    <div class="w-full md:w-3/5 mt-4 lg:-mt-40 px-10 flex flex-col space-y-16">
+    <div
+      class="w-full md:w-3/5 mt-4 lg:-mt-40 xl:-mt-64 px-10 flex flex-col space-y-16"
+    >
       <div
         v-for="(img, index) in leftImages"
         :key="'img_grid' + index"

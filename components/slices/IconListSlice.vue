@@ -1,6 +1,6 @@
 <template>
   <div
-    class="py-8 px-4 sm:px-8 md:px-16 ml-0 md:ml-8 lg:ml-16 md:mr-24 lg:mr-32 xl:mr-40"
+    class="xl:w-5/6 py-8 px-4 sm:px-8 md:px-16 ml-0 md:ml-8 lg:ml-16 md:mr-24 lg:mr-32 xl:mr-40"
   >
     <div class="gsap-in">
       <prismic-rich-text :field="slice.primary.section_title" class="gsap-in" />
@@ -18,7 +18,10 @@
           class="w-full md:w-1/5 grid place-items-start md:place-items-center"
         >
           <!-- <prismic-rich-text :field="item.icon" class="w-16" /> -->
-          <div class="w-full" v-html="item.icon[0].text"></div>
+          <div
+            class="w-full xl:flex xl:justify-center"
+            v-html="item.icon[0].text"
+          ></div>
         </div>
         <prismic-rich-text
           :field="item.icon_text"

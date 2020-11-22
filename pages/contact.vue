@@ -13,7 +13,7 @@
       </h1>
       <gradient-box />
     </div>
-    <div class="sm:px-4 md:px-12 lg:px-32 mt-16 sm:mt-6">
+    <div class="max-w-6xl sm:px-4 md:px-12 lg:px-32 mt-16 sm:mt-6 mx-auto">
       <div class="mt-32">
         <p class="py-8 sm:px-4 lg:w-2/3">
           Get in touch for a free introductory meeting.
