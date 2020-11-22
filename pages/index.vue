@@ -99,6 +99,7 @@ export default {
   margin-top: 2rem;
   width: 100%;
 }
+/* apply em (italicise) in prismic rich text to add colored highlight */
 .space-above em {
   font-style: normal;
   position: relative;
@@ -112,6 +113,14 @@ export default {
   left: 10%;
   background: linear-gradient(135deg, var(--dred), var(--dblue));
   opacity: 0.6;
+}
+
+strong a {
+  font-weight: 800;
+  text-decoration: underline;
+}
+strong a:hover {
+  color: var(--dred);
 }
 
 @media (min-width: 1024px) {
