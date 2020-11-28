@@ -52,7 +52,6 @@ import {
   homeProjectTimeline,
   homeAboutTimeline,
 } from '~/plugins/animations/pageAnimations'
-// import { runScrollIndicatorRepeat } from '~/plugins/animations/miscAnimations'
 
 export default {
   name: 'Home',

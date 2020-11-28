@@ -24,30 +24,7 @@
         <tr class="c26">
           <td class="c42" colspan="1" rowspan="1">
             <h1 id="h.os8kv4187osg" class="c9 c13">
-              <span
-                style="
-                  overflow: hidden;
-                  display: inline-block;
-                  margin: 0px 0px;
-                  border: 0px solid #000000;
-                  transform: rotate(0rad) translateZ(0px);
-                  -webkit-transform: rotate(0rad) translateZ(0px);
-                  width: 18.43px;
-                  height: 18.43px;
-                "
-                ><img
-                  alt=""
-                  src="images/image1.png"
-                  style="
-                    width: 18.43px;
-                    height: 18.43px;
-                    margin-left: 0px;
-                    margin-top: 0px;
-                    transform: rotate(0rad) translateZ(0px);
-                    -webkit-transform: rotate(0rad) translateZ(0px);
-                  "
-                  title="" /></span
-              ><span>&nbsp;</span><span>Profile</span>
+              <span>Profile</span>
             </h1>
             <p class="c28 c18">
               <span
@@ -62,30 +39,7 @@
               </span>
             </p>
             <h1 id="h.bfwcxbslj9" class="c13 c19">
-              <span
-                style="
-                  overflow: hidden;
-                  display: inline-block;
-                  margin: 0px 0px;
-                  border: 0px solid #000000;
-                  transform: rotate(0rad) translateZ(0px);
-                  -webkit-transform: rotate(0rad) translateZ(0px);
-                  width: 18px;
-                  height: 16.14px;
-                "
-                ><img
-                  alt=""
-                  src="images/image2.png"
-                  style="
-                    width: 18px;
-                    height: 16.14px;
-                    margin-left: 0px;
-                    margin-top: 0px;
-                    transform: rotate(0rad) translateZ(0px);
-                    -webkit-transform: rotate(0rad) translateZ(0px);
-                  "
-                  title="" /></span
-              ><span>&nbsp;</span><span class="c8">Employment History</span>
+              <span class="c8">Employment History</span>
             </h1>
             <h2 id="h.rfgvkg2ifhfd" class="c16 c18">
               <span>Freelance Web Developer</span>

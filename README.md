@@ -29,14 +29,3 @@ Add prismic API endpoint to nuxt.config.js
 # Adding new project
 
 Need to add new project route to sitemap in nuxt.config.js
-
-# TODO
-
-- overlap image next to about me
-- check \$prismic parsing tools (e.g. asText(document.title), asHtml()) documentations to use with nuxt
-- social media icons on landing? more stuff in general on landing.. perhaps animation/texture?
-- add blog (e.g. reflecting on web dev bootcamp.. etc)
-- google analytics via gtag data stream
-  [https://www.carlcassar.com/articles/add-google-analytics-to-a-nuxt-js-app/](here)
-- services pricing
-- mobile menu overlay if needed
