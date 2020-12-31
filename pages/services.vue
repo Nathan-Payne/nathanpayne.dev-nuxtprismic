@@ -43,6 +43,7 @@ import GradientLine from '~/components/GradientLine'
 import {
   servicesTitleAnimation,
   servicesScrollAnimation,
+  refreshScrollTrigger,
 } from '~/plugins/animations/pageAnimations'
 
 export default {
@@ -51,6 +52,11 @@ export default {
     SlicesBlock,
     GradientBox,
     GradientLine,
+  },
+  transition(to, from) {
+    refreshScrollTrigger()
+    // eslint-disable-next-line no-console
+    console.log('refreshed')
   },
   async asyncData({ $prismic, error }) {
     try {

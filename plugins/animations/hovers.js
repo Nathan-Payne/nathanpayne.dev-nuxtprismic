@@ -33,8 +33,18 @@ export function runProjectHover(imagePos, projectTitle) {
     .to(
       `.gsap-background-${projectTitle}`,
       {
-        x: '0.5rem',
-        y: '0.5rem',
+        x: '0.3rem',
+        y: '0.3rem',
+        duration: 0.15,
+        ease: 'power2.inOut',
+      },
+      '<'
+    )
+    .to(
+      `.gsap-img-${projectTitle}`,
+      {
+        x: '-0.3rem',
+        y: '-0.3rem',
         duration: 0.15,
         ease: 'power2.inOut',
       },
@@ -55,6 +65,16 @@ export function stopProjectHover(imagePos, projectTitle) {
     })
     .to(
       `.gsap-background-${projectTitle}`,
+      {
+        x: 0,
+        y: 0,
+        duration: 0.15,
+        ease: 'power2.inOut',
+      },
+      '<'
+    )
+    .to(
+      `.gsap-img-${projectTitle}`,
       {
         x: 0,
         y: 0,

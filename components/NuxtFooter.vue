@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-40 relative bg-gray-200 dark:bg-ddgrey">
+  <div class="mt-40 relative bg-gray-200 dark:bg-ddgrey gsap-footer-section">
     <section class="px-4 sm:px-8 py-16">
       <div>
         <nuxt-link to="/contact"
@@ -11,7 +11,7 @@
         >
       </div>
     </section>
-    <section class="border-t border-llgrey gsap-footer-section">
+    <section class="border-t border-llgrey">
       <nav class="px-4 sm:px-8 py-16 flex justify-between items-center">
         <div class="w-1/2 relative">
           <h2 class="font-bold relative z-20 gsap-footer-logo">Nathan Payne</h2>

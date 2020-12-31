@@ -5,7 +5,7 @@
       :class="
         imagePosition === 'right'
           ? 'sm:flex-row'
-          : 'sm:flex-row-reverse custom-width sm:-translate-x-24'
+          : 'sm:flex-row-reverse custom-width sm:-translate-x-2'
       "
       @mouseover="projectHover(imagePosition, singleWordProjectTitle)"
       @mouseleave="stopHover(imagePosition, singleWordProjectTitle)"
@@ -39,6 +39,7 @@
         <responsive-picture
           :field="slice.primary.project_image"
           class="relative z-20"
+          :class="`gsap-img-${singleWordProjectTitle}`"
         />
         <div
           class="w-full h-full absolute z-10 inset-0 shadow-lg project-image-background"
@@ -70,7 +71,7 @@ export default {
   },
   computed: {
     singleWordProjectTitle() {
-      return this.slice.primary.project_title[0].text.replace(/[\s&]/g, '')
+      return this.slice.primary.project_title[0].text.replace(/[\s&]/g, '') // removes spaces and & from titles
     },
     backgroundColor() {
       return this.slice.primary.background_hover_color

@@ -35,8 +35,6 @@ export default {
 
 <style>
 :root {
-  /* scroll-behavior: smooth; */
-  /* overflow-x: hidden; */
   touch-action: manipulation;
 }
 

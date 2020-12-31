@@ -263,13 +263,16 @@ export function projectDescTimeline() {
       '<0.5'
     )
 }
-
+export function refreshScrollTrigger() {
+  ScrollTrigger.refresh()
+}
 export function nuxtFooterTimeline() {
   return gsap
     .timeline({
       scrollTrigger: {
         trigger: '.gsap-footer-section',
-        start: 'top 68%',
+        start: 'top 700',
+        markers: true,
       },
     })
     .from('.gsap-footer-logo', {

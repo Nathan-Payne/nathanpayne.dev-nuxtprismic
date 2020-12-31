@@ -51,6 +51,7 @@ import {
   runScrollIndicatorExit,
   homeProjectTimeline,
   homeAboutTimeline,
+  refreshScrollTrigger,
 } from '~/plugins/animations/pageAnimations'
 
 export default {
@@ -60,6 +61,11 @@ export default {
     GradientBox,
     GradientLine,
     ScrollIndicator,
+  },
+  transition(to, from) {
+    refreshScrollTrigger()
+    // eslint-disable-next-line no-console
+    console.log('refreshed')
   },
   async asyncData({ $prismic, error }) {
     try {
