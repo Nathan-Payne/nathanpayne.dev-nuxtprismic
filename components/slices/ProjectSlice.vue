@@ -34,7 +34,7 @@
       </article>
       <!-- IMAGE STARTS HERE -->
       <div
-        class="max-w-lg md:max-w-2xl xl:max-w-3xl ml-auto mt-8 sm:mt-0 flex shadow-md project-image"
+        class="max-w-lg md:max-w-2xl xl:max-w-3xl ml-auto mt-8 sm:mt-0 relative flex shadow-md project-image"
       >
         <responsive-picture
           :field="slice.primary.project_image"
@@ -53,7 +53,10 @@
 
 <script>
 import ResponsivePicture from '../ResponsivePicture'
-import { runProjectHover, stopProjectHover } from '~/plugins/animations/hovers'
+import {
+  runProjectHover,
+  stopProjectHover,
+} from '~/assets/js/animations/hovers'
 
 export default {
   name: 'ProjectSlice',

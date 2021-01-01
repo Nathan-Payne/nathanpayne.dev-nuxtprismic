@@ -203,9 +203,9 @@
 
 <script>
 import emailjs from 'emailjs-com'
-import { runCursorBlink } from '~/plugins/animations/miscAnimations'
-import { runMenuHover, stopMenuHover } from '~/plugins/animations/hovers'
-import { nuxtFooterTimeline } from '~/plugins/animations/pageAnimations'
+import { runCursorBlink } from '~/assets/js/animations/miscAnimations'
+import { runMenuHover, stopMenuHover } from '~/assets/js/animations/hovers'
+import { nuxtFooterTimeline } from '~/assets/js/animations/pageAnimations'
 
 export default {
   name: 'NuxtFooter',

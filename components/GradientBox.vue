@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import { runGradientBox } from '~/plugins/animations/gradientBox'
+import { runGradientBox } from '~/assets/js/animations/gradientBox'
 
 export default {
   props: {

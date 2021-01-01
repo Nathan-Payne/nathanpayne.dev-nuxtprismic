@@ -92,12 +92,18 @@
 import emailjs from 'emailjs-com'
 import GradientBox from '~/components/GradientBox'
 import GradientLine from '~/components/GradientLine'
+import { refreshScrollTrigger } from '~/assets/js/animations/pageAnimations'
 
 export default {
   name: 'Contact',
   components: {
     GradientBox,
     GradientLine,
+  },
+  transition: {
+    afterEnter() {
+      refreshScrollTrigger()
+    },
   },
   data() {
     return {

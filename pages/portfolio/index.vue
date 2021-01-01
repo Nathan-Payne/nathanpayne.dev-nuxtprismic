@@ -24,11 +24,19 @@
 import SlicesBlock from '~/components/SlicesBlock.vue'
 import GradientBox from '~/components/GradientBox'
 import GradientLine from '~/components/GradientLine'
-import { portfolioTimeline } from '~/plugins/animations/pageAnimations'
+import {
+  portfolioTimeline,
+  refreshScrollTrigger,
+} from '~/assets/js/animations/pageAnimations'
 
 export default {
   name: 'Portfolio',
   components: { SlicesBlock, GradientBox, GradientLine },
+  transition: {
+    afterEnter() {
+      refreshScrollTrigger()
+    },
+  },
   async asyncData({ $prismic, error }) {
     try {
       const document = (await $prismic.api.getSingle('projects_home')).data

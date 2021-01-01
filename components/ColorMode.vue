@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import { runColormodeTween } from '~/plugins/animations/pageAnimations'
+import { runColormodeTween } from '~/assets/js/animations/pageAnimations'
 export default {
   computed: {
     btnLabel() {

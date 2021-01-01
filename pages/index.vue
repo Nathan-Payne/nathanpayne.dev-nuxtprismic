@@ -52,7 +52,7 @@ import {
   homeProjectTimeline,
   homeAboutTimeline,
   refreshScrollTrigger,
-} from '~/plugins/animations/pageAnimations'
+} from '~/assets/js/animations/pageAnimations'
 
 export default {
   name: 'Home',
@@ -62,10 +62,10 @@ export default {
     GradientLine,
     ScrollIndicator,
   },
-  transition(to, from) {
-    refreshScrollTrigger()
-    // eslint-disable-next-line no-console
-    console.log('refreshed')
+  transition: {
+    afterEnter() {
+      refreshScrollTrigger()
+    },
   },
   async asyncData({ $prismic, error }) {
     try {
@@ -90,10 +90,12 @@ export default {
     const scrollEntryTween = runScrollIndicatorEntry()
     scrollEntryTween.eventCallback('onComplete', runScrollIndicatorExit)
 
-    homeProjectTimeline()
+    setTimeout(() => {
+      homeProjectTimeline()
+    }, 0.05)
     setTimeout(() => {
       homeAboutTimeline()
-    }, 0.15)
+    }, 0.1)
   },
 }
 </script>

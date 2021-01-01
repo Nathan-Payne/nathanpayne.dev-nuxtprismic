@@ -37,8 +37,11 @@
 </template>
 
 <script>
-import { runMenuHover, stopMenuHover } from '~/plugins/animations/hovers'
-import { runLogoTween, runMenuTween } from '~/plugins/animations/pageAnimations'
+import { runMenuHover, stopMenuHover } from '~/assets/js/animations/hovers'
+import {
+  runLogoTween,
+  runMenuTween,
+} from '~/assets/js/animations/pageAnimations'
 import Logo from '~/components/Logo'
 export default {
   name: 'HeaderPrismic',

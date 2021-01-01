@@ -44,7 +44,7 @@ import {
   servicesTitleAnimation,
   servicesScrollAnimation,
   refreshScrollTrigger,
-} from '~/plugins/animations/pageAnimations'
+} from '~/assets/js/animations/pageAnimations'
 
 export default {
   name: 'Services',
@@ -53,10 +53,10 @@ export default {
     GradientBox,
     GradientLine,
   },
-  transition(to, from) {
-    refreshScrollTrigger()
-    // eslint-disable-next-line no-console
-    console.log('refreshed')
+  transition: {
+    afterEnter() {
+      refreshScrollTrigger()
+    },
   },
   async asyncData({ $prismic, error }) {
     try {

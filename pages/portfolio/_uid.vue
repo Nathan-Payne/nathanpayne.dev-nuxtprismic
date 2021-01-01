@@ -60,7 +60,7 @@ import ResponsivePicture from '~/components/ResponsivePicture'
 import {
   projectTitleTimeline,
   projectDescTimeline,
-} from '~/plugins/animations/pageAnimations'
+} from '~/assets/js/animations/pageAnimations'
 
 export default {
   components: { SlicesBlock, ResponsivePicture },
