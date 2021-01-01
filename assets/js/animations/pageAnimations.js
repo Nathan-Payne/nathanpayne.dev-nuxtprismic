@@ -268,6 +268,32 @@ export function projectDescTimeline() {
     )
 }
 
+export function contactFormTimeline() {
+  return gsap
+    .timeline()
+    .from(
+      '.gsap-contact-form',
+      {
+        autoAlpha: 0,
+        x: -30,
+        duration: 1.4,
+        ease: 'power3.out',
+      },
+      1.2
+    )
+    .from(
+      '.gsap-contact-info',
+      {
+        autoAlpha: 0,
+        x: -40,
+        duration: 1.6,
+        stagger: 0.08,
+        ease: 'power3.out',
+      },
+      '<0.2'
+    )
+}
+
 export function nuxtFooterTimeline() {
   return gsap
     .timeline({

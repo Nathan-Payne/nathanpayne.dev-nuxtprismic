@@ -39,7 +39,7 @@ export default {
 }
 
 html {
-  font-family: 'Nunito Sans', sans-serif;
+  font-family: 'Nunito Sans', sans-serif; /* 200, 400, 600, 800 weights available */
   font-size: 16px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;

@@ -13,78 +13,96 @@
       </h1>
       <gradient-box />
     </div>
-    <div class="max-w-6xl sm:px-4 md:px-12 lg:px-32 mt-16 sm:mt-6 mx-auto">
-      <div class="mt-32">
-        <p class="py-8 sm:px-4 lg:w-2/3">
+
+    <section class="mt-64 lg:flex justify-start lg:items-start">
+      <!-- RIGHT SIDE OF CONTACT PAGE -->
+      <div class="lg:w-full mb-12 pt-5 lg:pr-16 lg:order-2 text-right">
+        <h2 class="tracking-wider leading-tight gsap-contact-info">
+          Have a project in mind?
+        </h2>
+        <h5 class="mt-6 md:mt-8 relative font-thin gsap-contact-info">
           Get in touch for a free introductory meeting.
+        </h5>
+        <p class="mt-4 md:mt-6 gsap-contact-info">
+          If you have some ideas tell me about your future website:
         </p>
+        <ul class="gsap-contact-info">
+          <li class="mt-2">What are your goals and expectations?</li>
+          <li class="mt-2">What challenges do you need to solve?</li>
+          <li class="mt-2">Do you need custom assets?</li>
+          <li class="mt-2">Are you working to a specific deadline?</li>
+        </ul>
       </div>
-      <form
-        id="contact-form"
-        ref="contactForm"
-        class="flex flex-wrap"
-        aria-label="Contact Form"
-        @submit.prevent="sendEmail"
-      >
-        <div class="w-full sm:w-1/2 mt-6 sm:px-4">
-          <label for="name">Name</label>
-          <input
-            id="name"
-            name="name"
-            autocomplete="given-name"
-            class="w-full px-4 py-2 mt-1 bg-transparent border border-dgrey dark:border-gray-600 focus:outline-none"
-            type="text"
-            required
-          />
+
+      <!-- LEFT SIDE OF CONTACT PAGE -->
+      <div class="lg:w-3/4 max-w-3xl">
+        <form
+          id="contact-form"
+          ref="contactForm"
+          class="flex flex-wrap gsap-contact-form"
+          aria-label="Contact Form"
+          @submit.prevent="sendEmail"
+        >
+          <div class="w-full">
+            <label for="name">Name</label>
+            <input
+              id="name"
+              name="name"
+              autocomplete="given-name"
+              class="w-full px-4 py-2 mt-1 bg-transparent border border-dgrey dark:border-gray-600 focus:outline-none"
+              type="text"
+              required
+            />
+          </div>
+          <div class="w-full mt-8">
+            <label for="email">E-mail</label>
+            <input
+              id="email"
+              name="email"
+              autocomplete="email"
+              class="w-full px-4 py-2 mt-1 bg-transparent border border-dgrey dark:border-gray-600 focus:outline-none"
+              type="email"
+              required
+            />
+          </div>
+          <div class="w-full mt-8">
+            <label for="message">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              autocomplete="off"
+              class="w-full h-48 px-4 py-2 mt-1 bg-transparent border border-dgrey dark:border-gray-600 focus:outline-none resize-none block"
+              placeholder=""
+              required
+            ></textarea>
+          </div>
+          <div class="p-2 mt-8 md:mt-10 w-full">
+            <button
+              type="submit"
+              class="mx-auto py-2 px-6 flex uppercase font-black lg:text-xl tracking-widest dark:bg-lgrey shadow-md rounded border-l-4 border-dblue dark:border-dred focus:outline-none dark-hover:bg-dred hover:bg-dblue hover:text-white transform hover:scale-105 hover:shadow-lg transition duration-300"
+            >
+              send
+            </button>
+          </div>
+        </form>
+        <div
+          v-if="emailSent"
+          id="success-msg"
+          class="p-4 mt-6 font-extrabold bg-green-400 dark:bg-green-600 rounded shadow-lg transition duration-200 ease-in-out"
+        >
+          Looking forward to working with you! I aim to respond within a couple
+          of days but feel free to contact me on Linkedin if you haven't heard
+          anything.
         </div>
-        <div class="w-full sm:w-1/2 mt-6 sm:px-4">
-          <label for="email">E-mail</label>
-          <input
-            id="email"
-            name="email"
-            autocomplete="email"
-            class="w-full px-4 py-2 mt-1 bg-transparent border border-dgrey dark:border-gray-600 focus:outline-none"
-            type="email"
-            required
-          />
+        <div
+          v-if="emailNotSent"
+          id="err-msg"
+          class="p-4 mt-6 font-extrabold bg-dred rounded shadow-lg transition duration-200 ease-in-out"
+        >
+          There was an error sending your email: {{ emailError }}
         </div>
-        <div class="w-full mt-6 sm:px-4">
-          <label for="message">Message</label>
-          <textarea
-            id="message"
-            name="message"
-            autocomplete="off"
-            class="w-full h-48 px-4 py-2 mt-1 bg-transparent border border-dgrey dark:border-gray-600 focus:outline-none resize-none block"
-            placeholder=""
-            required
-          ></textarea>
-        </div>
-        <div class="p-2 mt-6 md:mt-10 w-full">
-          <button
-            type="submit"
-            class="mx-auto py-2 px-6 flex uppercase font-black lg:text-xl tracking-widest dark:bg-lgrey shadow-md rounded border-l-4 border-dblue dark:border-dred focus:outline-none dark-hover:bg-dred hover:bg-dblue hover:text-white transform hover:scale-105 hover:shadow-lg transition duration-300"
-          >
-            send
-          </button>
-        </div>
-      </form>
-      <div
-        v-if="emailSent"
-        id="success-msg"
-        class="p-4 mt-6 font-extrabold bg-green-400 dark:bg-green-600 rounded shadow-lg transition duration-200 ease-in-out"
-      >
-        Looking forward to working with you! I aim to respond within a couple of
-        days but feel free to contact me on Linkedin if you haven't heard
-        anything.
       </div>
-      <div
-        v-if="emailNotSent"
-        id="err-msg"
-        class="p-4 mt-6 font-extrabold bg-dred rounded shadow-lg transition duration-200 ease-in-out"
-      >
-        There was an error sending your email: {{ emailError }}
-      </div>
-    </div>
+    </section>
   </section>
 </template>
 
@@ -92,7 +110,10 @@
 import emailjs from 'emailjs-com'
 import GradientBox from '~/components/GradientBox'
 import GradientLine from '~/components/GradientLine'
-import { refreshScrollTrigger } from '~/assets/js/animations/pageAnimations'
+import {
+  refreshScrollTrigger,
+  contactFormTimeline,
+} from '~/assets/js/animations/pageAnimations'
 
 export default {
   name: 'Contact',
@@ -117,6 +138,9 @@ export default {
     emailResult() {
       return this.emailRes
     },
+  },
+  mounted() {
+    contactFormTimeline()
   },
   methods: {
     sendEmail(e) {
@@ -151,3 +175,34 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+#contact h5:before {
+  content: '';
+  width: 92%;
+  height: 25%;
+  position: absolute;
+  top: 70%;
+  left: 17%;
+  background: linear-gradient(
+    135deg,
+    transparent 4%,
+    var(--dred),
+    var(--dblue),
+    transparent 99%
+  );
+  opacity: 0.5;
+}
+
+#contact h2 {
+  font-size: clamp(2.5rem, 3.4vw, 4.5rem);
+  font-weight: 800;
+}
+
+@media (max-width: 441px) {
+  #contact h5:before {
+    top: 96%;
+    height: 15%;
+  }
+}
+</style>

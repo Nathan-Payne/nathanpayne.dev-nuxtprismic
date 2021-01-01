@@ -95,6 +95,7 @@ export default {
     hostname: 'https://nathanpayne.dev',
     gzip: true,
     routes: [
+      '/portfolio/bitcoin-perspective',
       '/portfolio/squarecircle',
       '/portfolio/tailwindcss-portfolio',
       '/portfolio/prnt',
