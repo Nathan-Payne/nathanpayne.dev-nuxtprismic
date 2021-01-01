@@ -30,6 +30,9 @@
       </div>
     </section>
 
+    <div class="social-icon-position">
+      <SocialIcons />
+    </div>
     <gradient-line :location="80" />
     <scroll-indicator />
 
@@ -45,8 +48,10 @@ import SlicesBlock from '~/components/SlicesBlock.vue'
 import GradientBox from '~/components/GradientBox'
 import GradientLine from '~/components/GradientLine'
 import ScrollIndicator from '~/components/ScrollIndicator'
+import SocialIcons from '~/components/SocialIcons'
 import {
   runInitOverlayReveal,
+  runSocialTween,
   runScrollIndicatorEntry,
   runScrollIndicatorExit,
   homeProjectTimeline,
@@ -61,6 +66,7 @@ export default {
     GradientBox,
     GradientLine,
     ScrollIndicator,
+    SocialIcons,
   },
   transition: {
     afterEnter() {
@@ -87,6 +93,7 @@ export default {
   },
   mounted() {
     runInitOverlayReveal()
+    runSocialTween()
     const scrollEntryTween = runScrollIndicatorEntry()
     scrollEntryTween.eventCallback('onComplete', runScrollIndicatorExit)
 
@@ -128,6 +135,18 @@ strong a {
 }
 strong a:hover {
   color: var(--dred);
+}
+
+.social-icon-position {
+  position: absolute;
+  right: 2px;
+  top: 69vh;
+}
+
+@media (min-width: 767px) {
+  .social-icon-position {
+    top: 71vh;
+  }
 }
 
 @media (min-width: 1024px) {

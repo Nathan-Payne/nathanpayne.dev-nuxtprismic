@@ -305,7 +305,7 @@ export function nuxtFooterTimeline() {
       '<0.2'
     )
     .from(
-      '.gsap-footer-icon',
+      '.gsap-footer-section .gsap-social-icon',
       {
         xPercent: -10,
         autoAlpha: 0,
@@ -317,6 +317,7 @@ export function nuxtFooterTimeline() {
     )
 }
 
+// LANDING ANIMATIONS
 export function runMenuTween() {
   return gsap.from('.gsap-menu-links *', {
     xPercent: 8,
@@ -343,6 +344,17 @@ export function runColormodeTween() {
     duration: 3,
     delay: 1,
     ease: 'power3.out',
+  })
+}
+
+export function runSocialTween() {
+  return gsap.from('.social-icon-position .gsap-social-icon', {
+    xPercent: -12,
+    autoAlpha: 0,
+    duration: 2,
+    stagger: 0.15,
+    delay: 1.2,
+    ease: 'power2.out',
   })
 }
 
