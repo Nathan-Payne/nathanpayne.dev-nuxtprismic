@@ -1,5 +1,6 @@
 export const state = () => ({
   menu: {},
+  showRender: false,
 })
 
 export const mutations = {
@@ -8,6 +9,9 @@ export const mutations = {
   },
   SET_ERROR(state, error) {
     state.menu = error
+  },
+  TOGGLE_RENDER(state) {
+    state.showRender = !state.showRender
   },
 }
 

@@ -49,24 +49,18 @@ export default {
     Logo,
   },
   mounted() {
-    runMenuTween()
+    runMenuTween().eventCallback('onComplete', this.toggleRender) // loads landing render after gsap intro
     runLogoTween()
   },
-  // computed: {
-  //   wordSplit() {
-  //     const splitWord = []
-  //     this.mainWord.split('').forEach((word) => {
-  //       splitWord.push(word)
-  //     })
-  //     return splitWord
-  //   },
-  // },
   methods: {
     menuHover(index) {
       runMenuHover(index)
     },
     stopHover(index) {
       stopMenuHover(index)
+    },
+    toggleRender() {
+      this.$store.commit('TOGGLE_RENDER')
     },
   },
 }

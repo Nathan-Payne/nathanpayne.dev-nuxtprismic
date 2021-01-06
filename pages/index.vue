@@ -30,7 +30,10 @@
       </div>
     </section>
 
-    <div class="canvas-wrapper">
+    <div
+      class="h-screen w-full absolute inset-0 z-10 opacity-0 bg-dgrey canvas-overlay"
+    ></div>
+    <div v-if="renderThree" class="render-wrapper">
       <LandingRender />
     </div>
 
@@ -57,6 +60,7 @@ import LandingRender from '~/components/LandingRender'
 import {
   runInitOverlayReveal,
   runSocialTween,
+  runLandingRenderIntro,
   runScrollIndicatorEntry,
   runScrollIndicatorExit,
   homeProjectTimeline,
@@ -97,11 +101,23 @@ export default {
       error({ statusCode: 404, message: 'Page not found' })
     }
   },
+  computed: {
+    renderThree() {
+      return this.$store.state.showRender
+    },
+  },
+  watch: {
+    renderThree() {
+      runLandingRenderIntro()
+    },
+  },
   mounted() {
-    runInitOverlayReveal()
+    runInitOverlayReveal() // covers initial flash of page
     runSocialTween()
-    const scrollEntryTween = runScrollIndicatorEntry()
-    scrollEntryTween.eventCallback('onComplete', runScrollIndicatorExit)
+    runScrollIndicatorEntry().eventCallback(
+      'onComplete',
+      runScrollIndicatorExit
+    )
 
     setTimeout(() => {
       homeProjectTimeline()

@@ -384,6 +384,14 @@ export function runSocialTween() {
   })
 }
 
+export function runLandingRenderIntro() {
+  return gsap.from('.canvas-overlay', {
+    autoAlpha: 1,
+    duration: 1.6,
+    ease: 'power2.out',
+  })
+}
+
 export function runScrollIndicatorEntry() {
   return gsap.from('.scroll-indicator', {
     autoAlpha: 0,

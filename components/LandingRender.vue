@@ -3,16 +3,16 @@
 </template>
 
 <script>
-// import { init } from '~/plugins/three/landingRender.client.js'
 /* eslint-disable prefer-const */
 /* eslint-disable unicorn/number-literal-case */
 import * as THREE from 'three'
-import { TrackballControls } from '@/node_modules/three/examples/jsm/controls/TrackballControls.js'
+// import { TrackballControls } from '@/node_modules/three/examples/jsm/controls/TrackballControls.js'
+
 export default {
   mounted() {
     let renderer
     let camera
-    let controls
+    // let controls
     let scene
     let width, height, canvas
     width = window.innerWidth
@@ -31,12 +31,13 @@ export default {
       renderer.setSize(width, height)
 
       // CAMERA
-      camera = new THREE.PerspectiveCamera(70, width / height, 5, 1000)
+      camera = new THREE.PerspectiveCamera(70, width / height, 2, 200)
       camera.position.set(40, 20, 50)
+      camera.lookAt(0, 0, 0)
 
       // CONTROLS
-      controls = new TrackballControls(camera, canvas)
-      controls.addEventListener('change', render)
+      // controls = new TrackballControls(camera, canvas)
+      // controls.addEventListener('change', render)
 
       // SCENE
       scene = new THREE.Scene()
@@ -84,13 +85,13 @@ export default {
         scene.add(cube)
       }
     }
-
     function animate() {
       requestAnimationFrame(animate)
-      camera.position.z += 0.005
-      camera.position.x += 0.02
-
-      controls.update()
+      camera.position.x -= 0.01
+      camera.rotation.y -= 0.00009
+      camera.position.z += Math.sin(camera.position.z * Math.PI)
+      // controls.update() // camera controls for testing and fun
+      render()
     }
 
     function render() {
@@ -103,7 +104,7 @@ export default {
       camera.aspect = width / height
       camera.updateProjectionMatrix()
       renderer.setSize(width, height)
-      controls.handleResize()
+      // controls.handleResize()
     }
 
     // UTILITIES
