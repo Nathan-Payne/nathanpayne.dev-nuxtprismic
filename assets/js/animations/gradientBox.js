@@ -14,7 +14,7 @@ export function runGradientBox(className) {
     .set(gradientBox, { xPercent: 0, scaleX: 0 })
     .from(textReveal, { x: '-4rem', duration: 0.1 })
     .to(textReveal, { xPercent: 50, duration: 0.55 })
-    .to(textReveal, { xPercent: 100, duration: 0.35 }, '-=0.15')
+    .to(textReveal, { xPercent: 101, duration: 0.35 }, '-=0.15')
   tl.from(
     gradientBox,
     {

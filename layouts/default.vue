@@ -2,7 +2,7 @@
   <div>
     <HeaderPrismic />
     <ColorMode class="mt-4 mr-4 absolute top-0 right-0 z-50" />
-    <main class="overflow-hidden">
+    <main class="overflow-hidden relative">
       <Nuxt />
     </main>
     <NuxtFooter />

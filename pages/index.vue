@@ -4,7 +4,7 @@
       class="w-full h-full absolute inset-0 z-50 bg-dgrey gsap-init-overlay"
     ></div>
     <section
-      class="h-screen w-full sm:w-3/4 lg:w-3/5 pb-20 flex flex-col justify-center"
+      class="h-screen w-full sm:w-3/4 lg:w-3/5 pb-20 relative flex flex-col justify-center"
     >
       <h5 v-if="smallTitle" class="text-sm dark:text-gray-400">
         {{ smallTitle }}
@@ -30,10 +30,14 @@
       </div>
     </section>
 
+    <div class="canvas-wrapper">
+      <LandingRender />
+    </div>
+
     <div class="social-icon-position">
       <SocialIcons />
     </div>
-    <gradient-line :location="80" />
+    <gradient-line :location="37" />
     <scroll-indicator />
 
     <section>
@@ -49,6 +53,7 @@ import GradientBox from '~/components/GradientBox'
 import GradientLine from '~/components/GradientLine'
 import ScrollIndicator from '~/components/ScrollIndicator'
 import SocialIcons from '~/components/SocialIcons'
+import LandingRender from '~/components/LandingRender'
 import {
   runInitOverlayReveal,
   runSocialTween,
@@ -67,6 +72,7 @@ export default {
     GradientLine,
     ScrollIndicator,
     SocialIcons,
+    LandingRender,
   },
   transition: {
     afterEnter() {

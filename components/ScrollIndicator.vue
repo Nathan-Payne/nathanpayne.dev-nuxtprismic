@@ -34,7 +34,7 @@ export default {
   z-index: 49;
   width: 52px;
   height: 60px;
-  bottom: -5px;
+  top: 90vh;
   left: 47%;
   opacity: 0.45;
 }

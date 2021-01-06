@@ -74,8 +74,8 @@ export default {
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
-    // extractCSS: true,
-    transpile: ['gsap'], // may need for server side rendering
+    extractCSS: true,
+    transpile: ['gsap', 'three'], // may need for static site generation
   },
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)

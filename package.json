@@ -19,7 +19,8 @@
     "emailjs-com": "^2.6.3",
     "gsap": "^3.5.1",
     "nuxt": "^2.14.6",
-    "prismic-dom": "^2.2.4"
+    "prismic-dom": "^2.2.4",
+    "three": "^0.124.0"
   },
   "devDependencies": {
     "@nuxtjs/color-mode": "^1.1.1",
