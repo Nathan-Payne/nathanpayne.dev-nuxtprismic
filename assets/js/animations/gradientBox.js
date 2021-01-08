@@ -7,13 +7,13 @@ export function runGradientBox(className) {
     paused: true,
     defaults: { ease: 'none' },
   })
-  // set commands set initial position correctly, required to work with nuxt links/transitions
+  // set commands initialise position correctly, required to work with nuxt links/transitions
   // main animation of after pseudo classes for animated elements
   tl.addLabel('start', 0)
     .set(textReveal, { xPercent: 0 })
     .set(gradientBox, { xPercent: 0, scaleX: 0 })
-    .from(textReveal, { x: '-4rem', duration: 0.1 })
-    .to(textReveal, { xPercent: 50, duration: 0.55 })
+    .from(textReveal, { x: '-4rem', scaleX: 1.2, duration: 0.1 })
+    .to(textReveal, { xPercent: 50, scaleX: 1, duration: 0.55 })
     .to(textReveal, { xPercent: 101, duration: 0.35 }, '-=0.15')
   tl.from(
     gradientBox,

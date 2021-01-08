@@ -10,8 +10,11 @@ export const mutations = {
   SET_ERROR(state, error) {
     state.menu = error
   },
-  TOGGLE_RENDER(state) {
-    state.showRender = !state.showRender
+  SET_RENDER_OFF(state) {
+    state.showRender = false
+  },
+  SET_RENDER_ON(state) {
+    state.showRender = true
   },
 }
 

@@ -49,18 +49,20 @@ export default {
     Logo,
   },
   mounted() {
-    runMenuTween().eventCallback('onComplete', this.toggleRender) // loads landing render after gsap intro
-    runLogoTween()
+    runMenuTween().eventCallback('onComplete', this.initRender) // loads landing render after gsap intro
+    runLogoTween() // animates logo
   },
   methods: {
     menuHover(index) {
-      runMenuHover(index)
+      runMenuHover(index) // hover state of individual menu items
     },
     stopHover(index) {
       stopMenuHover(index)
     },
-    toggleRender() {
-      this.$store.commit('TOGGLE_RENDER')
+    initRender() {
+      if (this.$route.name === 'index') {
+        this.$store.commit('SET_RENDER_ON') // only render if on landing page
+      }
     },
   },
 }

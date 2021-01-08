@@ -81,6 +81,12 @@ export default {
   transition: {
     afterEnter() {
       refreshScrollTrigger()
+      setTimeout(() => {
+        this.$store.commit('SET_RENDER_ON')
+      }, 1000)
+    },
+    leave() {
+      this.$store.commit('SET_RENDER_OFF')
     },
   },
   async asyncData({ $prismic, error }) {
@@ -112,19 +118,19 @@ export default {
     },
   },
   mounted() {
-    runInitOverlayReveal() // covers initial flash of page
-    runSocialTween()
+    runInitOverlayReveal() // pseudo-loader: covers initial flash of page
+    runSocialTween() // animates social icons
     runScrollIndicatorEntry().eventCallback(
       'onComplete',
       runScrollIndicatorExit
-    )
+    ) // adds exit tween only when entry tween completed
 
     setTimeout(() => {
       homeProjectTimeline()
-    }, 0.05)
+    }, 5) // adds project animations, timeout prevents conflict
     setTimeout(() => {
       homeAboutTimeline()
-    }, 0.1)
+    }, 10)
   },
 }
 </script>
