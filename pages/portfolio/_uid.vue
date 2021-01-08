@@ -44,11 +44,15 @@
           class="flex flex-col gsap-project-desc"
         />
       </article>
-      <responsive-picture
-        v-if="secondImage.url"
-        :field="secondImage"
+      <div
         class="w-1/2 md:w-1/5 mx-auto mt-12 md:mt-0 flex items-center gsap-project-image"
-      />
+      >
+        <responsive-picture
+          v-if="secondImage.url"
+          :field="secondImage"
+          class="rounded-md overflow-hidden"
+        />
+      </div>
     </section>
     <slices-block :slices="slices" class="mt-20" />
   </div>

@@ -6,7 +6,7 @@
       <div
         v-for="(img, index) in leftImages"
         :key="'img_grid' + index"
-        class="shadow-lg"
+        class="shadow-md rounded-lg overflow-hidden"
       >
         <responsive-picture
           v-if="img.repeatable_image.url"
@@ -18,7 +18,7 @@
       <div
         v-for="(img, index) in rightImages"
         :key="'img_grid' + index"
-        class="shadow-lg"
+        class="shadow-md rounded-lg overflow-hidden"
       >
         <responsive-picture
           v-if="img.repeatable_image.url"
