@@ -9,21 +9,21 @@
       <h5 v-if="smallTitle" class="text-sm dark:text-gray-400">
         {{ smallTitle }}
       </h5>
-      <div class="relative overflow-hidden">
-        <h1
-          class="relative z-20 font-thin text-dgrey dark:text-white leading-tight"
-        >
-          {{ mainTitle }}
-        </h1>
-        <gradient-box :box-name="'first-box'" :delay="0" />
-      </div>
-      <div class="relative overflow-hidden">
-        <h1
-          class="relative z-20 font-thin text-dgrey dark:text-white leading-tight"
-        >
-          {{ mainTitleSecondLine }}
-        </h1>
-        <gradient-box :box-name="'second-box'" :delay="450" />
+      <div
+        class="p-4 relative z-30 dark:bg-transparent bg-white bg-opacity-25 backdrop-filter transition-colors duration-300 ease-in-out"
+      >
+        <div class="relative z-20 overflow-hidden">
+          <h1 class="font-thin text-dgrey dark:text-white leading-tight">
+            {{ mainTitle }}
+          </h1>
+          <gradient-box :box-name="'first-box'" :delay="0" />
+        </div>
+        <div class="relative z-20 overflow-hidden">
+          <h1 class="font-thin text-dgrey dark:text-white leading-tight">
+            {{ mainTitleSecondLine }}
+          </h1>
+          <gradient-box :box-name="'second-box'" :delay="450" />
+        </div>
       </div>
       <div v-if="ctaLinkUid" class="w-24 mt-6 inline-block text-center">
         <nuxt-link :to="`/${ctaLinkUid}`"> {{ ctaText }} </nuxt-link>
@@ -130,6 +130,13 @@ export default {
 </script>
 
 <style>
+.backdrop-filter {
+  width: fit-content;
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border-radius: 10px;
+}
+
 .space-above {
   display: block;
   margin-top: 2rem;

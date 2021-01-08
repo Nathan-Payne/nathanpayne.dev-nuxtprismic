@@ -3,7 +3,7 @@
     <div aria-hidden="true" class="gradient-box" :class="boxName"></div>
     <div
       aria-hidden="true"
-      class="w-full bg-white dark:bg-dgrey absolute inset-0 z-30"
+      class="w-full bg-white dark:bg-dgrey absolute inset-0 z-20"
       :class="`text-reveal-${boxName}`"
     ></div>
   </div>
