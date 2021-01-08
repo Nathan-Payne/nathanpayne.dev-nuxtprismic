@@ -60,8 +60,11 @@ export default {
       stopMenuHover(index)
     },
     initRender() {
-      if (this.$route.name === 'index') {
-        this.$store.commit('SET_RENDER_ON') // only render if on landing page
+      if (
+        this.$route.name === 'index' &&
+        this.$store.state.onMobile === false
+      ) {
+        this.$store.commit('SET_RENDER_ON') // only render if on landing page and not <767px
       }
     },
   },

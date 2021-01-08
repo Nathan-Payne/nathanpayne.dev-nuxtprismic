@@ -82,7 +82,9 @@ export default {
     afterEnter() {
       refreshScrollTrigger()
       setTimeout(() => {
-        this.$store.commit('SET_RENDER_ON')
+        if (this.$store.state.onMobile === false) {
+          this.$store.commit('SET_RENDER_ON')
+        }
       }, 1000)
     },
     leave() {
@@ -107,6 +109,11 @@ export default {
       error({ statusCode: 404, message: 'Page not found' })
     }
   },
+  data() {
+    return {
+      windowWidth: null,
+    }
+  },
   computed: {
     renderThree() {
       return this.$store.state.showRender
@@ -114,10 +121,15 @@ export default {
   },
   watch: {
     renderThree() {
-      runLandingRenderIntro()
+      runLandingRenderIntro() // runs fade in if component rendered
     },
   },
   mounted() {
+    this.windowWidth = window.innerWidth
+    if (this.windowWidth < 767) {
+      this.$store.commit('ON_MOBILE') // determines one of conditions equired to render (in HeaderPrismic)
+    }
+    window.addEventListener('resize', this.onResize)
     runInitOverlayReveal() // pseudo-loader: covers initial flash of page
     runSocialTween() // animates social icons
     runScrollIndicatorEntry().eventCallback(
@@ -131,6 +143,19 @@ export default {
     setTimeout(() => {
       homeAboutTimeline()
     }, 10)
+  },
+  beforeDestroyed() {
+    window.removeEventListener('resize', this.onResize) // prevents multiple event listeners being added
+  },
+  methods: {
+    onResize() {
+      this.windowWidth = window.innerWidth
+      if (this.windowWidth < 767) {
+        this.$store.commit('SET_RENDER_OFF')
+      } else {
+        this.$store.commit('SET_RENDER_ON')
+      }
+    },
   },
 }
 </script>

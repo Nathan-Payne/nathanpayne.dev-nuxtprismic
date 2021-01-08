@@ -1,6 +1,7 @@
 export const state = () => ({
   menu: {},
   showRender: false,
+  onMobile: false,
 })
 
 export const mutations = {
@@ -15,6 +16,9 @@ export const mutations = {
   },
   SET_RENDER_ON(state) {
     state.showRender = true
+  },
+  ON_MOBILE(state) {
+    state.onMobile = true
   },
 }
 
