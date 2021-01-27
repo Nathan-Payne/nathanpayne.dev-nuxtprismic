@@ -26,13 +26,13 @@ export default {
     gradientLineTl
       .fromTo(
         '.gradient-line',
-        { xPercent: -100, scaleX: 1, duration: 1.4 },
-        { xPercent: 100, scaleX: 0, autoAlpha: 0, duration: 1.5 },
+        { xPercent: -100, scaleX: 1, duration: 1.3 },
+        { xPercent: 100, scaleX: 0, autoAlpha: 0, duration: 1.4 },
         0.38
       )
       .from(
         '.page-line',
-        { xPercent: -20, scaleX: 0, autoAlpha: 0, duration: 1.4 },
+        { xPercent: -20, scaleX: 0, autoAlpha: 0, duration: 1.3 },
         '<'
       )
       .to('.page-line', { autoAlpha: 0.5, duration: 1 })

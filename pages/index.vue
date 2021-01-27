@@ -10,23 +10,38 @@
         {{ smallTitle }}
       </h5>
       <div
-        class="p-4 relative z-30 dark:bg-transparent bg-white bg-opacity-25 backdrop-filter transition-colors duration-300 ease-in-out"
+        class="p-4 relative z-30 dark:bg-transparent bg-white bg-opacity-75 backdrop-filter transition-colors duration-300 ease-in-out"
       >
         <div class="relative z-20 overflow-hidden">
-          <h1 class="font-thin text-dgrey dark:text-white leading-tight">
+          <h1 class="font-thin text-ddgrey dark:text-white leading-tight">
             {{ mainTitle }}
           </h1>
           <gradient-box :box-name="'first-box'" :delay="0" />
         </div>
         <div class="relative z-20 overflow-hidden">
-          <h1 class="font-thin text-dgrey dark:text-white leading-tight">
+          <h1 class="font-thin text-ddgrey dark:text-white leading-tight">
             {{ mainTitleSecondLine }}
           </h1>
           <gradient-box :box-name="'second-box'" :delay="450" />
         </div>
       </div>
-      <div v-if="ctaLinkUid" class="w-24 mt-6 inline-block text-center">
-        <nuxt-link :to="`/${ctaLinkUid}`"> {{ ctaText }} </nuxt-link>
+      <div
+        class="mt-8 flex flex-col sm:flex-row space-y-4 sm:space-y-0 relative z-30 gsap-cta-buttons"
+      >
+        <div
+          v-if="ctaLinkUid"
+          class="ml-4 px-4 py-2 dark:bg-transparent bg-white bg-opacity-50 backdrop-filter uppercase font-black lg:text-xl tracking-widest shadow-md rounded border-l-4 border-dblue dark:border-dred focus:outline-none dark-hover:bg-dred hover:bg-dblue hover:text-white transform hover:scale-105 hover:shadow-lg transition duration-300"
+        >
+          <nuxt-link :to="`/${ctaLinkUid}`"> {{ ctaText }} </nuxt-link>
+        </div>
+        <div
+          v-if="ctaLinkUidSecondary"
+          class="ml-4 sm:ml-8 px-4 py-2 dark:bg-transparent bg-white bg-opacity-50 backdrop-filter uppercase font-black lg:text-xl tracking-widest shadow-md rounded border-l-4 border-dblue dark:border-dred focus:outline-none dark-hover:bg-dred hover:bg-dblue hover:text-white transform hover:scale-105 hover:shadow-lg transition duration-300"
+        >
+          <nuxt-link :to="`/${ctaLinkUidSecondary}`">
+            {{ ctaTextSecondary }}
+          </nuxt-link>
+        </div>
       </div>
     </section>
 
@@ -40,7 +55,8 @@
     <div class="social-icon-position">
       <SocialIcons />
     </div>
-    <gradient-line :location="37" />
+
+    <gradient-line :location="34" />
     <scroll-indicator />
 
     <section>
@@ -59,8 +75,9 @@ import SocialIcons from '~/components/SocialIcons'
 import LandingRender from '~/components/LandingRender'
 import {
   runInitOverlayReveal,
-  runSocialTween,
   runLandingRenderIntro,
+  runSocialTween,
+  runCtaButtonTween,
   runScrollIndicatorEntry,
   runScrollIndicatorExit,
   homeProjectTimeline,
@@ -102,6 +119,8 @@ export default {
         mainTitleSecondLine: document.main_title_second_line[0].text,
         ctaText: document.cta_text[0].text,
         ctaLinkUid: document.cta_link.uid,
+        ctaTextSecondary: document.cta_text_secondary[0].text,
+        ctaLinkUidSecondary: document.cta_link_secondary.uid,
         sectionTitle: document.section_title,
         slices: document.body,
       }
@@ -126,12 +145,13 @@ export default {
   },
   mounted() {
     this.windowWidth = window.innerWidth
-    if (this.windowWidth < 767) {
-      this.$store.commit('ON_MOBILE') // determines one of conditions equired to render (in HeaderPrismic)
+    if (this.windowWidth < 600) {
+      this.$store.commit('ON_MOBILE') // determines one of conditions required to render (in HeaderPrismic)
     }
     window.addEventListener('resize', this.onResize)
     runInitOverlayReveal() // pseudo-loader: covers initial flash of page
     runSocialTween() // animates social icons
+    runCtaButtonTween()
     runScrollIndicatorEntry().eventCallback(
       'onComplete',
       runScrollIndicatorExit

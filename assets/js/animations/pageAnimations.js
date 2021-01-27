@@ -95,21 +95,6 @@ export function homeAboutTimeline() {
     .from(paragraphs[2], {}, '<0.15')
     .from(paragraphs[3], {}, '<0.15')
     .from(paragraphs[4], {}, '<0.15')
-
-  // ALTERNATE: ADD SCROLL TRIGGER TO EACH INDIVIDUAL PARAGRAPH
-  // paragraphs.forEach((para) => {
-  //   gsap.from(para, {
-  //     scrollTrigger: {
-  //       trigger: para,
-  //       start: 'top 72%',
-  //     },
-  //     xPercent: 3,
-  //     autoAlpha: 0,
-  //     delay: 0.2,
-  //     duration: 0.8,
-  //     ease: 'power2.out',
-  //   })
-  // })
 }
 
 export function portfolioTimeline() {
@@ -349,16 +334,16 @@ export function runMenuTween() {
     xPercent: 8,
     autoAlpha: 0,
     duration: 0.8,
-    stagger: 0.08,
+    stagger: 0.07,
     ease: 'back.out(1)',
     delay: 0.8,
   })
 }
 export function runLogoTween() {
   return gsap.from('.gsap-logo', {
-    yPercent: -10,
+    yPercent: -12,
     autoAlpha: 0,
-    duration: 3,
+    duration: 2.5,
     ease: 'power2.out',
     delay: 1.1,
   })
@@ -367,8 +352,8 @@ export function runLogoTween() {
 export function runColormodeTween() {
   return gsap.from('.gsap-colormode', {
     autoAlpha: 0,
-    duration: 3,
-    delay: 1,
+    duration: 2,
+    delay: 0.8,
     ease: 'power3.out',
   })
 }
@@ -377,9 +362,19 @@ export function runSocialTween() {
   return gsap.from('.social-icon-position .gsap-social-icon', {
     xPercent: -12,
     autoAlpha: 0,
-    duration: 2,
+    duration: 1.7,
     stagger: 0.15,
     delay: 1.2,
+    ease: 'power2.out',
+  })
+}
+
+export function runCtaButtonTween() {
+  return gsap.from('.gsap-cta-buttons', {
+    xPercent: -4,
+    autoAlpha: 0,
+    duration: 1.2,
+    delay: 1.1,
     ease: 'power2.out',
   })
 }
@@ -388,7 +383,7 @@ export function runLandingRenderIntro() {
   return gsap.from('.canvas-overlay', {
     autoAlpha: 1,
     duration: 1.6,
-    ease: 'power2.out',
+    ease: 'power1.out',
   })
 }
 

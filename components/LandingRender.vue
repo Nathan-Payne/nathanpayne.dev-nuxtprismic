@@ -71,12 +71,12 @@ export default {
       const cubeGeo = new THREE.BoxBufferGeometry(8, 8, 8)
       const cubeMat = new THREE.MeshLambertMaterial()
 
-      for (let i = 0; i < 22; i++) {
+      for (let i = 0; i < 19; i++) {
         const cube = new THREE.Mesh(cubeGeo, cubeMat)
         // positions shifted right of DOM elements between ~ -60 to 60 units
-        cube.position.x = 18 + 60 * (2.0 * Math.random() - 1.0)
+        cube.position.x = 16 + 60 * (2.0 * Math.random() - 1.0)
         cube.position.y = -5 + 60 * (2.0 * Math.random() - 1.0)
-        cube.position.z = 55 * (2.0 * Math.random() - 1.0)
+        cube.position.z = 50 * (2.0 * Math.random() - 1.0)
 
         cube.rotation.x = Math.random() * Math.PI
         cube.rotation.y = Math.random() * Math.PI
