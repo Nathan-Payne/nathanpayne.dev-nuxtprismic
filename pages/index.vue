@@ -10,7 +10,7 @@
         {{ smallTitle }}
       </h5>
       <div
-        class="p-4 relative z-30 dark:bg-transparent bg-white bg-opacity-75 backdrop-filter transition-colors duration-300 ease-in-out"
+        class="p-4 relative z-30 dark:bg-transparent bg-white bg-opacity-50 backdrop-filter transition-colors duration-300 ease-in-out"
       >
         <div class="relative z-20 overflow-hidden">
           <h1 class="font-thin text-ddgrey dark:text-white leading-tight">
@@ -46,7 +46,7 @@
     </section>
 
     <div
-      class="h-screen w-full absolute inset-0 z-10 opacity-0 bg-dgrey canvas-overlay"
+      class="h-screen w-full absolute inset-0 z-10 opacity-0 dark:bg-dgrey bg-white canvas-overlay"
     ></div>
     <div v-if="renderThree" class="render-wrapper">
       <LandingRender />
@@ -56,7 +56,7 @@
       <SocialIcons />
     </div>
 
-    <gradient-line :location="34" />
+    <gradient-line :location="36" />
     <scroll-indicator />
 
     <section>
@@ -102,7 +102,7 @@ export default {
         if (this.$store.state.onMobile === false) {
           this.$store.commit('SET_RENDER_ON')
         }
-      }, 1000)
+      }, 1500)
     },
     leave() {
       this.$store.commit('SET_RENDER_OFF')

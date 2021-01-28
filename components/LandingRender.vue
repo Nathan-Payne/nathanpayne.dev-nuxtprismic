@@ -18,6 +18,11 @@ export default {
     width = window.innerWidth
     height = window.innerHeight - 60
     canvas = document.getElementById('landing-render')
+    const numShapes = 30
+    // FPS limiting (30)
+    let clock = new THREE.Clock()
+    let delta = 0
+    let interval = 1 / 30
 
     function init() {
       // RENDERER
@@ -44,13 +49,16 @@ export default {
       scene.fog = new THREE.Fog(0x1e1f1f, 55, 160)
 
       // LIGHTING
-      const dirLight = new THREE.DirectionalLight(0xffffff, 0.4)
+      const dirLight = new THREE.DirectionalLight(0xffffff, 0.98)
       dirLight.position.set(1, 1, -1).normalize()
       scene.add(dirLight)
+      const dirLight2 = new THREE.DirectionalLight(0xffffff, 0.98)
+      dirLight2.position.set(-1, -1, 1).normalize()
+      scene.add(dirLight2)
 
-      const pointLight = new THREE.PointLight(0xddddff, 1, 500)
-      pointLight.position.set(10, -5, 0)
-      scene.add(pointLight)
+      // const pointLight = new THREE.PointLight(0xffffff, 1, 500)
+      // pointLight.position.set(10, -5, 0)
+      // scene.add(pointLight)
 
       // ON RESIZE
       window.addEventListener('resize', onWindowResize)
@@ -60,23 +68,24 @@ export default {
       // add sphere
       const sphereGeo = new THREE.SphereBufferGeometry(40, 16, 16)
       const sphereMat = new THREE.MeshLambertMaterial({
-        emissive: 0x222222,
+        emissive: 0x282828,
         wireframe: true,
       })
       const sphere = new THREE.Mesh(sphereGeo, sphereMat)
-      sphere.position.set(20, -5, -90)
+      sphere.position.set(50, -15, -110)
+      sphere.name = 'sphere'
       scene.add(sphere)
 
       // add cubes
-      const cubeGeo = new THREE.BoxBufferGeometry(8, 8, 8)
-      const cubeMat = new THREE.MeshLambertMaterial()
+      const cubeGeo = new THREE.PlaneBufferGeometry(1, 1)
+      const cubeMat = new THREE.MeshLambertMaterial({ side: THREE.DoubleSide })
 
-      for (let i = 0; i < 19; i++) {
+      for (let i = 0; i < numShapes; i++) {
         const cube = new THREE.Mesh(cubeGeo, cubeMat)
-        // positions shifted right of DOM elements between ~ -60 to 60 units
-        cube.position.x = 16 + 60 * (2.0 * Math.random() - 1.0)
-        cube.position.y = -5 + 60 * (2.0 * Math.random() - 1.0)
-        cube.position.z = 50 * (2.0 * Math.random() - 1.0)
+        cube.name = `cube-${i}`
+        cube.position.x = 16 + 35 * (2.0 * Math.random() - 1.0)
+        cube.position.y = -6 + 65 * (2.0 * Math.random() - 1.0)
+        cube.position.z = 10 + 40 * (2.0 * Math.random() - 1.0)
 
         cube.rotation.x = Math.random() * Math.PI
         cube.rotation.y = Math.random() * Math.PI
@@ -87,11 +96,33 @@ export default {
     }
     function animate() {
       requestAnimationFrame(animate)
-      camera.position.x -= 0.01
-      camera.rotation.y -= 0.00009
-      camera.position.z += Math.sin(camera.position.z * Math.PI)
-      // controls.update() // camera controls for testing and fun
-      render()
+
+      delta += clock.getDelta()
+
+      if (delta > interval) {
+        const sphere = scene.getObjectByName('sphere')
+        const cubes = []
+        for (let i = 0; i < numShapes; i++) {
+          let cube = scene.getObjectByName(`cube-${i}`)
+          cubes.push(cube)
+        }
+
+        sphere.rotation.y += 0.0004
+        cubes.forEach((cube, i) => {
+          cube.rotation.x += 0.0005 * i
+          cube.rotation.z += 0.0025
+          cube.position.y += 0.002 * i
+
+          if (cube.position.y > 90) {
+            cube.position.y = -60
+          }
+        })
+
+        // controls.update() // camera controls for testing and fun
+        render()
+
+        delta = delta % interval
+      }
     }
 
     function render() {
